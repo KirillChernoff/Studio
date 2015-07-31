@@ -1,0 +1,101 @@
+﻿<Window x:Class="XMLGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XMLGenerator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl x:Name="tabControl1" SelectionChanged="tabControl1_SelectionChanged">
+        <TabItem x:Name="First" Header="Hello tab" Visibility="Visible">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Выберите действие" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"  ></TextBlock>
+                <Button x:Name="ChooseNewButton" Content="Create new" Click="ChooseNewButtonClick"  Grid.Row="9" Grid.Column="2"/>
+                <Button x:Name="ChooseEditButton" Content="Edit existing" Click="ChooseEditButtonClick" Grid.Row="9" Grid.Column="5"/>
+                <Button x:Name="Exit" Content="Exit" Click="ExitClick" Grid.Row="0" Grid.Column="7"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem x:Name="NewXML" Header="Create New" Visibility="Visible">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="95.2" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="17*" />
+                    <RowDefinition Height="18*" />
+                    <RowDefinition Height="19*" />
+                    <RowDefinition Height="20*" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Choose Template" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1"  />
+                <Button x:Name="Template1Button" Content="Use template 1" Click="Template1Button_Click"  Grid.Row="2" Grid.Column="1"  />
+                <TextBlock x:Name="Template1Desc" Text="Template 1 Description" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <Button x:Name="Template2Button" Content="Use template 2" Click="Template2Button_Click"  Grid.Row="3" Grid.Column="1"  />
+                <TextBlock x:Name="Template2Desc" Text="Template 2 Description" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <Button x:Name="Template3Button" Content="Use template 3" Click="Template3Button_Click"  Grid.Row="4" Grid.Column="1"  />
+                <TextBlock x:Name="Template3Desc" Text="Template 3 Description" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <Button x:Name="Template4Button" Content="Use template 4" Click="Template4Button_Click"  Grid.Row="5" Grid.Column="1"  />
+                <TextBlock x:Name="Template4Desc" Text="Template 4 Description" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <Button x:Name="Template5Button" Content="Use template 5" Click="Template5Button_Click"  Grid.Row="6" Grid.Column="1"  />
+                <TextBlock x:Name="Template5Desc" Text="Template 5 Description" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <Button x:Name="Template6Button" Content="Use template 6" Click="Template6Button_Click"  Grid.Row="7" Grid.Column="1"  />
+                <TextBlock x:Name="Template6Desc" Text="Template 6 Description" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <Button x:Name="Template7Button" Content="Use template 7" Click="Template7Button_Click"  Grid.Row="8" Grid.Column="1"  />
+                <TextBlock x:Name="Template7Desc" Text="Template 7 Description" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <Button x:Name="Template8Button" Content="Use template 8" Click="Template8Button_Click"  Grid.Row="9" Grid.Column="1"  />
+                <TextBlock x:Name="Template8Desc" Text="Template 8 Description" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <Button x:Name="Exit1" Content="Exit" Click="ExitClick" Grid.Row="0" Grid.Column="7" />
+                <Button x:Name="Back" Content="Back" Click="BackToMainClick" Grid.Row="0" Grid.Column="6" />
+
+            </Grid>
+        </TabItem>
+    </TabControl>
+
+</Window>
