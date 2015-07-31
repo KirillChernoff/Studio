@@ -75,21 +75,21 @@
                     <RowDefinition Height="20*" />
                 </Grid.RowDefinitions>
                 <TextBlock Text="Choose Template" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1"  />
-                <Button x:Name="Template1Button" Content="Use template 1" Click="Template1Button_Click"  Grid.Row="2" Grid.Column="1"  />
+                <Button x:Name="UseTemplate1Button" Content="Use template 1" Click="UseTemplate1Button_Click"  Grid.Row="2" Grid.Column="1"  />
                 <TextBlock x:Name="Template1Desc" Text="Template 1 Description" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="Template2Button" Content="Use template 2" Click="Template2Button_Click"  Grid.Row="3" Grid.Column="1"  />
+                <Button x:Name="UseTemplate2Button" Content="Use template 2" Click="UseTemplate2Button_Click"  Grid.Row="3" Grid.Column="1"  />
                 <TextBlock x:Name="Template2Desc" Text="Template 2 Description" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="Template3Button" Content="Use template 3" Click="Template3Button_Click"  Grid.Row="4" Grid.Column="1"  />
+                <Button x:Name="UseTemplate3Button" Content="Use template 3" Click="UseTemplate3Button_Click"  Grid.Row="4" Grid.Column="1"  />
                 <TextBlock x:Name="Template3Desc" Text="Template 3 Description" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="Template4Button" Content="Use template 4" Click="Template4Button_Click"  Grid.Row="5" Grid.Column="1"  />
+                <Button x:Name="UseTemplate4Button" Content="Use template 4" Click="UseTemplate4Button_Click"  Grid.Row="5" Grid.Column="1"  />
                 <TextBlock x:Name="Template4Desc" Text="Template 4 Description" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="Template5Button" Content="Use template 5" Click="Template5Button_Click"  Grid.Row="6" Grid.Column="1"  />
+                <Button x:Name="UseTemplate5Button" Content="Use template 5" Click="UseTemplate5Button_Click"  Grid.Row="6" Grid.Column="1"  />
                 <TextBlock x:Name="Template5Desc" Text="Template 5 Description" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="Template6Button" Content="Use template 6" Click="Template6Button_Click"  Grid.Row="7" Grid.Column="1"  />
+                <Button x:Name="UseTemplate6Button" Content="Use template 6" Click="UseTemplate6Button_Click"  Grid.Row="7" Grid.Column="1"  />
                 <TextBlock x:Name="Template6Desc" Text="Template 6 Description" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="Template7Button" Content="Use template 7" Click="Template7Button_Click"  Grid.Row="8" Grid.Column="1"  />
+                <Button x:Name="UseTemplate7Button" Content="Use template 7" Click="UseTemplate7Button_Click"  Grid.Row="8" Grid.Column="1"  />
                 <TextBlock x:Name="Template7Desc" Text="Template 7 Description" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="Template8Button" Content="Use template 8" Click="Template8Button_Click"  Grid.Row="9" Grid.Column="1"  />
+                <Button x:Name="UseTemplate8Button" Content="Use template 8" Click="UseTemplate8Button_Click"  Grid.Row="9" Grid.Column="1"  />
                 <TextBlock x:Name="Template8Desc" Text="Template 8 Description" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="3"/>
                 <Button x:Name="Exit1" Content="Exit" Click="ExitClick" Grid.Row="0" Grid.Column="7" />
                 <Button x:Name="Back" Content="Back" Click="BackToMainClick" Grid.Row="0" Grid.Column="6" />

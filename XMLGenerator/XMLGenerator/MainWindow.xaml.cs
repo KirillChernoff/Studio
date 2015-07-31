@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace XMLGenerator
 {
@@ -30,7 +31,7 @@ namespace XMLGenerator
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-
+            Table.ReadXML("efwe");
         }
 
         public MainWindow()
@@ -43,44 +44,49 @@ namespace XMLGenerator
 
         }
 
-        private void Template3Button_Click(object sender, RoutedEventArgs e)
+        private void UseTemplate1Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Template4Button_Click(object sender, RoutedEventArgs e)
+        private void UseTemplate2Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void UseTemplate3Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Template1Button_Click(object sender, RoutedEventArgs e)
+        private void UseTemplate4Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Template2Button_Click(object sender, RoutedEventArgs e)
+
+        private void UseTemplate5Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Template5Button_Click(object sender, RoutedEventArgs e)
+        private void UseTemplate6Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Template6Button_Click(object sender, RoutedEventArgs e)
+
+        private void UseTemplate7Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Template8Button_Click(object sender, RoutedEventArgs e)
+        private void UseTemplate8Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
-        private void Template7Button_Click(object sender, RoutedEventArgs e)
+        private void BackToMainClick(object sender, RoutedEventArgs e)
         {
-
+            tabControl1.SelectedIndex = 0;
         }
     }
 }
