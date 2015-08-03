@@ -96,6 +96,41 @@
 
             </Grid>
         </TabItem>
+        <TabItem x:Name="EditTab" Header="Edit" Visibility="Visible">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="95.2" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="17*" />
+                    <RowDefinition Height="18*" />
+                    <RowDefinition Height="19*" />
+                    <RowDefinition Height="20*" />
+                </Grid.RowDefinitions>
+                
+
+            </Grid>
+        </TabItem>
+        
     </TabControl>
 
 </Window>

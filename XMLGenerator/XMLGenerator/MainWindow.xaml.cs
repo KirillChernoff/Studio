@@ -31,7 +31,7 @@ namespace XMLGenerator
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-            Table.ReadXML("efwe");
+            Logic.Table TestTable = Logic.ReadXml("MAIN.xml");
         }
 
         public MainWindow()
