@@ -7,8 +7,179 @@ using System.Xml;
 
 namespace XMLGenerator
 {
-   
-    public  class Table
+    public class Coords
+    {
+        private int _rowCoord
+        {
+            get
+            {
+                return _rowCoord;
+            }
+            set
+            {
+                _rowCoord = value;
+            }
+        }
+        private int _colCoord
+        {
+            get
+            {
+                return _colCoord;
+            }
+            set
+            {
+                _colCoord = value;
+            }
+
+        }
+        public Coords()
+        {
+
+        }
+        public Coords(int RowCoord, int ColCoord)
+        {
+            _rowCoord = RowCoord;
+            _colCoord = ColCoord;
+        }
+
+    }
+    public class HeaderCell
+    {
+        private int _headerCellHeight
+        {
+            get
+            {
+                return _headerCellHeight;
+            }
+            set
+            {
+                if(value>0)
+                _headerCellHeight = value;
+            }
+        }
+        private string _headerCellName
+        {
+            get
+            {
+                return _headerCellName;
+            }
+            set
+            {
+                _headerCellName = value;
+            }
+        }
+        private int _headerCellWidth
+        {
+            get
+            {
+                return _headerCellWidth;
+            }
+            set
+            {
+                if(value>0)
+                _headerCellWidth = value;
+            }
+        }
+        private int _headerCellFontSize
+        {
+            get
+            {
+                return _headerCellFontSize;
+            }
+            set
+            {
+                if (value > 0)
+                    _headerCellFontSize = value;
+            }
+
+        }
+        private string _headerCellAlign
+        {
+            get
+            {
+                return _headerCellAlign;
+            }
+            set
+            {
+                _headerCellAlign = value;
+            }
+
+        }
+        private string _headerCellHeader
+        {
+            get
+            {
+                return _headerCellHeader;
+            }
+            set
+            {
+                _headerCellHeader = value;
+            }
+        }
+        public HeaderCell()
+        {
+
+        }
+        public HeaderCell(int CellHeight, int CellWidth, int CellFontSize, string CellName, string CellAlign, string CellHeader)
+        {
+            _headerCellHeight = CellHeight;
+            _headerCellWidth = CellWidth;
+            _headerCellFontSize = CellFontSize;
+            _headerCellName = CellName;
+            _headerCellAlign = CellAlign;
+            _headerCellHeader = CellHeader;
+        }
+
+    }
+    public class TabCell
+    {
+        private string _tabCellAlign
+        {
+            get
+            {
+                return _tabCellAlign;
+            }
+            set
+            {
+                _tabCellAlign = value;
+            }
+        }
+        private string _tabCellPrecision
+        {
+            get
+            {
+                return _tabCellPrecision;
+            }
+            set
+            {
+                _tabCellPrecision = value;
+            }
+        }
+        private string _tabCellParametr
+        {
+            get
+            {
+                //можно включить проверку на вхождение тега в словарь тегов
+                return _tabCellParametr;
+            }
+            set
+            {
+                _tabCellParametr = value;
+            }
+        }
+        public TabCell()
+        {
+
+        }
+        public TabCell(string CellAlign, string CellPrecision, string CellParametr)
+        {
+            _tabCellAlign = CellAlign;
+            _tabCellPrecision = CellPrecision;
+            _tabCellParametr = CellParametr;
+        }
+    }
+
+   /* public  class Table
     {
         public static int GetCoordRow(string Coord)
         {
@@ -43,11 +214,29 @@ namespace XMLGenerator
 
         public static void ReadXML(string XMLName)
         {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("MAIN.xml");
-            foreach (XmlNode task in xmlDoc.DocumentElement.ChildNodes)
+            XmlTextReader reader = null;
+            try
             {
-                Console.WriteLine( xmlDoc.DocumentElement.GetAttribute("Name"));
+                reader = new XmlTextReader("MAIN.xml");
+
+                reader.WhitespaceHandling = WhitespaceHandling.None; // пропускаем пустые узлы 
+
+                while (reader.Read())
+                    if (reader.NodeType == XmlNodeType.Element)
+                        if (reader.Name == "TabColumn")
+                        {
+                            string order = reader.GetAttribute("Header");
+
+
+                            Console.WriteLine(order);
+
+                        }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка: " + ex.Message);
             }
         }
 
@@ -100,7 +289,7 @@ namespace XMLGenerator
             this._rowNum = rowNum;
             this._cells = cells;
         }
-    }
+    }*/
     static class  Logic
     {
     }
