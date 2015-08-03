@@ -7,290 +7,308 @@ using System.Xml;
 
 namespace XMLGenerator
 {
-    public class Coords
+
+    class  Logic
     {
-        private int _rowCoord
+        public class Coords
         {
-            get
+            private int _rowCoord;
+            public int rowCoord
             {
-                return _rowCoord;
+                get
+                {
+                    return _rowCoord;
+                }
+                set
+                {
+                    _rowCoord = value;
+                }
             }
-            set
+            private int _colCoord;
+            public int colCoord
             {
-                _rowCoord = value;
+                get
+                {
+                    return _colCoord;
+                }
+                set
+                {
+                    _colCoord = value;
+                }
+
             }
-        }
-        private int _colCoord
-        {
-            get
+            public Coords()
             {
-                return _colCoord;
+
             }
-            set
+            public Coords(int RowCoord, int ColCoord)
             {
-                _colCoord = value;
+                _rowCoord = RowCoord;
+                _colCoord = ColCoord;
             }
 
         }
-        public Coords()
-        {
 
-        }
-        public Coords(int RowCoord, int ColCoord)
+        public class HeaderCell
         {
-            _rowCoord = RowCoord;
-            _colCoord = ColCoord;
-        }
-
-    }
-    public class HeaderCell
-    {
-        private int _headerCellHeight
-        {
-            get
+            private Coords _headerCellCoord;
+            public Coords headerCellCoord
             {
-                return _headerCellHeight;
+                get
+                {
+                    return _headerCellCoord;
+                }
+                set
+                {
+                    _headerCellCoord = value;
+                }
             }
-            set
+            private int _headerCellHeight;
+            public int headerCellHeight
             {
-                if(value>0)
-                _headerCellHeight = value;
+                get
+                {
+                    return _headerCellHeight;
+                }
+                set
+                {
+                    if (value > 0)
+                        _headerCellHeight = value;
+                }
             }
-        }
-        private string _headerCellName
-        {
-            get
+            private string _headerCellName;
+            public string headerCellName
             {
-                return _headerCellName;
+                get
+                {
+                    return _headerCellName;
+                }
+                set
+                {
+                    _headerCellName = value;
+                }
             }
-            set
+            private int _headerCellWidth;
+            public int headerCellWidth
             {
-                _headerCellName = value;
+                get
+                {
+                    return _headerCellWidth;
+                }
+                set
+                {
+                    if (value > 0)
+                        _headerCellWidth = value;
+                }
             }
-        }
-        private int _headerCellWidth
-        {
-            get
+            private int _headerCellFontSize;
+            public int headerCellFontSize
             {
-                return _headerCellWidth;
-            }
-            set
-            {
-                if(value>0)
-                _headerCellWidth = value;
-            }
-        }
-        private int _headerCellFontSize
-        {
-            get
-            {
-                return _headerCellFontSize;
-            }
-            set
-            {
-                if (value > 0)
-                    _headerCellFontSize = value;
-            }
-
-        }
-        private string _headerCellAlign
-        {
-            get
-            {
-                return _headerCellAlign;
-            }
-            set
-            {
-                _headerCellAlign = value;
-            }
-
-        }
-        private string _headerCellHeader
-        {
-            get
-            {
-                return _headerCellHeader;
-            }
-            set
-            {
-                _headerCellHeader = value;
-            }
-        }
-        public HeaderCell()
-        {
-
-        }
-        public HeaderCell(int CellHeight, int CellWidth, int CellFontSize, string CellName, string CellAlign, string CellHeader)
-        {
-            _headerCellHeight = CellHeight;
-            _headerCellWidth = CellWidth;
-            _headerCellFontSize = CellFontSize;
-            _headerCellName = CellName;
-            _headerCellAlign = CellAlign;
-            _headerCellHeader = CellHeader;
-        }
-
-    }
-    public class TabCell
-    {
-        private string _tabCellAlign
-        {
-            get
-            {
-                return _tabCellAlign;
-            }
-            set
-            {
-                _tabCellAlign = value;
-            }
-        }
-        private string _tabCellPrecision
-        {
-            get
-            {
-                return _tabCellPrecision;
-            }
-            set
-            {
-                _tabCellPrecision = value;
-            }
-        }
-        private string _tabCellParametr
-        {
-            get
-            {
-                //можно включить проверку на вхождение тега в словарь тегов
-                return _tabCellParametr;
-            }
-            set
-            {
-                _tabCellParametr = value;
-            }
-        }
-        public TabCell()
-        {
-
-        }
-        public TabCell(string CellAlign, string CellPrecision, string CellParametr)
-        {
-            _tabCellAlign = CellAlign;
-            _tabCellPrecision = CellPrecision;
-            _tabCellParametr = CellParametr;
-        }
-    }
-
-   /* public  class Table
-    {
-        public static int GetCoordRow(string Coord)
-        {
-            char[] splitters = { ' ' };
-            int row;
-            string[] temp= Coord.Split(splitters);
-            row = Convert.ToInt32(temp[0], 10);
-            return row;
-        }
-
-        public static int GetCoordCol(string Coord)
-        {
-            char[] splitters = { ' ' };
-            int col;
-            string[] temp = Coord.Split(splitters);
-            col = Convert.ToInt32(temp[1], 10);
-            return col;
-        }
-
-        public static string SetCoord(int row, int col)
-        {
-            string coord = row.ToString() + ' ' + col.ToString();
-            return coord;
-        }
-
-        public static string GetCell(int row,int col, Dictionary<string,string> dict)
-        {
-            string val;
-            val = dict[SetCoord(row, col)];
-            return val;
-        }
-
-        public static void ReadXML(string XMLName)
-        {
-            XmlTextReader reader = null;
-            try
-            {
-                reader = new XmlTextReader("MAIN.xml");
-
-                reader.WhitespaceHandling = WhitespaceHandling.None; // пропускаем пустые узлы 
-
-                while (reader.Read())
-                    if (reader.NodeType == XmlNodeType.Element)
-                        if (reader.Name == "TabColumn")
-                        {
-                            string order = reader.GetAttribute("Header");
-
-
-                            Console.WriteLine(order);
-
-                        }
-
+                get
+                {
+                    return _headerCellFontSize;
+                }
+                set
+                {
+                    if (value > 0)
+                        _headerCellFontSize = value;
+                }
 
             }
-            catch (Exception ex)
+            private string _headerCellAlign;
+            public string headerCellAlign
             {
-                Console.WriteLine("Ошибка: " + ex.Message);
+                get
+                {
+                    return _headerCellAlign;
+                }
+                set
+                {
+                    _headerCellAlign = value;
+                }
+
+            }
+            private string _headerCellHeader;
+            public string headerCellHeader
+            {
+                get
+                {
+                    return _headerCellHeader;
+                }
+                set
+                {
+                    _headerCellHeader = value;
+                }
+            }
+            public HeaderCell()
+            {
+
+            }
+            public HeaderCell(Coords CellCoord, int CellHeight, int CellWidth, int CellFontSize, string CellName, string CellAlign, string CellHeader)
+            {
+                _headerCellCoord = CellCoord;
+                _headerCellHeight = CellHeight;
+                _headerCellWidth = CellWidth;
+                _headerCellFontSize = CellFontSize;
+                _headerCellName = CellName;
+                _headerCellAlign = CellAlign;
+                _headerCellHeader = CellHeader;
+            }
+
+        }
+
+        public class TabCell
+        {
+            private Coords _tabCellCoord;
+            public Coords tabCellCoord
+            {
+                get
+                {
+                    return _tabCellCoord;
+                }
+                set
+                {
+                    _tabCellCoord = value;
+                }
+            }
+            private string _tabCellAlign;
+            public string tabCellAlign
+            {
+                get
+                {
+                    return _tabCellAlign;
+                }
+                set
+                {
+                    _tabCellAlign = value;
+                }
+            }
+            private string _tabCellPrecision;
+            public string tabCellPrecision
+            {
+                get
+                {
+                    return _tabCellPrecision;
+                }
+                set
+                {
+                    _tabCellPrecision = value;
+                }
+            }
+            private string _tabCellParametr;
+            public string tabCellParametr
+            {
+                get
+                {
+                    //можно включить проверку на вхождение тега в словарь тегов
+                    return _tabCellParametr;
+                }
+                set
+                {
+                    _tabCellParametr = value;
+                }
+            }
+            public TabCell()
+            {
+
+            }
+            public TabCell(Coords CellCoord, string CellAlign, string CellPrecision, string CellParametr)
+            {
+                _tabCellCoord = CellCoord;
+                _tabCellAlign = CellAlign;
+                _tabCellPrecision = CellPrecision;
+                _tabCellParametr = CellParametr;
             }
         }
 
-        public Table FillTable(string templateName)
+        public class Table
         {
-            Table table=new Table();
+            int _rowNum;
+            public int rowNum
+            {
+                get
+                {
+                    return _rowNum;
+                }
+                set
+                {
+                    _rowNum = value;
+                }
+            }
+            int _colNum;
+            public int colNum
+            {
+                get
+                {
+                    return _colNum;
+                }
+                set
+                {
+                    _colNum = value;
+                }
+            }
+            private List<HeaderCell> _header;
+            public List<HeaderCell> header
+            {
+                get
+                {
+                    return _header;
+                }
+                set
+                {
+                    _header = value;
+                }
 
+            }
+            private List<TabCell> _cells;
+            public List<TabCell> cells
+            {
+                get
+                {
+                    return _cells;
+                }
+                set
+                {
+                    _cells = value;
+                }
+            }
+            public Table()
+            {
+
+            }
+            public Table(int rowNum, int colNum, List<HeaderCell> Header, List<TabCell> Cell)
+            {
+                _colNum = colNum;
+                _rowNum = rowNum;
+                _header = Header;
+                _cells = Cell;
+            }
+        }
+
+        public Table ReadXml(string FileName)
+        {
+            Table table = new Table();
+            table.header = ReadXMLHeader();
+            table.cells = ReadXMLCells();
+            table.colNum = table.header.Count;
+            table.rowNum = (table.cells.Count / table.header.Count) +1;
 
             return table;
         }
 
-        public Dictionary<string, string> SetCell(int row, int col, string val, Dictionary<string, string> dict)
+        public List<HeaderCell> ReadXMLHeader()
         {
-            dict.Add(SetCoord(row, col), val);
-            return dict;
+            List<HeaderCell> HeaderCells = new List<HeaderCell>();
+
+            return HeaderCells;
+        }
+        public List<TabCell> ReadXMLCells()
+        {
+            List<TabCell> TabCells = new List<TabCell>();
+
+            return TabCells;
         }
 
-        int _rowNum
-        {
-            get
-            {
-                return _rowNum;
-            }
-            set
-            {
-                _rowNum = value;
-            }
-        }
-        int _colNum
-        {
-            get
-            {
-                return _colNum;
-            }
-            set
-            {
-                _colNum = value;
-            }
-        }
-        Dictionary<string, string> _cells;
-        public Table()
-        {
-            _colNum = 0;
-            _rowNum = 0;
-            _cells = new Dictionary<string, string>();
-        }
-        public Table(int rowNum, int colNum, Dictionary<string,string> cells)
-        {
-            this._colNum = colNum;
-            this._rowNum = rowNum;
-            this._cells = cells;
-        }
-    }*/
-    static class  Logic
-    {
     }
+
 }
