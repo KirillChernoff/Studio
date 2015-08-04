@@ -322,37 +322,49 @@ namespace XMLGenerator
             }
             return HeaderCells;
         }
-        public static void DisplayXML(Table table)
+        public static void DisplayXML(ListBox ListBox1, Table table)
         {
-            MainWindow w = new MainWindow();
-            List < string > temp = new List<string>();
-            for(int i = 0; i < table.cells.Count; i++)
+            
+            
+
+            
+            
+            
+            for(int j=0; j < table.colNum; j++)
             {
-                Console.WriteLine(table.cells[i].tabCellParametr);
-                Console.WriteLine(table.cells[i].tabCellCoord.colCoord);
-                Console.WriteLine(table.cells[i].tabCellCoord.rowCoord);
-                if (table.cells[i].tabCellCoord.rowCoord == 1)
+                List < string > temp = new List<string>();
+                for(int i = 0; i < table.cells.Count; i++)
                 {
-                    temp.Add(table.cells[i].tabCellParametr);
-                }   
-            }
-            ListBox ListBox1 = new ListBox();
-            StackPanel panel = new StackPanel();
-            panel.Orientation = Orientation.Horizontal;
-            TextBlock block = new TextBlock();
-            for (int i = 0; i < table.colNum; i++)
-            {
-                
-                block.Name = "field"+(i+1).ToString();
-                block.Text = temp[0];
-                block.Height = 50;
-                block.Width = 100;
-                
+                    Console.WriteLine(table.cells[i].tabCellParametr);
+                    Console.WriteLine(table.cells[i].tabCellCoord.colCoord);
+                    Console.WriteLine(table.cells[i].tabCellCoord.rowCoord);
+                    if (table.cells[i].tabCellCoord.rowCoord == (j+1))
+                    {
+                        temp.Add(table.cells[i].tabCellParametr);
 
+                    }   
+                }
+                StackPanel panel = new StackPanel();
+                panel.Orientation = Orientation.Horizontal;
+                for (int i = 0; i < table.colNum; i++)
+                {
+                    TextBlock block = new TextBlock();
+
+                    block.Name = "field"+'_'+(i+1).ToString() + '_'+j.ToString();
+                    block.Text = temp[i];
+                    block.Height = 50;
+                    block.Width = 150;
+                    panel.Children.Add(block);
+
+                }
+                temp.Clear();
+                ListBox1.Items.Add(panel);
             }
 
-            panel.Children.Add(block);
-            ListBox1.Items.Add(panel);
+
+        
+           
+            
         }
         public static List<TabCell> ReadXMLCells(string FileName)
         {
@@ -370,11 +382,11 @@ namespace XMLGenerator
                     temp.tabCellAlign = elem.Attribute("Align").Value;
                     temp.tabCellParametr = elem.Attribute("Parametr").Value;
                     temp.tabCellPrecision = elem.Attribute("Precision").Value;
-                    //temp.tabCellCoord.rowCoord = coordinate.rowCoord;
-                    //temp.tabCellCoord.colCoord = coordinate.colCoord;
+                   
                     temp.tabCellCoord = coordinate;
                     TabCells.Add(temp);
                     col++;
+                    temp = null;
                     
                     
                 }

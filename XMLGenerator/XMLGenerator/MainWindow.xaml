@@ -90,7 +90,7 @@
                 <Button x:Name="UseTemplate7Button" Content="Use template 7" Click="UseTemplate7Button_Click"  Grid.Row="8" Grid.Column="1"  />
                 <TextBlock x:Name="Template7Desc" Text="Template 7 Description" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3"/>
                 <Button x:Name="UseTemplate8Button" Content="Use template 8" Click="UseTemplate8Button_Click"  Grid.Row="9" Grid.Column="1"  />
-                <TextBlock x:Name="Template8Desc" Text="Template 8 Description" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <TextBlock x:Name="Template8Desc" Text="Template 8 Description" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="3" />
                 <Button x:Name="Exit1" Content="Exit" Click="ExitClick" Grid.Row="0" Grid.Column="7" />
                 <Button x:Name="Back" Content="Back" Click="BackToMainClick" Grid.Row="0" Grid.Column="6" />
 
@@ -114,7 +114,9 @@
 
                 </Grid.ColumnDefinitions>
 
-                <ListBox x:Name="ListBox1">
+                <ListBox x:Name="ListBox1" Grid.ColumnSpan="7">
+                    
+                    
                     
                 </ListBox>
 

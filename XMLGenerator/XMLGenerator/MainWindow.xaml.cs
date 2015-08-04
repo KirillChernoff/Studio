@@ -50,6 +50,10 @@ namespace XMLGenerator
         private void UseTemplate1Button_Click(object sender, RoutedEventArgs e)
         {
 
+            Logic.Table table = new Logic.Table();
+            table = Logic.ReadXml("MAIN.xml");
+            Logic.DisplayXML(ListBox1, table);
+
         }
 
         private void UseTemplate2Button_Click(object sender, RoutedEventArgs e)
@@ -94,15 +98,11 @@ namespace XMLGenerator
 
         private void AddRowClick(object sender, RoutedEventArgs e)
         {
-            Logic.Table table = new Logic.Table();
-            table = Logic.ReadXml("MAIN.xml");
-            Logic.DisplayXML(table);
-
         }
 
         private void AddColClick(object sender, RoutedEventArgs e)
         {
-            listbox1.Items.Add("test");
+            
         }
 
         private void SaveClick(object sender, RoutedEventArgs e)
