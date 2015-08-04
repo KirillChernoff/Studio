@@ -34,8 +34,11 @@ namespace XMLGenerator
             Logic.Table TestTable = Logic.ReadXml("MAIN.xml");
         }
 
+        
+
         public MainWindow()
         {
+
             InitializeComponent();
         }
 
@@ -88,5 +91,30 @@ namespace XMLGenerator
         {
             tabControl1.SelectedIndex = 0;
         }
+
+        private void AddRowClick(object sender, RoutedEventArgs e)
+        {
+            Logic.Table table = new Logic.Table();
+            table = Logic.ReadXml("MAIN.xml");
+            Logic.DisplayXML(table);
+
+        }
+
+        private void AddColClick(object sender, RoutedEventArgs e)
+        {
+            listbox1.Items.Add("test");
+        }
+
+        private void SaveClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CancelClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
 }

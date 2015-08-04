@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
+using System.Windows.Controls;
 
 namespace XMLGenerator
 {
@@ -215,6 +216,8 @@ namespace XMLGenerator
             }
             public TabCell(Coords CellCoord, string CellAlign, string CellPrecision, string CellParametr)
             {
+                Coords temp = new Coords();
+                temp = CellCoord;
                 _tabCellCoord = CellCoord;
                 _tabCellAlign = CellAlign;
                 _tabCellPrecision = CellPrecision;
@@ -319,28 +322,68 @@ namespace XMLGenerator
             }
             return HeaderCells;
         }
+        public static void DisplayXML(Table table)
+        {
+            MainWindow w = new MainWindow();
+            List < string > temp = new List<string>();
+            for(int i = 0; i < table.cells.Count; i++)
+            {
+                Console.WriteLine(table.cells[i].tabCellParametr);
+                Console.WriteLine(table.cells[i].tabCellCoord.colCoord);
+                Console.WriteLine(table.cells[i].tabCellCoord.rowCoord);
+                if (table.cells[i].tabCellCoord.rowCoord == 1)
+                {
+                    temp.Add(table.cells[i].tabCellParametr);
+                }   
+            }
+            ListBox ListBox1 = new ListBox();
+            StackPanel panel = new StackPanel();
+            panel.Orientation = Orientation.Horizontal;
+            TextBlock block = new TextBlock();
+            for (int i = 0; i < table.colNum; i++)
+            {
+                
+                block.Name = "field"+(i+1).ToString();
+                block.Text = temp[0];
+                block.Height = 50;
+                block.Width = 100;
+                
+
+            }
+
+            panel.Children.Add(block);
+            ListBox1.Items.Add(panel);
+        }
         public static List<TabCell> ReadXMLCells(string FileName)
         {
             List<TabCell> TabCells = new List<TabCell>();
             XDocument xdoc = XDocument.Load(FileName);
-            Coords coordinate = new Coords(1, 0);
+            int row = 1;
+            int col = 0;
             foreach (XElement el in xdoc.Root.Elements()) { 
+                
                 foreach (XElement elem in xdoc.Root.Element("TabRow").Elements())
                 {
                     TabCell temp = new TabCell();
+
+                    Coords coordinate = new Coords(row, col);
                     temp.tabCellAlign = elem.Attribute("Align").Value;
                     temp.tabCellParametr = elem.Attribute("Parametr").Value;
                     temp.tabCellPrecision = elem.Attribute("Precision").Value;
+                    //temp.tabCellCoord.rowCoord = coordinate.rowCoord;
+                    //temp.tabCellCoord.colCoord = coordinate.colCoord;
                     temp.tabCellCoord = coordinate;
-                    coordinate.colCoord++;
                     TabCells.Add(temp);
+                    col++;
+                    
                     
                 }
-                coordinate.colCoord = 0;
-                coordinate.rowCoord++;
+                col = 0;
+                row++;
             }
             return TabCells;
         }
+        
 
    
     }
