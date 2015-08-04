@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+<TabColumns>
+		<TabColumn Name="Col1" Header="Преоб" Align="Center" Width="80" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="Вход" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col3" Header="T, мкс" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col4" Header="ρ, кг/м³" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col5" Header="t, &#176;С" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col6" Header="ρt, кг/м³" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col7" Header="P, МПа" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col8" Header="ρtP, кг/м³" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.S78.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.S78.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn01.Per" Precision="3" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn01.Pr01" Precision="3" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn01.Tem" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn01.Pr02" Precision="3" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn01.Prs" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn01.Den" Precision="3" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.S78.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.S78.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn02.Per" Precision="3" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn02.Pr01" Precision="3" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn02.Tem" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn02.Pr02" Precision="3" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn02.Prs" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.S78.Cn02.Den" Precision="3" Align="Center" />
+	</TabRow>
+</DataSetTable>

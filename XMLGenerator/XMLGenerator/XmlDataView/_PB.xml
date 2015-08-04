@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="t, &#176;С" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col3" Header="P, МПа" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Вх ТПУ" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PB.ILet.Tem" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PB.ILet.Prs" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Вых ТПУ" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PB.OLet.Tem" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PB.OLet.Prs" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Разность" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PB.Bl.dTem" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PB.Bl.dPrs" Precision="N" Align="Center" />
+	</TabRow>
+</DataSetTable>

@@ -19,6 +19,9 @@ namespace XMLGenerator
 
     public partial class MainWindow : Window
     {
+
+        const string File_MAIN = "_MAIN.xml";
+
         public void ExitClick(object sender, System.EventArgs e)
         {
             this.Close();
@@ -31,7 +34,7 @@ namespace XMLGenerator
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-            Logic.Table TestTable = Logic.ReadXml("MAIN.xml");
+            Logic.Table TestTable = Logic.ReadXml(File_MAIN);
         }
 
         
@@ -95,9 +98,12 @@ namespace XMLGenerator
         private void AddRowClick(object sender, RoutedEventArgs e)
         {
             Logic.Table table = new Logic.Table();
-            table = Logic.ReadXml("MAIN.xml");
-            Logic.DisplayXML(table);
+            table = Logic.ReadXml(File_MAIN);
+            //Logic.DisplayXML(table);
 
+            //Logic.DisplayXML(ListBox1, table);
+
+            Logic.DisplayXML(this, table);
         }
 
         private void AddColClick(object sender, RoutedEventArgs e)

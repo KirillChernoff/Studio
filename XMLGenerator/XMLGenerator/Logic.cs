@@ -6,10 +6,25 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.Windows.Controls;
+using System.Diagnostics;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using System.Windows;
+//using System.Windows.Controls;
+//using System.Windows.Data;
+//using System.Windows.Documents;
+//using System.Windows.Input;
+//using System.Windows.Media;
+//using System.Windows.Media.Imaging;
+//using System.Windows.Navigation;
+//using System.Windows.Shapes;
+//using System.Xml;
 
 namespace XMLGenerator
 {
-
     class  Logic
     {
         public class Coords
@@ -49,6 +64,11 @@ namespace XMLGenerator
                 _colCoord = ColCoord;
             }
 
+        }
+
+        private static string PathXml
+        {
+            get { return System.AppDomain.CurrentDomain.BaseDirectory + "XmlDataView\\"; }
         }
 
         public class HeaderCell
@@ -292,8 +312,8 @@ namespace XMLGenerator
         public static Table ReadXml(string FileName)
         {
             Table table = new Table();
-            table.header = ReadXMLHeader(FileName);
-            table.cells = ReadXMLCells(FileName);
+            table.header = ReadXMLHeader(PathXml+FileName);
+            table.cells = ReadXMLCells(PathXml+FileName);
             table.colNum = table.header.Count;
             table.rowNum = (table.cells.Count / table.header.Count) +1;
 
@@ -322,9 +342,11 @@ namespace XMLGenerator
             }
             return HeaderCells;
         }
-        public static void DisplayXML(Table table)
+
+        public static void DisplayXML(MainWindow w, Table table)
         {
-            MainWindow w = new MainWindow();
+            ListBox listbox = (ListBox)w.FindName("ListBox1");
+
             List < string > temp = new List<string>();
             for(int i = 0; i < table.cells.Count; i++)
             {
@@ -336,24 +358,68 @@ namespace XMLGenerator
                     temp.Add(table.cells[i].tabCellParametr);
                 }   
             }
-            ListBox ListBox1 = new ListBox();
-            StackPanel panel = new StackPanel();
-            panel.Orientation = Orientation.Horizontal;
-            TextBlock block = new TextBlock();
+
+            StackPanel panel;
+            TextBlock block;
+
             for (int i = 0; i < table.colNum; i++)
             {
-                
+                panel = new StackPanel();
+                panel.Orientation = Orientation.Horizontal;
+
+
+                block = new TextBlock();
                 block.Name = "field"+(i+1).ToString();
-                block.Text = temp[0];
+                block.Text = temp[i];
                 block.Height = 50;
                 block.Width = 100;
-                
 
+                panel.Children.Add(block);
+
+                listbox.Items.Add(panel);
+            }
+        }
+
+        public static void DisplayXML(ListBox tstListBox, Table table)
+        {
+            List<string> temp = new List<string>();
+            for (int i = 0; i < table.cells.Count; i++)
+            {
+                Console.WriteLine(table.cells[i].tabCellParametr);
+                Console.WriteLine(table.cells[i].tabCellCoord.colCoord);
+                Console.WriteLine(table.cells[i].tabCellCoord.rowCoord);
+             
+                if (table.cells[i].tabCellCoord.rowCoord == 1)
+                    temp.Add(table.cells[i].tabCellParametr);
             }
 
-            panel.Children.Add(block);
-            ListBox1.Items.Add(panel);
+            StackPanel panel;
+            TextBlock block;
+
+            for (int i = 0; i < table.colNum; i++)
+            {
+                panel = new StackPanel();
+                panel.Orientation = Orientation.Horizontal;
+
+                block = new TextBlock();
+                block.Name = "field" + (i + 1).ToString();
+                block.Text = temp[i];
+                block.Height = 50;
+                block.Width = 100;
+
+                Debug.WriteLine(block.Text);
+
+                panel.Children.Add(block);
+
+                tstListBox.Items.Add(panel);
+            }
         }
+
+
+
+
+
+
         public static List<TabCell> ReadXMLCells(string FileName)
         {
             List<TabCell> TabCells = new List<TabCell>();

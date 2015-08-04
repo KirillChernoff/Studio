@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="Пробоотборник" Align="Center" Width="80" Height="40" Fontsize="14" />
+		<TabColumn Name="Col2" Header="Состояние" Align="Center" Width="90" Height="40" Fontsize="14" />
+		<TabColumn Name="Col3" Header="Выход" Align="Center" Width="80" Height="40" Fontsize="14" />
+		<TabColumn Name="Col4" Header="Отобрано доз, шт" Align="Center" Width="100" Height="40" Fontsize="14" />
+		<TabColumn Name="Col5" Header="Осталось доз, шт" Align="Center" Width="100" Height="40" Fontsize="14" />
+		<TabColumn Name="Col6" Header="Объем перекачки, м³" Align="Center" Width="120" Height="40" Fontsize="14" />
+		<TabColumn Name="Col7" Header="Объем пробы, дм³" Align="Center" Width="100" Height="40" Fontsize="14" />
+		<TabColumn Name="Col8" Header="Объем дозы, см³" Align="Center" Width="90" Height="40" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.Samp.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Seq.CDat.Samp.Cn01.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.Samp.Cn01.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn01.Puls" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn01.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn01.Pr02" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn01.Pr03" Precision="1" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn01.Pr04" Precision="1" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.Samp.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Seq.CDat.Samp.Cn02.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.Samp.Cn02.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn02.Puls" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn02.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn02.Pr02" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn02.Pr03" Precision="1" Align="Center" />
+		<TabCell Parametr="Val.CDat.Samp.Cn02.Pr04" Precision="1" Align="Center" />
+	</TabRow>
+</DataSetTable> 

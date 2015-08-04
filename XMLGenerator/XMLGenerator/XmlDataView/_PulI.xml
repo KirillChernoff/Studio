@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="Вход" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="N, имп" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col3" Header="dN, имп" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col4" Header="dT, c " Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col5" Header="f, Гц" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col6" Header="T, мкс" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn01.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn01.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn01.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn01.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn01.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn02.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn02.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn02.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn02.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn02.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn03.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn03.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn03.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn03.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn03.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn03.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn04.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn04.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn04.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn04.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn04.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn04.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn05.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn05.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn05.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn05.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn05.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn05.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn06.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn06.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn06.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn06.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn06.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn06.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn07.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn07.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn07.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn07.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn07.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn07.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn08.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn08.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn08.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn08.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn08.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn08.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn09.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn09.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn09.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn09.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn09.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn09.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn10.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn10.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn10.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn10.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn10.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn10.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn11.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn11.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn11.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn11.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn11.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn11.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn12.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn12.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn12.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn12.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn12.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn12.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn13.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn13.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn13.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn13.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn13.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn13.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn14.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn14.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn14.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn14.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn14.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn14.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn15.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn15.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn15.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn15.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn15.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn15.Per" Precision="H" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.PulI.Cn16.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn16.Pr01" Precision="0" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn16.Puls" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn16.Time" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn16.Freq" Precision="H" Align="Center" />
+		<TabCell Parametr="Val.CDat.PulI.Cn16.Per" Precision="H" Align="Center" />
+	</TabRow>
+</DataSetTable>

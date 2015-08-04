@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="Параметр" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="БИК" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col3" Header="Режим" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col4" Header="Кан1" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col5" Header="Кан2" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col6" Header="Разность" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="tпп, °С" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.Tem" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.Tem" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.Tem" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dTem" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Pпп, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.Prs" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.Prs" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.Prs" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dPrs" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="ρпп, кг/м³" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.Den" Precision="N" Align="Center" />
+		<TabCell Parametr="Mod.CDat.QB.Bl.Den" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.Den" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.Den" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dDen" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="φв, %" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.VWat" Precision="N" Align="Center" />
+		<TabCell Parametr="Mod.CDat.QB.Bl.VWat" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.VWat" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.VWat" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dVWat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Wв, %" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.WWat" Precision="N" Align="Center" />
+		<TabCell Parametr="Mod.CDat.QB.Bl.VWat" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.WWat" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.WWat" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dWWat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="μ, мПа*с" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.DVis" Precision="N" Align="Center" />
+		<TabCell Parametr="Mod.CDat.QB.Bl.DVis" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.DVis" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.DVis" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dDVis" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="v, мм²/с" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.KVis" Precision="N" Align="Center" />
+		<TabCell Parametr="Mod.CDat.QB.Bl.KVis" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.KVis" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.KVis" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dKVis" Precision="N" Align="Center" />
+	</TabRow>
+  <TabRow>
+    <TabCell Parametr="v₁₅, мм²/с" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Bl.KVis15" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="v₂₀, мм²/с" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Bl.KVis20" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+		<TabCell Parametr="tвис, °С" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.Tem2" Precision="N" Align="Center" />
+		<TabCell Parametr="Mod.CDat.QB.Bl.KVis" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.Tem2" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.Tem2" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dTem2" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Q, м³/ч" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.VRat" Precision="N" Align="Center" />
+		<TabCell Parametr="Mod.CDat.QB.Bl.VRat" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.VRat" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.VRat" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dVRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="t₀, °С" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.Tem0" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="ρ₁₅, кг/м³" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.Den15" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn01.Den15" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Cn02.Den15" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.dDen15" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="ρ₂₀, кг/м³" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.Den20" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Cn01.Den20" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Cn02.Den20" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Bl.dDen20" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="ρв, кг/м³" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.QB.Bl.DenW" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+		<TabCell Parametr="" Precision="N" Align="Center" />
+	</TabRow>
+  <TabRow>
+    <TabCell Parametr="ΔPф, МПа" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Cn01.dPrsF" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Cn02.dPrsF" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="N" Align="Center" />
+  </TabRow>
+</DataSetTable>

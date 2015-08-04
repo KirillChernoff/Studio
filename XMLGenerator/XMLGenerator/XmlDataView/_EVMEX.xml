@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataSetTable>
+  <TabColumns>
+    <TabColumn Name="Col1" Header="Параметр" Align="Center" Width="150" Height="25" Fontsize="14" />
+    <TabColumn Name="Col2" Header="Значение" Align="Center" Width="150" Height="25" Fontsize="14" />
+    <TabColumn Name="Col3" Header="Параметр" Align="Center" Width="150" Height="25" Fontsize="14" />
+    <TabColumn Name="Col4" Header="Значение" Align="Center" Width="150" Height="25" Fontsize="14" />
+  </TabColumns>
+  <TabRow>
+    <TabCell Parametr="Номер линии" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.EVM.Bl.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Qji,м³/ч" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.EVM.Bl.Pr01" Precision="1" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Код команды" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.EVM.Bl.Value" Precision="0" Align="Center" />
+    <TabCell Parametr="Tji,с" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.EVM.Bl.Pr03" Precision="3" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Код Busy" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.EVM.Bl.Pr01" Precision="0" Align="Center" />
+    <TabCell Parametr="Nэпрji,имп" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.EVM.Bl.Pr04" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Код статуса" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.EVM.Bl.Pr02" Precision="0" Align="Center" />
+    <TabCell Parametr="fэпрji,Гц" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.EVM.Bl.Pr05" Precision="3" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Код ошибки" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.EVM.Bl.Pr03" Precision="0" Align="Center" />
+    <TabCell Parametr="Nji,имп" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.EVM.Bl.Pr12" Precision="3" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="fji,Гц" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.EVM.Bl.Pr13" Precision="3" Align="Center" />
+  </TabRow>
+</DataSetTable>

@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="Вход" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="I, мА" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn01.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn02.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn03.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn03.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn04.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn04.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn05.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn05.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn06.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn06.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn07.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn07.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn08.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn08.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn09.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn09.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn10.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn10.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn11.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn11.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn12.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn12.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn13.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn13.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn14.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn14.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn15.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn15.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn16.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn16.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn17.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn17.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn18.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn18.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn19.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn19.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn20.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn20.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn21.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn21.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn22.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn22.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn23.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn23.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn24.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn24.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn25.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn25.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn26.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn26.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn27.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn27.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn28.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn28.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn29.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn29.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn30.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn30.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn31.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn31.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn32.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn32.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn33.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn33.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn34.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn34.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn35.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn35.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn36.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn36.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn37.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn37.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn38.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn38.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn39.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn39.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn40.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn40.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn41.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn41.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn42.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn42.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn43.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn43.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn44.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn44.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn45.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn45.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn46.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn46.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn47.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn47.Curr" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.CurI.Cn48.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CurI.Cn48.Curr" Precision="N" Align="Right" />
+	</TabRow>
+</DataSetTable>

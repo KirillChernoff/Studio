@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="Параметр" Align="Center" Width="120" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="Значение" Align="Center" Width="120" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Pвхбф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.ILet.Prs" Precision="N" Align="Center" />
+	</TabRow>
+  <TabRow>
+		<TabCell Parametr="Pвыхбф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.OLet.Prs" Precision="N" Align="Center" />
+	</TabRow>
+  <TabRow>
+		<TabCell Parametr="ΔPбф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Bl.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+  <TabRow Name="Line" Number="1">
+		<TabCell Parametr="ΔPф1бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn01.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="2">
+		<TabCell Parametr="ΔPф2бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn02.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="3">
+		<TabCell Parametr="ΔPф3бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn03.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="4">
+		<TabCell Parametr="ΔPф4бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn04.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="5">
+		<TabCell Parametr="ΔPф5бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn05.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="6">
+		<TabCell Parametr="ΔPф6бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn06.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="7">
+		<TabCell Parametr="ΔPф7бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn07.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="8">
+		<TabCell Parametr="ΔPф8бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn08.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="9">
+		<TabCell Parametr="ΔPф9бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn09.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="10">
+		<TabCell Parametr="ΔPф10бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn10.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="11">
+		<TabCell Parametr="ΔPф11бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn11.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow Name="Line" Number="12">
+		<TabCell Parametr="ΔPф12бф, МПа" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.FB.Cn12.dPrsF" Precision="N" Align="Center" />
+	</TabRow>
+</DataSetTable>
