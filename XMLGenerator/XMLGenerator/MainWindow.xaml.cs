@@ -19,6 +19,8 @@ namespace XMLGenerator
 
     public partial class MainWindow : Window
     {
+
+        internal static Logic.ObjectXML objectXML = new Logic.ObjectXML();
         public void ExitClick(object sender, System.EventArgs e)
         {
             this.Close();
@@ -31,25 +33,28 @@ namespace XMLGenerator
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-            Logic.Table TestTable = Logic.ReadXml("_MAIN.xml");
+            Logic.ObjectXML TestTable = Logic.ReadXml("_MAIN.xml");
         }
 
         
 
         public MainWindow()
         {
+            
 
             InitializeComponent();
         }
 
-        
+        internal static Logic.ObjectXML GetObjectXML()
+        {
+            return objectXML;
+        }
         private void UseTemplate1Button_Click(object sender, RoutedEventArgs e)
         {
             ListBox1.Items.Clear();
 
-            Logic.Table table = new Logic.Table();
-            table = Logic.ReadXml("_MAIN.xml");
-            Logic.DisplayXML(ListBox1, table);
+            objectXML = Logic.ReadXml("_MAIN.xml");
+            Logic.DisplayXML(ListBox1, objectXML);
 
             tabControl1.SelectedIndex = 2;
 

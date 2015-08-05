@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Name="mainwindow">
     <TabControl x:Name="tabControl1"  >
         <TabItem x:Name="First" Header="Hello tab" Visibility="Visible" >
             <Grid>
