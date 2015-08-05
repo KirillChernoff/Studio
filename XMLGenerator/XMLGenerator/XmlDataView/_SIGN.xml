@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="Название" Align="Center" Width="200" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="Состояние" Align="Center" Width="150" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn01.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn02.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn03.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn03.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn04.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn04.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn05.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn05.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn06.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn06.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn07.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn07.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn08.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn08.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn09.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn09.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn10.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn10.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn11.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn11.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn12.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn12.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn13.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn13.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn14.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn14.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn15.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn15.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="FNam.CDat.Sign.Cn16.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="StM.CDat.Sign.Cn16.Value" Precision="N" Align="Center" />
+	</TabRow>
+</DataSetTable>

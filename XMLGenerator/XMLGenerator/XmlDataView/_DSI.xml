@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="Вход" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="Состояние" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn01.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn01.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn02.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn02.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn03.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn03.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn04.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn04.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn05.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn05.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn06.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn06.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn07.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn07.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn08.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn08.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn09.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn09.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn10.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn10.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn11.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn11.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn12.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn12.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn13.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn13.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn14.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn14.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn15.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn15.InPut" Precision="N" Align="Right" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.DSI.Cn16.InPut" Precision="N" Align="Center" />
+		<TabCell Parametr="St.CDat.DSI.Cn16.InPut" Precision="N" Align="Right" />
+	</TabRow>
+</DataSetTable>

@@ -12,9 +12,13 @@ namespace XMLGenerator
 
     class  Logic
     {
-        public class Coords
+        private static string PathXml
         {
-            private int _rowCoord;
+            get { return AppDomain.CurrentDomain.BaseDirectory + "XmlDataView\\"; }
+        }
+        public class Coords : Object
+        {
+            public int _rowCoord;
             public int rowCoord
             {
                 get
@@ -26,7 +30,7 @@ namespace XMLGenerator
                     _rowCoord = value;
                 }
             }
-            private int _colCoord;
+            public int _colCoord;
             public int colCoord
             {
                 get
@@ -39,6 +43,12 @@ namespace XMLGenerator
                 }
 
             }
+
+            public override int GetHashCode()
+            {
+                return base.GetHashCode();
+            }
+            
             public Coords()
             {
 
@@ -251,8 +261,21 @@ namespace XMLGenerator
                     _colNum = value;
                 }
             }
-            private List<HeaderCell> _header;
-            public List<HeaderCell> header
+            private Dictionary<Coords, TabCell> _cells;
+            public Dictionary<Coords,TabCell> cells
+            {
+                get
+                {
+                    return _cells;
+                }
+                set
+                {
+                    _cells = value;
+                }
+
+            }
+            private Dictionary<Coords,HeaderCell> _header;
+            public Dictionary<Coords,HeaderCell> header
             {
                 get
                 {
@@ -264,23 +287,12 @@ namespace XMLGenerator
                 }
 
             }
-            private List<TabCell> _cells;
-            public List<TabCell> cells
-            {
-                get
-                {
-                    return _cells;
-                }
-                set
-                {
-                    _cells = value;
-                }
-            }
+
             public Table()
             {
 
             }
-            public Table(int rowNum, int colNum, List<HeaderCell> Header, List<TabCell> Cell)
+            public Table(int rowNum, int colNum, Dictionary<Coords, HeaderCell> Header, Dictionary<Coords, TabCell> Cell)
             {
                 _colNum = colNum;
                 _rowNum = rowNum;
@@ -292,23 +304,25 @@ namespace XMLGenerator
         public static Table ReadXml(string FileName)
         {
             Table table = new Table();
-            table.header = ReadXMLHeader(FileName);
-            table.cells = ReadXMLCells(FileName);
+            table.header = ReadXMLHeader(PathXml+FileName);
+            table.cells = ReadXMLCells(PathXml+FileName);
             table.colNum = table.header.Count;
             table.rowNum = (table.cells.Count / table.header.Count) +1;
 
             return table;
         }
 
-        public static List<HeaderCell> ReadXMLHeader(string FileName)
+        public static Dictionary<Coords,HeaderCell> ReadXMLHeader(string FileName)
         {
-            List<HeaderCell> HeaderCells = new List<HeaderCell>();
+            Dictionary<Coords, HeaderCell> HeaderCells = new Dictionary<Coords, HeaderCell>();
             XDocument xdoc = XDocument.Load(FileName);
-            Coords coordinate = new Coords(0, 0);
-
+            int col = 0, row = 0;
+            
             foreach (XElement el in xdoc.Root.Element("TabColumns").Elements())
             {
                 HeaderCell temp = new HeaderCell();
+                Coords coordinate = new Coords(row, col);
+
                 temp.headerCellAlign = el.Attribute("Align").Value;
                 temp.headerCellName = el.Attribute("Name").Value;
                 temp.headerCellFontSize = Convert.ToInt32(el.Attribute("Fontsize").Value,10);
@@ -317,64 +331,29 @@ namespace XMLGenerator
                 temp.headerCellHeader = el.Attribute("Header").Value;
 
                 temp.headerCellCoord = coordinate;
-                coordinate.colCoord++;
-                HeaderCells.Add(temp);;
+                
+                try
+                {
+                HeaderCells.Add(coordinate,temp);
+                }
+                catch (ArgumentException)
+                {
+                    Console.WriteLine( coordinate.colCoord.ToString(), ' ', coordinate.rowCoord.ToString()," already exists.");
+                }
+                temp = null;
+                col++;
             }
             return HeaderCells;
         }
-        public static void DisplayXML(ListBox ListBox1, Table table)
+        public static Dictionary<Coords, TabCell> ReadXMLCells(string FileName)
         {
-            
-            
-
-            
-            
-            
-            for(int j=0; j < table.colNum; j++)
-            {
-                List < string > temp = new List<string>();
-                for(int i = 0; i < table.cells.Count; i++)
-                {
-                    Console.WriteLine(table.cells[i].tabCellParametr);
-                    Console.WriteLine(table.cells[i].tabCellCoord.colCoord);
-                    Console.WriteLine(table.cells[i].tabCellCoord.rowCoord);
-                    if (table.cells[i].tabCellCoord.rowCoord == (j+1))
-                    {
-                        temp.Add(table.cells[i].tabCellParametr);
-
-                    }   
-                }
-                StackPanel panel = new StackPanel();
-                panel.Orientation = Orientation.Horizontal;
-                for (int i = 0; i < table.colNum; i++)
-                {
-                    TextBlock block = new TextBlock();
-
-                    block.Name = "field"+'_'+(i+1).ToString() + '_'+j.ToString();
-                    block.Text = temp[i];
-                    block.Height = 50;
-                    block.Width = 150;
-                    panel.Children.Add(block);
-
-                }
-                temp.Clear();
-                ListBox1.Items.Add(panel);
-            }
-
-
-        
-           
-            
-        }
-        public static List<TabCell> ReadXMLCells(string FileName)
-        {
-            List<TabCell> TabCells = new List<TabCell>();
+            Dictionary<Coords, TabCell> TabCells = new Dictionary<Coords, TabCell> ();
             XDocument xdoc = XDocument.Load(FileName);
             int row = 1;
             int col = 0;
-            foreach (XElement el in xdoc.Root.Elements()) { 
+            foreach (XElement el in xdoc.Root.Elements("TabRow")) { 
                 
-                foreach (XElement elem in xdoc.Root.Element("TabRow").Elements())
+                foreach (XElement elem in el.Elements())
                 {
                     TabCell temp = new TabCell();
 
@@ -384,7 +363,17 @@ namespace XMLGenerator
                     temp.tabCellPrecision = elem.Attribute("Precision").Value;
                    
                     temp.tabCellCoord = coordinate;
-                    TabCells.Add(temp);
+
+
+                    try
+                    {
+                        TabCells.Add( coordinate, temp);
+                    }
+                    catch (ArgumentException)
+                    {
+                        Console.WriteLine("An element with Key = \"txt\" already exists.");
+                    }
+
                     col++;
                     temp = null;
                     
@@ -394,6 +383,63 @@ namespace XMLGenerator
                 row++;
             }
             return TabCells;
+        }
+        public static void DisplayXML(ListBox ListBox1, Table table)
+        {
+            StackPanel panel1 = new StackPanel();
+            panel1.Orientation = Orientation.Horizontal;
+            for (int i = 0; i < table.colNum; i++)
+            {
+                Button button = new Button();
+                Coords coords= new Coords(i, 0);
+                button.Name = "field" + '_' + (i + 1).ToString() + '_' + 0.ToString();
+                button.Content = table.header[coords].headerCellHeader;
+                button.Height = 50;
+                button.Width = 150;
+                button.Click += EditHeaderClick;
+
+                panel1.Children.Add(button);
+
+            }
+
+            ListBox1.Items.Add(panel1);
+
+
+
+            for (int j=0; j < table.rowNum-1; j++)
+            {
+                
+                StackPanel panel = new StackPanel();
+                panel.Orientation = Orientation.Horizontal;
+                for (int i = 0; i < table.colNum; i++)
+                {
+                    Button button = new Button();
+
+                    Coords coords = new Coords(j+1, i);
+                    button.Name = "field"+'_'+(i+1).ToString() + '_'+j.ToString();
+                    button.Content = table.cells[coords].tabCellParametr;
+                    button.Height = 50;
+                    button.Width = 150;
+                    button.Click += EditCellClick;
+
+                    panel.Children.Add(button);
+
+                }
+                ListBox1.Items.Add(panel);
+            }
+
+
+        
+           
+            
+        }
+        public static void EditCellClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            (sender as Button).Content = "ok";
+        }
+        public static void EditHeaderClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            (sender as Button).Content = "ok";
         }
         
 

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <TabControl x:Name="tabControl1" SelectionChanged="tabControl1_SelectionChanged"  >
+    <TabControl x:Name="tabControl1"  >
         <TabItem x:Name="First" Header="Hello tab" Visibility="Visible" >
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -127,17 +127,7 @@
                 <Button x:Name="Cancel" Content="Cancel" Click="CancelClick" Grid.Row="1" Grid.Column="4" />
             </Grid>
         </TabItem>
-        <TabItem x:Name="EditTab1" Header="Edit" Visibility="Visible" >
-            <ListBox x:Name="listbox1">
-                
-                
-                
-            </ListBox>
-            
-            
-
-
-        </TabItem>
+        
 
     </TabControl>
 

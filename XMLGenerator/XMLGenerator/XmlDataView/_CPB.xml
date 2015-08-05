@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="tкп, &#176;С" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="Pкп, МПа" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col3" Header="tд, &#176;С" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Val.CDat.CPB.Bl.Tem" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CPB.Bl.Prs" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.CPB.Bl.Tem2" Precision="N" Align="Center" />
+	</TabRow>
+</DataSetTable>

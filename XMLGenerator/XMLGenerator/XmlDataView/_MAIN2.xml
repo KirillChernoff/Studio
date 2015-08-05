@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+  <TabColumns>
+		<TabColumn Name="Col1" Header="" Align="Center" Width="50" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="Состояние" Align="Center" Width="120" Height="25" Fontsize="14" />
+		<TabColumn Name="Col3" Header="Отобрано проб" Align="Center" Width="120" Height="25" Fontsize="14" />
+		<TabColumn Name="Col4" Header="Осталось проб" Align="Center" Width="120" Height="25" Fontsize="14" />
+	</TabColumns>
+
+  <TabRow>
+    <TabCell Parametr="АП 1" Precision="N" Align="Center" />
+    <TabCell Parametr="Seq.CDat.Samp.Cn01.Puls" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.Samp.Cn01.Puls" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.CDat.Samp.Cn01.Pr01" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="АП 2" Precision="N" Align="Center" />
+    <TabCell Parametr="Seq.CDat.Samp.Cn02.Puls" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.Samp.Cn02.Puls" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.CDat.Samp.Cn02.Pr01" Precision="0" Align="Center" />
+  </TabRow>
+</DataSetTable>

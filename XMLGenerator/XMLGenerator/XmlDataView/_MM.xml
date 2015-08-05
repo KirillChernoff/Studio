@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="ПМР" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="Вход" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col3" Header="f, Гц" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col4" Header="Кпм, имп/т" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col5" Header="W, т/ч" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn01.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn01.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn01.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn02.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn02.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn02.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn03.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn03.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn03.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn03.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn03.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn04.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn04.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn04.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn04.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn04.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn05.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn05.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn05.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn05.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn05.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn06.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn06.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn06.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn06.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn06.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn07.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn07.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn07.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn07.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn07.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn08.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn08.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn08.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn08.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn08.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn09.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn09.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn09.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn09.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn09.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn10.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn10.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn10.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn10.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn10.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn11.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn11.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn11.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn11.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn11.MRat" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.MM.Cn12.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.MM.Cn12.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn12.Freq" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn12.MCf" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.MM.Cn12.MRat" Precision="N" Align="Center" />
+	</TabRow>
+</DataSetTable>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataSetTable>
+  <TabColumns>
+    <TabColumn Name="Col1" Header="ПР" Align="Center" Width="70" Height="25" Fontsize="14" />
+    <TabColumn Name="Col2" Header="Счет/Откл" Align="Center" Width="90" Height="25" Fontsize="14" />
+    <TabColumn Name="Col3" Header="К, имп/м³" Align="Center" Width="90" Height="25" Fontsize="14" />
+    <TabColumn Name="Col4" Header="Nij" Align="Center" Width="90" Height="25" Fontsize="14" />
+    <TabColumn Name="Col5" Header="fij" Align="Center" Width="90" Height="25" Fontsize="14" />
+    <TabColumn Name="Col6" Header="Vij" Align="Center" Width="90" Height="25" Fontsize="14" />
+    <TabColumn Name="Col7" Header="" Align="Center" Width="15" Height="25" Fontsize="14" />
+    <TabColumn Name="Col8" Header="Параметр" Align="Center" Width="110" Height="25" Fontsize="14" />
+    <TabColumn Name="Col9" Header="Значение" Align="Center" Width="90" Height="25" Fontsize="14" />
+  </TabColumns>
+  <TabRow>
+    <TabCell Parametr="ПР01" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn01.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn01.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn01.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn01.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn01.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="Код команды" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Bl.Value" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР02" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn02.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn02.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn02.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn02.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn02.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="Код Busy" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Bl.Pr01" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР03" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn03.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn03.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn03.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn03.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn03.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="Код статуса" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Bl.Pr02" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn04.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn04.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn04.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn04.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn04.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="Код ошибки" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Bl.Pr03" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР05" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn05.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn05.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn05.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn05.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn05.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР06" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn06.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn06.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn06.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn06.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn06.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn07.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn07.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn07.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn07.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn07.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn08.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn08.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn08.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn08.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn08.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР09" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn09.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn09.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn09.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn09.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn09.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР10" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn10.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn10.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn10.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn10.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn10.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР11" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn11.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn11.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn11.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn11.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn11.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="ПР12" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn12.Arg" Precision="0" Align="Center" />
+    <TabCell Parametr="Val.EDat.VCR.Cn12.VCf" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn12.Pr07" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn12.Pr08" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.MDat.VCR.Cn12.Pr10" Precision="N" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+    <TabCell Parametr="" Precision="0" Align="Center" />
+  </TabRow>
+</DataSetTable>

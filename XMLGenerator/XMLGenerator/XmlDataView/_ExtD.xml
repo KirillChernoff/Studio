@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="Параметр" Align="Center" Width="200" Height="25" Fontsize="14" />
+		<TabColumn Name="Col3" Header="Место установки" Align="Center" Width="150" Height="25" Fontsize="14" />
+		<TabColumn Name="Col4" Header="Регистр" Align="Center" Width="80" Height="25" Fontsize="14" />
+		<TabColumn Name="Col5" Header="Значение" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.ExtD.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Nam.CDat.ExtD.Cn01.Pr01" Precision="N" Align="Center" />
+		<TabCell Parametr="Nam.CDat.ExtD.Cn01.Pr02" Precision="N" Align="Center" />
+		<TabCell Parametr="Nam.CDat.ExtD.Cn01.Pr04" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.ExtD.Cn01.Value" Precision="N" Align="Center" />
+	</TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn02.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn02.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn02.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn02.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn02.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn03.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn03.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn03.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn03.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn03.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn04.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn04.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn04.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn04.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn04.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn05.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn05.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn05.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn05.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn05.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn06.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn06.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn06.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn06.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn06.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn07.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn07.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn07.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn07.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn07.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn08.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn08.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn08.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn08.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn08.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn09.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn09.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn09.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn09.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn09.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn10.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn10.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn10.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn10.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn10.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn11.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn11.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn11.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn11.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn11.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn12.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn12.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn12.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn12.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn12.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn13.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn13.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn13.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn13.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn13.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn14.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn14.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn14.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn14.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn14.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn15.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn15.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn15.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn15.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn15.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn16.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn16.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn16.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn16.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn16.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn17.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn17.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn17.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn17.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn17.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn18.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn18.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn18.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn18.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn18.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn19.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn19.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn19.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn19.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn19.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn20.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn20.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn20.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn20.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn20.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn31.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn31.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn31.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn31.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn31.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn32.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn32.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn32.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn32.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn32.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn33.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn33.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn33.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn33.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn33.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn34.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn34.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn34.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn34.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn34.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn35.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn35.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn35.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn35.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn35.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn36.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn36.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn36.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn36.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn36.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn37.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn37.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn37.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn37.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn37.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn38.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn38.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn38.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn38.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn38.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn39.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn39.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn39.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn39.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn39.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn30.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn30.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn30.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn30.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn30.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn31.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn31.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn31.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn31.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn31.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn32.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn32.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn32.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn32.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn32.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn33.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn33.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn33.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn33.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn33.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn34.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn34.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn34.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn34.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn34.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn35.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn35.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn35.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn35.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn35.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn36.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn36.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn36.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn36.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn36.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn37.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn37.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn37.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn37.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn37.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn38.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn38.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn38.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn38.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn38.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn39.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn39.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn39.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn39.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn39.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn40.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn40.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn40.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn40.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn40.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn41.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn41.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn41.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn41.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn41.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn42.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn42.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn42.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn42.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn42.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn43.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn43.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn43.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn43.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn43.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn44.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn44.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn44.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn44.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn44.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn45.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn45.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn45.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn45.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn45.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn46.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn46.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn46.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn46.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn46.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn47.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn47.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn47.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn47.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn47.Value" Precision="N" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Nam.CDat.ExtD.Cn48.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn48.Pr01" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn48.Pr02" Precision="N" Align="Center" />
+    <TabCell Parametr="Nam.CDat.ExtD.Cn48.Pr04" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.ExtD.Cn48.Value" Precision="N" Align="Center" />
+  </TabRow>
+</DataSetTable>

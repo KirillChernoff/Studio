@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="Преоб." Align="Center" Width="80" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="" Align="Center" Width="40" Height="25" Fontsize="14" />
+    <TabColumn Name="Col3" Header="Установлен" Align="Center" Width="100" Height="25" Fontsize="14" />
+		<TabColumn Name="Col4" Header="Вход" Align="Center" Width="60" Height="25" Fontsize="14" />
+		<TabColumn Name="Col5" Header="Аргумент" Align="Center" Width="120" Height="25" Fontsize="14" />
+		<TabColumn Name="Col6" Header="" Align="Center" Width="60" Height="25" Fontsize="14" />
+		<TabColumn Name="Col7" Header="Значение" Align="Center" Width="120" Height="25" Fontsize="14" />
+		<TabColumn Name="Col8" Header="" Align="Center" Width="60" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn01.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn01.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn01.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn01.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn01.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn01.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn02.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn02.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn02.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn02.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn02.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn02.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn03.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn03.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn03.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn03.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn03.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn03.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn03.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn03.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn04.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn04.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn04.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn04.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn04.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn04.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn04.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn04.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn05.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn05.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn05.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn05.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn05.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn05.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn05.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn05.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn06.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn06.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn06.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn06.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn06.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn06.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn06.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn06.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn07.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn07.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn07.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn07.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn07.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn07.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn07.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn07.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn08.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn08.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn08.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn08.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn08.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn08.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn08.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn08.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn09.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn09.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn09.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn09.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn09.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn09.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn09.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn09.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn10.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn10.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn10.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn10.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn10.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn10.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn10.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn10.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn11.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn11.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn11.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn11.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn11.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn11.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn11.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn11.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn12.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn12.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn12.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn12.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn12.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn12.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn12.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn12.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn13.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn13.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn13.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn13.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn13.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn13.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn13.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn13.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn14.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn14.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn14.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn14.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn14.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn14.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn14.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn14.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn15.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn15.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn15.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn15.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn15.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn15.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn15.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn15.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn16.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn16.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn16.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn16.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn16.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn16.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn16.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn16.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn17.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn17.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn17.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn17.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn17.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn17.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn17.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn17.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn18.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn18.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn18.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn18.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn18.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn18.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn18.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn18.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn19.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn19.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn19.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn19.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn19.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn19.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn19.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn19.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn20.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn20.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn20.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn20.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn20.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn20.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn20.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn20.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn21.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn21.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn21.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn21.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn21.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn21.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn21.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn21.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn22.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn22.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn22.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn22.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn22.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn22.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn22.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn22.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn23.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn23.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn23.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn23.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn23.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn23.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn23.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn23.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn24.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn24.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn24.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn24.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn24.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn24.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn24.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn24.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn25.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn25.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn25.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn25.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn25.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn25.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn25.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn25.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn26.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn26.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn26.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn26.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn26.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn26.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn26.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn26.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn27.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn27.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn27.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn27.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn27.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn27.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn27.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn27.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn28.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn28.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn28.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn28.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn28.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn28.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn28.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn28.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn29.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn29.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn29.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn29.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn29.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn29.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn29.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn29.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn30.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn30.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn30.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn30.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn30.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn30.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn30.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn30.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn31.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn31.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn31.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn31.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn31.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn31.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn31.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn31.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn32.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn32.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn32.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn32.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn32.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn32.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn32.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn32.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn33.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn33.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn33.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn33.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn33.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn33.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn33.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn33.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn34.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn34.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn34.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn34.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn34.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn34.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn34.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn34.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn35.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn35.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn35.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn35.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn35.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn35.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn35.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn35.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn36.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn36.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn36.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn36.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn36.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn36.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn36.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn36.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn37.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn37.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn37.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn37.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn37.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn37.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn37.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn37.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn38.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn38.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn38.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn38.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn38.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn38.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn38.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn38.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn39.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn39.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn39.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn39.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn39.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn39.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn39.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn39.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn40.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn40.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn40.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn40.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn40.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn40.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn40.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn40.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn41.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn41.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn41.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn41.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn41.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn41.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn41.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn41.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn42.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn42.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn42.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn42.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn42.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn42.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn42.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn42.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn43.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn43.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn43.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn43.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn43.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn43.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn43.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn43.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn44.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn44.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn44.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn44.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn44.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn44.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn44.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn44.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn45.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn45.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn45.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn45.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn45.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn45.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn45.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn45.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn46.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn46.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn46.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn46.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn46.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn46.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn46.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn46.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn47.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn47.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn47.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn47.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn47.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn47.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn47.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn47.Value" Precision="N" Align="Center" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Nam.CDat.TrM.Cn48.Value" Precision="N" Align="Center" />
+    <TabCell Parametr="Unt.CDat.TrM.Cn48.OutPut" Precision="N" Align="Center" />
+    <TabCell Parametr="Plc.CDat.TrM.Cn48.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="MCn.CDat.TrM.Cn48.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn48.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn48.Arg" Precision="N" Align="Center" />
+		<TabCell Parametr="Val.CDat.TrM.Cn48.Value" Precision="N" Align="Center" />
+		<TabCell Parametr="Unt.CDat.TrM.Cn48.Value" Precision="N" Align="Center" />
+	</TabRow>
+</DataSetTable>

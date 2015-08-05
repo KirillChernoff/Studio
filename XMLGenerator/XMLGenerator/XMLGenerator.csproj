@@ -129,6 +129,40 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="XmlDataView\_ADPAR.xml" />
+    <Resource Include="XmlDataView\_CPB.xml" />
+    <Resource Include="XmlDataView\_CPBEX.xml" />
+    <Resource Include="XmlDataView\_CurI.xml" />
+    <Resource Include="XmlDataView\_DSI.xml" />
+    <Resource Include="XmlDataView\_EMMEX.xml" />
+    <Resource Include="XmlDataView\_EVMEX.xml" />
+    <Resource Include="XmlDataView\_ExtD.xml" />
+    <Resource Include="XmlDataView\_FB.xml" />
+    <Resource Include="XmlDataView\_LB.xml" />
+    <Resource Include="XmlDataView\_MAIN.xml" />
+    <Resource Include="XmlDataView\_MAIN2.xml" />
+    <Resource Include="XmlDataView\_MAIN3.xml" />
+    <Resource Include="XmlDataView\_MM.xml" />
+    <Resource Include="XmlDataView\_PB.xml" />
+    <Resource Include="XmlDataView\_PBEX.xml" />
+    <Resource Include="XmlDataView\_PulI.xml" />
+    <Resource Include="XmlDataView\_QB.xml" />
+    <Resource Include="XmlDataView\_ReportData.xml" />
+    <Resource Include="XmlDataView\_S78.xml" />
+    <Resource Include="XmlDataView\_SAMP0.xml" />
+    <Resource Include="XmlDataView\_SAMP1.xml" />
+    <Resource Include="XmlDataView\_SAMP2.xml" />
+    <Resource Include="XmlDataView\_SAMP3.xml" />
+    <Resource Include="XmlDataView\_SIGN.xml" />
+    <Resource Include="XmlDataView\_TankEX.xml" />
+    <Resource Include="XmlDataView\_TankExPb.xml" />
+    <Resource Include="XmlDataView\_TOTAL.xml" />
+    <Resource Include="XmlDataView\_TRM.xml" />
+    <Resource Include="XmlDataView\_VCREX.xml" />
+    <Resource Include="XmlDataView\_VM.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

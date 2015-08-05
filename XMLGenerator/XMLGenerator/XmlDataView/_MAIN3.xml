@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+  <TabColumns>
+    <TabColumn Name="Col1" Header="φв %" Align="Center" Width="80" Height="25" Fontsize="14" />
+    <TabColumn Name="Col2" Header="Wв %" Align="Center" Width="80" Height="25" Fontsize="14" />
+    <TabColumn Name="Col3" Header="ν, мм/с²" Align="Center" Width="80" Height="25" Fontsize="14" />
+    <TabColumn Name="Col4" Header="Qбик, м³/ч" Align="Center" Width="100" Height="25" Fontsize="14" />
+  </TabColumns>
+  <TabRow>
+    <TabCell Parametr="Val.CDat.QB.Bl.VWat" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Bl.WWat" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Bl.KVis" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.CDat.QB.Bl.VRat" Precision="N" Align="Center" />
+  </TabRow>
+</DataSetTable>

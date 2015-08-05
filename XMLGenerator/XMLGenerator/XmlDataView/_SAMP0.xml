@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSetTable>
+	<TabColumns>
+		<TabColumn Name="Col1" Header="" Align="Center" Width="300" Height="25" Fontsize="14" />
+		<TabColumn Name="Col2" Header="" Align="Center" Width="100" Height="25" Fontsize="14" />
+	</TabColumns>
+	<TabRow>
+		<TabCell Parametr="Отбор пробы пропорционально:" Precision="N" Align="Left" />
+		<TabCell Parametr="Mod.CDat.Samp.Bl.Pr07" Precision="N" Align="Left" />
+	</TabRow>
+	<TabRow>
+		<TabCell Parametr="Авт.перекл.АП в конце смены:" Precision="N" Align="Left" />
+		<TabCell Parametr="Mod.CDat.Samp.Bl.Pr06" Precision="N" Align="Left" />
+	</TabRow>
+</DataSetTable>

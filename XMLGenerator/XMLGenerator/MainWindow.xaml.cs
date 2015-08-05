@@ -31,7 +31,7 @@ namespace XMLGenerator
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-            Logic.Table TestTable = Logic.ReadXml("MAIN.xml");
+            Logic.Table TestTable = Logic.ReadXml("_MAIN.xml");
         }
 
         
@@ -42,17 +42,16 @@ namespace XMLGenerator
             InitializeComponent();
         }
 
-        private void tabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+        
         private void UseTemplate1Button_Click(object sender, RoutedEventArgs e)
         {
+            ListBox1.Items.Clear();
 
             Logic.Table table = new Logic.Table();
-            table = Logic.ReadXml("MAIN.xml");
+            table = Logic.ReadXml("_MAIN.xml");
             Logic.DisplayXML(ListBox1, table);
+
+            tabControl1.SelectedIndex = 2;
 
         }
 

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataSetTable>
+  <TabColumns>
+    <TabColumn Name="Col1" Header="Параметр" Align="Center" Width="220" Height="25" Fontsize="14" />
+    <TabColumn Name="Col2" Header="Значение" Align="Center" Width="100" Height="25" Fontsize="14" />
+  </TabColumns>
+  <TabRow>
+    <TabCell Parametr="Код команды" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.Tank.Bl.Value" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Код Busy" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.Tank.Bl.Pr01" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Код статуса" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.Tank.Bl.Pr02" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Код фазы изм" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.Tank.Bl.Pr04" Precision="0" Align="Center" />
+  </TabRow>
+  <TabRow>
+    <TabCell Parametr="Код ошибки" Precision="N" Align="Center" />
+    <TabCell Parametr="Val.EDat.Tank.Bl.Pr03" Precision="0" Align="Center" />
+  </TabRow>
+</DataSetTable>
+
