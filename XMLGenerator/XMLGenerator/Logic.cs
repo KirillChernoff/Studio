@@ -19,7 +19,7 @@ using System.IO;
 namespace XMLGenerator
 {
 
-    public class  Logic 
+     class  Logic 
     {
         public static string PathXml
         {
@@ -392,7 +392,7 @@ namespace XMLGenerator
 
         internal static void DisplayXML(ListBox ListBox1, ObjectXML table)
         {
-            save();
+           // save();
             StackPanel panel1 = new StackPanel();
             panel1.Orientation = Orientation.Horizontal;
             for (int col = 0; col < table.colNum; col++)
@@ -525,6 +525,7 @@ namespace XMLGenerator
         {
             HeaderCell t = new HeaderCell(int.Parse(w.HeightField.Text), int.Parse(w.WidthField.Text), int.Parse(w.FontsizeField.Text), w.NameField.Text, w.AlignField.Text, w.HeaderField.Text);
             objectXML.header[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
+            MainWindow.objectXML = objectXML;
             save();
 
         }        
@@ -533,6 +534,7 @@ namespace XMLGenerator
         {
             TabCell t = new TabCell( w.AlignField.Text, w.PrecisionField.Text, w.ParametrField.Text);
             objectXML.cells[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
+            MainWindow.objectXML = objectXML;
             save();
         }
     }

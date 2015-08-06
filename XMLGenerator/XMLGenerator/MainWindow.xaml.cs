@@ -19,8 +19,6 @@ namespace XMLGenerator
 
     public partial class MainWindow : Window
     {
-        public Logic test = new Logic();
-
         
         public void Refresh()
         {
@@ -52,9 +50,9 @@ namespace XMLGenerator
         {
 
             InitializeComponent();
-            Logic.save += Logic.ReadXml;
+            Logic.save += this.Refresh;
         }
-
+        
         internal static Logic.ObjectXML GetObjectXML()
         {
             return objectXML;
