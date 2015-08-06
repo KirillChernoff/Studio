@@ -19,9 +19,9 @@ using System.IO;
 namespace XMLGenerator
 {
 
-    class  Logic : MainWindow
+    public class  Logic 
     {
-        private static string PathXml
+        public static string PathXml
         {
             get { return AppDomain.CurrentDomain.BaseDirectory + "XmlDataView\\"; }
         }
@@ -160,7 +160,7 @@ namespace XMLGenerator
             }
             public HeaderCell()
             {
-
+                
             }
             public HeaderCell( int CellHeight, int CellWidth, int CellFontSize, string CellName, string CellAlign, string CellHeader)
             {
@@ -217,6 +217,9 @@ namespace XMLGenerator
             }
             public TabCell()
             {
+                _tabCellAlign = "";
+                _tabCellPrecision = "";
+                _tabCellParametr = "";
 
             }
             public TabCell(string CellAlign, string CellPrecision, string CellParametr)
@@ -293,7 +296,7 @@ namespace XMLGenerator
             }
         }
 
-        public static ObjectXML ReadXml(string FileName)
+        internal static ObjectXML ReadXml(string FileName)
         {
             ObjectXML table = new ObjectXML();
             table.header = ReadXMLHeader(PathXml+FileName);
@@ -349,6 +352,7 @@ namespace XMLGenerator
 
             return HeaderCells;
         }
+
         public static Dictionary<int, TabCell> ReadXMLCells(string FileName)
         {
             Dictionary<int, TabCell> TabCells = new Dictionary<int, TabCell> ();
@@ -385,8 +389,10 @@ namespace XMLGenerator
             }
             return TabCells;
         }
-        public static void DisplayXML(ListBox ListBox1, ObjectXML table)
+
+        internal static void DisplayXML(ListBox ListBox1, ObjectXML table)
         {
+            save();
             StackPanel panel1 = new StackPanel();
             panel1.Orientation = Orientation.Horizontal;
             for (int col = 0; col < table.colNum; col++)
@@ -442,53 +448,93 @@ namespace XMLGenerator
             coord.colCoord = int.Parse(temp[1])-1;
             return coord;
         }
-        public static void OpenEditTableCellWindow( EditTableCell w, TabCell cell )
+
+        public static void OpenEditTableCellWindow( EditTableCell w, TabCell cell, Coords coord)
         {
-            w.Show();
             w.ParametrField.Text = cell.tabCellParametr;
             w.AlignField.Text = cell.tabCellAlign;
             w.PrecisionField.Text = cell.tabCellPrecision;
-            
+            w.col.Text = coord.colCoord.ToString();
+            w.row.Text = coord.rowCoord.ToString();
+            w.ShowDialog();
 
         }
-        public static void OpenEditHeaderCellWindow(EditHeaderCell w, HeaderCell cell)
+
+        public static void OpenEditHeaderCellWindow(EditHeaderCell w, HeaderCell cell, Coords coord)
         {
-            w.Show();
             w.HeaderField.Text = cell.headerCellHeader;
             w.AlignField.Text = cell.headerCellAlign;
             w.HeightField.Text = cell.headerCellHeight.ToString();
             w.WidthField.Text = cell.headerCellWidth.ToString();
             w.NameField.Text = cell.headerCellName;
+            w.FontsizeField.Text = cell.headerCellFontSize.ToString();
+            w.col.Text = coord.colCoord.ToString();
+            w.row.Text = coord.rowCoord.ToString();
+            w.ShowDialog();
 
 
 
 
         }
+
         public static void EditCellClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
             t = GetCoords((sender as Button).Name.ToString());
             EditTableCell w = new EditTableCell();
             ObjectXML xml = new ObjectXML();
-            xml = GetObjectXML();
+            xml = MainWindow.GetObjectXML();
             TabCell cell = new TabCell();
             cell=xml.cells[t.GetHashCode()];
-            OpenEditTableCellWindow(w, cell);
+            OpenEditTableCellWindow(w, cell, t);
         }
+
         public static void EditHeaderClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
             t = GetCoords((sender as Button).Name.ToString());
             EditHeaderCell w = new EditHeaderCell();
             ObjectXML xml = new ObjectXML();
-            xml = GetObjectXML();
-            HeaderCell cell = new HeaderCell();
-            cell = xml.header[t.GetHashCode()];
-            OpenEditHeaderCellWindow(w, cell);
+            xml = MainWindow.GetObjectXML();
+            HeaderCell cell = xml.header[t.GetHashCode()];
+            OpenEditHeaderCellWindow(w, cell,t);
         }
         
+        public static void AddRow(ObjectXML objectXML)
+        {
+            for(int i = 0; i < objectXML.colNum; i++)
+            {
+                objectXML.cells.Add(new Coords(objectXML.rowNum , i).GetHashCode(), new TabCell());
+            }
+            objectXML.rowNum++;
+        }
 
-   
+        public static void AddCol(ObjectXML objectXML)
+        {
+            objectXML.header.Add(new Coords(0, objectXML.colNum).GetHashCode(), new HeaderCell());
+            for(int i = 1; i < objectXML.rowNum; i++)
+            {
+                objectXML.cells.Add(new Coords(i, objectXML.colNum).GetHashCode(), new TabCell());
+            }
+            objectXML.colNum++;
+        }
+        public delegate void saving();
+        public static event  saving save;
+        
+        public static void SaveHeader(EditHeaderCell w, ObjectXML objectXML)
+        {
+            HeaderCell t = new HeaderCell(int.Parse(w.HeightField.Text), int.Parse(w.WidthField.Text), int.Parse(w.FontsizeField.Text), w.NameField.Text, w.AlignField.Text, w.HeaderField.Text);
+            objectXML.header[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
+            save();
+
+        }        
+
+        public static void SaveCell(EditTableCell w,ObjectXML objectXML)
+        {
+            TabCell t = new TabCell( w.AlignField.Text, w.PrecisionField.Text, w.ParametrField.Text);
+            objectXML.cells[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
+            save();
+        }
     }
 
 }

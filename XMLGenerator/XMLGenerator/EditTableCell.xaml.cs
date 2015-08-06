@@ -24,14 +24,16 @@ namespace XMLGenerator
             InitializeComponent();
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        public void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            Logic.SaveCell(this, MainWindow.GetObjectXML());
+            this.Close();
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        public  void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

@@ -43,6 +43,8 @@
         <TextBox x:Name="FontsizeField" Grid.Column="1" Grid.Row="11"/>
         <Button x:Name="SaveButton" Content="Save" Click="SaveButton_Click" Grid.Column="3" Grid.Row="1"/>
         <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Grid.Column="3" Grid.Row="3"/>
+        <TextBlock x:Name="row" Visibility="Hidden"/>
+        <TextBlock x:Name="col" Visibility="Hidden"/>
 
     </Grid>
 </Window>

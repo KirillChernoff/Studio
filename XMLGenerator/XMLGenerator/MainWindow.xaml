@@ -114,11 +114,7 @@
 
                 </Grid.ColumnDefinitions>
 
-                <ListBox x:Name="ListBox1" Grid.ColumnSpan="7">
-                    
-                    
-                    
-                </ListBox>
+                <ListBox x:Name="ListBox1" Grid.ColumnSpan="7"/>
 
 
                 <Button x:Name="AddRow" Content="Add Row" Click="AddRowClick" Grid.Row="1" Grid.Column="0" />
