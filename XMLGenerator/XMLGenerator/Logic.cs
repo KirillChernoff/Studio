@@ -285,7 +285,10 @@ namespace XMLGenerator
 
             public ObjectXML()
             {
-
+                _colNum = 0;
+                _rowNum = 1;
+                _cells = new Dictionary<int, TabCell>();
+                _header = new Dictionary<int, HeaderCell>();
             }
             public ObjectXML(int rowNum, int colNum, Dictionary<int, HeaderCell> Header, Dictionary<int, TabCell> Cell)
             {
@@ -389,10 +392,10 @@ namespace XMLGenerator
             }
             return TabCells;
         }
-
+        
         internal static void DisplayXML(ListBox ListBox1, ObjectXML table)
         {
-           // save();
+            ListBox1.Items.Clear();
             StackPanel panel1 = new StackPanel();
             panel1.Orientation = Orientation.Horizontal;
             for (int col = 0; col < table.colNum; col++)
@@ -504,20 +507,24 @@ namespace XMLGenerator
         {
             for(int i = 0; i < objectXML.colNum; i++)
             {
-                objectXML.cells.Add(new Coords(objectXML.rowNum , i).GetHashCode(), new TabCell());
+                objectXML.cells.Add(new Coords(objectXML.rowNum , i).GetHashCode(), new TabCell("","",""));
             }
             objectXML.rowNum++;
+            MainWindow.objectXML = objectXML;
         }
 
         public static void AddCol(ObjectXML objectXML)
         {
-            objectXML.header.Add(new Coords(0, objectXML.colNum).GetHashCode(), new HeaderCell());
+            Coords temp = new Coords(0, objectXML.colNum);
+            objectXML.header.Add(temp.GetHashCode(), new HeaderCell(80,25,14,"", "", ""));
             for(int i = 1; i < objectXML.rowNum; i++)
             {
-                objectXML.cells.Add(new Coords(i, objectXML.colNum).GetHashCode(), new TabCell());
+                objectXML.cells.Add(new Coords(i, objectXML.colNum).GetHashCode(), new TabCell("", "", ""));
             }
             objectXML.colNum++;
+            MainWindow.objectXML = objectXML;
         }
+
         public delegate void saving();
         public static event  saving save;
         
@@ -536,6 +543,41 @@ namespace XMLGenerator
             objectXML.cells[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
             MainWindow.objectXML = objectXML;
             save();
+        }
+
+        public static void WriteXml(ObjectXML objectXml, string filename)
+        {
+            XDocument doc = new XDocument();
+            XElement Root = new XElement("DataSetTable");
+            doc.Add(Root);
+            XElement Header = new XElement("TabColumns");
+            for(int col = 0; col < objectXml.header.Count; col++)
+            {
+                Coords coords = new Coords(0, col);
+                Header.Add(new XElement("TabColumn",
+                    new XAttribute("Name", objectXml.header[coords.GetHashCode()].headerCellName),
+                    new XAttribute("Fontsize", objectXml.header[coords.GetHashCode()].headerCellFontSize),
+                    new XAttribute("Height", objectXml.header[coords.GetHashCode()].headerCellHeight),
+                    new XAttribute("Width", objectXml.header[coords.GetHashCode()].headerCellWidth),
+                    new XAttribute("Align", objectXml.header[coords.GetHashCode()].headerCellAlign),
+                    new XAttribute("Header", objectXml.header[coords.GetHashCode()].headerCellHeader)));
+            }
+            doc.Root.Add(Header);
+            for(int row = 1; row < objectXml.rowNum; row++) {
+                XElement tableRow = new XElement("TabRow");                
+                for (int col = 0; col < objectXml.colNum; col++)
+                {
+                    Coords coords = new Coords(row, col);
+                    tableRow.Add(new XElement("TabCell",
+                        new XAttribute("Align", objectXml.cells[coords.GetHashCode()].tabCellAlign),
+                        new XAttribute("Precision", objectXml.cells[coords.GetHashCode()].tabCellPrecision),
+                        new XAttribute("Parametr", objectXml.cells[coords.GetHashCode()].tabCellParametr)));
+                }
+                doc.Root.Add(tableRow);
+            }
+
+            //сохраняем наш документ
+            doc.Save(filename);
         }
     }
 

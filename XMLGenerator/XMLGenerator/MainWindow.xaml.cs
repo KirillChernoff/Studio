@@ -24,6 +24,7 @@ namespace XMLGenerator
         {
             Logic.DisplayXML(ListBox1, objectXML);
         }
+
         internal static Logic.ObjectXML objectXML = new Logic.ObjectXML();
         
         public void ExitClick(object sender, System.EventArgs e)
@@ -33,12 +34,13 @@ namespace XMLGenerator
 
         public void ChooseNewButtonClick(object sender, System.EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
+            tabControl1.SelectedIndex = 2;
         }
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-            Logic.ObjectXML TestTable = Logic.ReadXml("_MAIN.xml");
+            Logic.ObjectXML objectXML = new Logic.ObjectXML();
+            tabControl1.SelectedIndex = 1;
         }
 
 
@@ -48,9 +50,8 @@ namespace XMLGenerator
         }
         public MainWindow()
         {
-
-            InitializeComponent();
             Logic.save += this.Refresh;
+            InitializeComponent();
         }
         
         internal static Logic.ObjectXML GetObjectXML()
@@ -125,12 +126,12 @@ namespace XMLGenerator
 
         private void SaveClick(object sender, RoutedEventArgs e)
         {
-
+            Logic.WriteXml(objectXML,"Mainer.xml");
         }
 
         private void CancelClick(object sender, RoutedEventArgs e)
         {
-
+            tabControl1.SelectedIndex = 0;
         }
 
         
