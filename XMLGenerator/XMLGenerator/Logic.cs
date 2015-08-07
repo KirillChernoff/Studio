@@ -15,17 +15,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using Microsoft.Win32;
 
 namespace XMLGenerator
 {
 
      class  Logic 
     {
-        public static string PathXml
-        {
-            get { return AppDomain.CurrentDomain.BaseDirectory + "XmlDataView\\"; }
-        }
-
+    
         public class Coords 
         {
 
@@ -92,6 +89,7 @@ namespace XMLGenerator
                 {
                     if (value > 0)
                         _headerCellHeight = value;
+                    else _headerCellHeight = Math.Abs(value);
                 }
             }
             private string _headerCellName;
@@ -117,6 +115,7 @@ namespace XMLGenerator
                 {
                     if (value > 0)
                         _headerCellWidth = value;
+                    else _headerCellWidth = Math.Abs(value);
                 }
             }
             private int _headerCellFontSize;
@@ -130,6 +129,7 @@ namespace XMLGenerator
                 {
                     if (value > 0)
                         _headerCellFontSize = value;
+                    else _headerCellFontSize = Math.Abs(value);
                 }
 
             }
@@ -302,8 +302,8 @@ namespace XMLGenerator
         internal static ObjectXML ReadXml(string FileName)
         {
             ObjectXML table = new ObjectXML();
-            table.header = ReadXMLHeader(PathXml+FileName);
-            table.cells = ReadXMLCells(PathXml+FileName);
+            table.header = ReadXMLHeader(FileName);
+            table.cells = ReadXMLCells(FileName);
             table.colNum = table.header.Count;
             table.rowNum = (table.cells.Count / table.header.Count) +1;
 
@@ -324,11 +324,7 @@ namespace XMLGenerator
             foreach (XElement el in xdoc.Root.Element("TabColumns").Elements())
             {
                 temp = new HeaderCell();
-
-                //coordinate = new Coords(row, col);
-
-                //Console.WriteLine(coordinate.ToString());
-
+                
                 temp.headerCellAlign = el.Attribute("Align").Value;
                 temp.headerCellName = el.Attribute("Name").Value;
                 temp.headerCellFontSize = Convert.ToInt32(el.Attribute("Fontsize").Value,10);
@@ -339,20 +335,15 @@ namespace XMLGenerator
                 try
                 {
                     HeaderCells.Add(coordinate.GetHashCode(), temp);
-
-                    //HeaderCells2.Add(new Coords(row, col).ToString(), temp);
+                    
                 }
                 catch (ArgumentException)
                 {
-                    //Console.WriteLine(coordinate.colCoord.ToString(), ' ', coordinate.rowCoord.ToString(), " already exists.");
+                    
                 }
-                //temp = null;
                 col++;
             }
-
-           // Coords coordinate1 = new Coords(0, 0);
-            //Console.WriteLine(HeaderCells2.ContainsKey(coordinate1.ToString()));
-
+            
             return HeaderCells;
         }
 
@@ -524,7 +515,7 @@ namespace XMLGenerator
         }
         public static void ErrorDialog()
         {
-            MessageBox.Show("Требуется ввести имя", "Ошибка при вводе имени",
+            MessageBox.Show("Введено неверное значение", "Ошибка при вводе значения",
             MessageBoxButton.OK, MessageBoxImage.Error);
         }
         public static void AddCol(ObjectXML objectXML)
@@ -544,7 +535,7 @@ namespace XMLGenerator
         
         public static void SaveHeader(EditHeaderCell w, ObjectXML objectXML)
         {
-            HeaderCell t = new HeaderCell(int.Parse(w.HeightField.Text), int.Parse(w.WidthField.Text), int.Parse(w.FontsizeField.Text), w.NameField.Text, w.AlignField.Text, w.HeaderField.Text);
+            HeaderCell t = new HeaderCell(Math.Abs(int.Parse(w.HeightField.Text)), Math.Abs(int.Parse(w.WidthField.Text)), Math.Abs(int.Parse(w.FontsizeField.Text)), w.NameField.Text, w.AlignField.Text, w.HeaderField.Text);
             objectXML.header[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
             MainWindow.objectXML = objectXML;
             save();
@@ -557,6 +548,18 @@ namespace XMLGenerator
             objectXML.cells[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
             MainWindow.objectXML = objectXML;
             save();
+        }
+
+        public static void SaveAs(ObjectXML objectXML)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.AddExtension = true;
+            saveFileDialog1.ShowDialog();
+            WriteXml(objectXML, saveFileDialog1.FileName+".xml");
         }
 
         public static void WriteXml(ObjectXML objectXml, string filename)
@@ -593,6 +596,9 @@ namespace XMLGenerator
             //сохраняем наш документ
             doc.Save(filename);
         }
+        public static void ShowAbout()
+        {
+            MessageBox.Show("XML Generator version 0.0.1(Alpha)", "About", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
-
 }

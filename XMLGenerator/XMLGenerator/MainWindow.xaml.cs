@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,13 +40,23 @@ namespace XMLGenerator
 
         public void ChooseNewButtonClick(object sender, System.EventArgs e)
         {
-            tabControl1.SelectedIndex = 2;
+            ListBox1.Items.Clear();
         }
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-            Logic.ObjectXML objectXML = new Logic.ObjectXML();
-            tabControl1.SelectedIndex = 1;
+            OpenFileDialog myDialog = new OpenFileDialog();
+
+            myDialog.Filter = "XML(*.XML;*.xml)|*.Xml;*.xml" + "|Все файлы (*.*)|*.* ";
+            myDialog.CheckFileExists = true;
+            myDialog.Multiselect = false;
+            myDialog.ShowDialog();
+            string FilePath = myDialog.FileName;
+
+            objectXML=Logic.ReadXml(FilePath);
+            Logic.DisplayXML(ListBox1, objectXML);
+            
+
         }
 
 
@@ -64,58 +75,7 @@ namespace XMLGenerator
         {
             return objectXML;
         }
-        
-        private void UseTemplate1Button_Click(object sender, RoutedEventArgs e)
-        {
-            ListBox1.Items.Clear();
-
-            objectXML = Logic.ReadXml("_MAIN.xml");
-            Logic.DisplayXML(ListBox1, objectXML);
-
-            tabControl1.SelectedIndex = 2;
-
-        }
-
-        private void UseTemplate2Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void UseTemplate3Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void UseTemplate4Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void UseTemplate5Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void UseTemplate6Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void UseTemplate7Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void UseTemplate8Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void BackToMainClick(object sender, RoutedEventArgs e)
-        {
-            tabControl1.SelectedIndex = 0;
-        }
-
+       
         private void AddRowClick(object sender, RoutedEventArgs e)
         {
             Logic.AddRow(objectXML);
@@ -135,11 +95,14 @@ namespace XMLGenerator
             Logic.WriteXml(objectXML,"Mainer.xml");
         }
 
-        private void CancelClick(object sender, RoutedEventArgs e)
+        private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
-            tabControl1.SelectedIndex = 0;
+            Logic.SaveAs(objectXML);
         }
 
-        
+        private void AboutProgram_Click(object sender, RoutedEventArgs e)
+        {
+            Logic.ShowAbout();
+        }
     }
 }
