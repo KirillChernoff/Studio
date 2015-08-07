@@ -21,21 +21,34 @@ namespace XMLGenerator
     public partial class MainWindow : Window
     {
         
+        public MainWindow()
+        {
+            Logic.getRes += this.findStyles;
+            Logic.save += this.Refresh;
+
+            InitializeComponent();
+        }
+
+        internal static Logic.ObjectXML objectXML = new Logic.ObjectXML();
+        public string PathXML;
+        public ListBox getListBox()
+        {
+            return ListBox1;
+        }
+        
+        internal static Logic.ObjectXML GetObjectXML()
+        {
+            return objectXML;
+        }
+        
         public void findStyles(object sender)
         {
             (sender as Button).Style=(Style)FindResource("DefaultButtonStyle");
         }
+
         public void Refresh()
         {
             Logic.DisplayXML(ListBox1, objectXML);
-            
-        }
-
-        internal static Logic.ObjectXML objectXML = new Logic.ObjectXML();
-        
-        public void ExitClick(object sender, System.EventArgs e)
-        {
-            this.Close();
         }
 
         public void ChooseNewButtonClick(object sender, System.EventArgs e)
@@ -45,35 +58,20 @@ namespace XMLGenerator
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
+            ListBox1.Items.Clear();
+
             OpenFileDialog myDialog = new OpenFileDialog();
 
             myDialog.Filter = "XML(*.XML;*.xml)|*.Xml;*.xml" + "|Все файлы (*.*)|*.* ";
             myDialog.CheckFileExists = true;
             myDialog.Multiselect = false;
             myDialog.ShowDialog();
-            string FilePath = myDialog.FileName;
+            PathXML = myDialog.FileName;
 
-            objectXML=Logic.ReadXml(FilePath);
+            objectXML=Logic.ReadXml(PathXML);
             Logic.DisplayXML(ListBox1, objectXML);
             
 
-        }
-
-
-        public ListBox getListBox()
-        {
-            return ListBox1;
-        }
-        public MainWindow()
-        {
-            Logic.getRes += this.findStyles;
-            Logic.save += this.Refresh;
-            InitializeComponent();
-        }
-        
-        internal static Logic.ObjectXML GetObjectXML()
-        {
-            return objectXML;
         }
        
         private void AddRowClick(object sender, RoutedEventArgs e)
@@ -92,7 +90,7 @@ namespace XMLGenerator
 
         private void SaveClick(object sender, RoutedEventArgs e)
         {
-            Logic.WriteXml(objectXML,"Mainer.xml");
+            Logic.WriteXml(objectXML,PathXML);
         }
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)
@@ -103,6 +101,11 @@ namespace XMLGenerator
         private void AboutProgram_Click(object sender, RoutedEventArgs e)
         {
             Logic.ShowAbout();
+        }
+        
+        public void ExitClick(object sender, System.EventArgs e)
+        {
+            this.Close();
         }
     }
 }

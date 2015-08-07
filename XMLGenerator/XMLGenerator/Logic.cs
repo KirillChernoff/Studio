@@ -25,10 +25,6 @@ namespace XMLGenerator
     
         public class Coords 
         {
-
-            
-
-
             private int _rowCoord;
             public int rowCoord
             {
@@ -52,10 +48,7 @@ namespace XMLGenerator
                 {
                     _colCoord = value;
                 }
-
             }
-
-
 
             public override int GetHashCode()
             {
@@ -64,20 +57,16 @@ namespace XMLGenerator
             
             public Coords()
             {
-
             }
             public Coords(int RowCoord, int ColCoord)
             {
                 _rowCoord = RowCoord;
                 _colCoord = ColCoord;
             }
-
-            
         }
 
         public class HeaderCell
         {
-           
             private int _headerCellHeight;
             public int headerCellHeight
             {
@@ -158,13 +147,12 @@ namespace XMLGenerator
                     _headerCellHeader = value;
                 }
             }
+
             public HeaderCell()
             {
-                
             }
             public HeaderCell( int CellHeight, int CellWidth, int CellFontSize, string CellName, string CellAlign, string CellHeader)
             {
-                
                 _headerCellHeight = CellHeight;
                 _headerCellWidth = CellWidth;
                 _headerCellFontSize = CellFontSize;
@@ -206,8 +194,7 @@ namespace XMLGenerator
             public string tabCellParametr
             {
                 get
-                {
-                    //можно включить проверку на вхождение тега в словарь тегов
+                { 
                     return _tabCellParametr;
                 }
                 set
@@ -215,12 +202,12 @@ namespace XMLGenerator
                     _tabCellParametr = value;
                 }
             }
+
             public TabCell()
             {
                 _tabCellAlign = "";
                 _tabCellPrecision = "";
                 _tabCellParametr = "";
-
             }
             public TabCell(string CellAlign, string CellPrecision, string CellParametr)
             {
@@ -267,7 +254,6 @@ namespace XMLGenerator
                 {
                     _cells = value;
                 }
-
             }
             private Dictionary<int,HeaderCell> _header;
             public Dictionary<int,HeaderCell> header
@@ -280,7 +266,6 @@ namespace XMLGenerator
                 {
                     _header = value;
                 }
-
             }
 
             public ObjectXML()
@@ -302,8 +287,10 @@ namespace XMLGenerator
         internal static ObjectXML ReadXml(string FileName)
         {
             ObjectXML table = new ObjectXML();
+
             table.header = ReadXMLHeader(FileName);
             table.cells = ReadXMLCells(FileName);
+
             table.colNum = table.header.Count;
             table.rowNum = (table.cells.Count / table.header.Count) +1;
 
@@ -313,8 +300,6 @@ namespace XMLGenerator
         public static Dictionary<int,HeaderCell> ReadXMLHeader(string FileName)
         {
             Dictionary<int, HeaderCell> HeaderCells = new Dictionary<int, HeaderCell>();
-
-            //Dictionary<string, HeaderCell> HeaderCells2 = new Dictionary<string, HeaderCell>();
             XDocument xdoc = XDocument.Load(FileName);
             int col = 0, row = 0;
 
@@ -331,7 +316,9 @@ namespace XMLGenerator
                 temp.headerCellHeight = Convert.ToInt32(el.Attribute("Height").Value, 10);
                 temp.headerCellWidth = Convert.ToInt32(el.Attribute("Width").Value, 10);
                 temp.headerCellHeader = el.Attribute("Header").Value;
+
                 coordinate = new Coords(row, col);
+
                 try
                 {
                     HeaderCells.Add(coordinate.GetHashCode(), temp);
@@ -341,6 +328,7 @@ namespace XMLGenerator
                 {
                     
                 }
+
                 col++;
             }
             
@@ -358,8 +346,8 @@ namespace XMLGenerator
                 foreach (XElement elem in el.Elements())
                 {
                     TabCell temp = new TabCell();
-
                     Coords coordinate = new Coords(row, col);
+
                     temp.tabCellAlign = elem.Attribute("Align").Value;
                     temp.tabCellParametr = elem.Attribute("Parametr").Value;
                     temp.tabCellPrecision = elem.Attribute("Precision").Value;
@@ -388,22 +376,26 @@ namespace XMLGenerator
         
         public static  event resGet getRes;
 
-
         internal static void DisplayXML(ListBox ListBox1, ObjectXML table)
         {
             ListBox1.Items.Clear();
+
             StackPanel panel1 = new StackPanel();
             panel1.Orientation = Orientation.Horizontal;
+
             for (int col = 0; col < table.colNum; col++)
             {
                 Button button = new Button();
                 Coords coords= new Coords(0, col);
+
                 button.Name = "field" + '_' + (col + 1).ToString() + '_' + 0.ToString();
                 button.Content = table.header[coords.GetHashCode()].headerCellHeader;
                 button.Height = 30;
                 button.Width = 150;
                 button.Click += EditHeaderClick;
+
                 getRes(button);
+
                 button.Background=Brushes.LightGray;
                 button.BorderBrush = Brushes.LightGray;
 
@@ -411,8 +403,6 @@ namespace XMLGenerator
             }
 
             ListBox1.Items.Add(panel1);
-
-
 
             for (int row=1; row < table.rowNum; row++)
             {
@@ -422,21 +412,25 @@ namespace XMLGenerator
                 for (int col = 0; col < table.colNum; col++)
                 {
                     Button button = new Button();
-
                     Coords coords = new Coords(row, col);
+
                     button.Name = "field"+'_'+(col+1).ToString() + '_'+row.ToString();
                     button.Content = table.cells[coords.GetHashCode()].tabCellParametr;
                     button.Height = 30;
                     button.Width = 150;
                     button.Click += EditCellClick;
+
                     getRes(button);
+
                     button.Background = Brushes.LightGray;
                     button.BorderBrush = Brushes.LightGray;
 
                     panel.Children.Add(button);
 
                 }
+
                 ListBox1.Items.Add(panel);
+
             }
 
 
@@ -444,14 +438,16 @@ namespace XMLGenerator
            
             
         }
-        
 
         public static Coords GetCoords(string buttonName)
         {
             Coords coord = new Coords();
+
             string[] temp = buttonName.Split('_');
+
             coord.rowCoord = int.Parse( temp[2]);
             coord.colCoord = int.Parse(temp[1])-1;
+
             return coord;
         }
 
@@ -460,8 +456,10 @@ namespace XMLGenerator
             w.ParametrField.Text = cell.tabCellParametr;
             w.AlignField.Text = cell.tabCellAlign;
             w.PrecisionField.Text = cell.tabCellPrecision;
+
             w.col.Text = coord.colCoord.ToString();
             w.row.Text = coord.rowCoord.ToString();
+
             w.ShowDialog();
 
         }
@@ -474,6 +472,7 @@ namespace XMLGenerator
             w.WidthField.Text = cell.headerCellWidth.ToString();
             w.NameField.Text = cell.headerCellName;
             w.FontsizeField.Text = cell.headerCellFontSize.ToString();
+
             w.col.Text = coord.colCoord.ToString();
             w.row.Text = coord.rowCoord.ToString();
 
@@ -484,69 +483,97 @@ namespace XMLGenerator
         public static void EditCellClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
-            t = GetCoords((sender as Button).Name.ToString());
             EditTableCell w = new EditTableCell();
             ObjectXML xml = new ObjectXML();
-            xml = MainWindow.GetObjectXML();
             TabCell cell = new TabCell();
+
+            t = GetCoords((sender as Button).Name.ToString());
+            xml = MainWindow.GetObjectXML();
             cell=xml.cells[t.GetHashCode()];
+
             OpenEditTableCellWindow(w, cell, t);
         }
 
         public static void EditHeaderClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
-            t = GetCoords((sender as Button).Name.ToString());
             EditHeaderCell w = new EditHeaderCell();
             ObjectXML xml = new ObjectXML();
-            xml = MainWindow.GetObjectXML();
             HeaderCell cell = xml.header[t.GetHashCode()];
+
+            t = GetCoords((sender as Button).Name.ToString());
+            xml = MainWindow.GetObjectXML();
+
             OpenEditHeaderCellWindow(w, cell,t);
         }
         
+        public static void ErrorDialog()
+        {
+            MessageBox.Show("Введено неверное значение", "Ошибка при вводе значения",
+            MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
         public static void AddRow(ObjectXML objectXML)
         {
             for(int i = 0; i < objectXML.colNum; i++)
             {
                 objectXML.cells.Add(new Coords(objectXML.rowNum , i).GetHashCode(), new TabCell("","",""));
             }
+
             objectXML.rowNum++;
+
             MainWindow.objectXML = objectXML;
         }
-        public static void ErrorDialog()
-        {
-            MessageBox.Show("Введено неверное значение", "Ошибка при вводе значения",
-            MessageBoxButton.OK, MessageBoxImage.Error);
-        }
+
         public static void AddCol(ObjectXML objectXML)
         {
             Coords temp = new Coords(0, objectXML.colNum);
+
             objectXML.header.Add(temp.GetHashCode(), new HeaderCell(80,25,14,"", "", ""));
+
             for(int i = 1; i < objectXML.rowNum; i++)
             {
                 objectXML.cells.Add(new Coords(i, objectXML.colNum).GetHashCode(), new TabCell("", "", ""));
             }
+
             objectXML.colNum++;
+
             MainWindow.objectXML = objectXML;
         }
 
         public delegate void saving();
+
         public static event  saving save;
         
         public static void SaveHeader(EditHeaderCell w, ObjectXML objectXML)
         {
-            HeaderCell t = new HeaderCell(Math.Abs(int.Parse(w.HeightField.Text)), Math.Abs(int.Parse(w.WidthField.Text)), Math.Abs(int.Parse(w.FontsizeField.Text)), w.NameField.Text, w.AlignField.Text, w.HeaderField.Text);
+            HeaderCell t = new HeaderCell(
+                Math.Abs(int.Parse(w.HeightField.Text)), 
+                Math.Abs(int.Parse(w.WidthField.Text)), 
+                Math.Abs(int.Parse(w.FontsizeField.Text)), 
+                w.NameField.Text, 
+                w.AlignField.Text, 
+                w.HeaderField.Text);
+
             objectXML.header[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
+
             MainWindow.objectXML = objectXML;
+
             save();
 
         }        
 
         public static void SaveCell(EditTableCell w,ObjectXML objectXML)
         {
-            TabCell t = new TabCell( w.AlignField.Text, w.PrecisionField.Text, w.ParametrField.Text);
+            TabCell t = new TabCell( 
+                w.AlignField.Text, 
+                w.PrecisionField.Text, 
+                w.ParametrField.Text);
+
             objectXML.cells[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
+
             MainWindow.objectXML = objectXML;
+
             save();
         }
 
@@ -559,6 +586,7 @@ namespace XMLGenerator
             saveFileDialog1.RestoreDirectory = true;
             saveFileDialog1.AddExtension = true;
             saveFileDialog1.ShowDialog();
+
             WriteXml(objectXML, saveFileDialog1.FileName+".xml");
         }
 
@@ -566,8 +594,11 @@ namespace XMLGenerator
         {
             XDocument doc = new XDocument();
             XElement Root = new XElement("DataSetTable");
+
             doc.Add(Root);
+
             XElement Header = new XElement("TabColumns");
+
             for(int col = 0; col < objectXml.header.Count; col++)
             {
                 Coords coords = new Coords(0, col);
@@ -579,9 +610,13 @@ namespace XMLGenerator
                     new XAttribute("Align", objectXml.header[coords.GetHashCode()].headerCellAlign),
                     new XAttribute("Header", objectXml.header[coords.GetHashCode()].headerCellHeader)));
             }
+
             doc.Root.Add(Header);
+
             for(int row = 1; row < objectXml.rowNum; row++) {
-                XElement tableRow = new XElement("TabRow");                
+
+                XElement tableRow = new XElement("TabRow");  
+                              
                 for (int col = 0; col < objectXml.colNum; col++)
                 {
                     Coords coords = new Coords(row, col);
@@ -590,12 +625,13 @@ namespace XMLGenerator
                         new XAttribute("Precision", objectXml.cells[coords.GetHashCode()].tabCellPrecision),
                         new XAttribute("Parametr", objectXml.cells[coords.GetHashCode()].tabCellParametr)));
                 }
+
                 doc.Root.Add(tableRow);
             }
-
-            //сохраняем наш документ
+            
             doc.Save(filename);
         }
+
         public static void ShowAbout()
         {
             MessageBox.Show("XML Generator version 0.0.1(Alpha)", "About", MessageBoxButton.OK, MessageBoxImage.Information);
