@@ -20,9 +20,14 @@ namespace XMLGenerator
     public partial class MainWindow : Window
     {
         
+        public void findStyles(object sender)
+        {
+            (sender as Button).Style=(Style)FindResource("DefaultButtonStyle");
+        }
         public void Refresh()
         {
             Logic.DisplayXML(ListBox1, objectXML);
+            
         }
 
         internal static Logic.ObjectXML objectXML = new Logic.ObjectXML();
@@ -50,6 +55,7 @@ namespace XMLGenerator
         }
         public MainWindow()
         {
+            Logic.getRes += this.findStyles;
             Logic.save += this.Refresh;
             InitializeComponent();
         }

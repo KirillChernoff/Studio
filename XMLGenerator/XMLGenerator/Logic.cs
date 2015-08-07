@@ -392,7 +392,12 @@ namespace XMLGenerator
             }
             return TabCells;
         }
+
+        public delegate void resGet(object sender);
         
+        public static  event resGet getRes;
+
+
         internal static void DisplayXML(ListBox ListBox1, ObjectXML table)
         {
             ListBox1.Items.Clear();
@@ -404,9 +409,12 @@ namespace XMLGenerator
                 Coords coords= new Coords(0, col);
                 button.Name = "field" + '_' + (col + 1).ToString() + '_' + 0.ToString();
                 button.Content = table.header[coords.GetHashCode()].headerCellHeader;
-                button.Height = 50;
+                button.Height = 30;
                 button.Width = 150;
                 button.Click += EditHeaderClick;
+                getRes(button);
+                button.Background=Brushes.LightGray;
+                button.BorderBrush = Brushes.LightGray;
 
                 panel1.Children.Add(button);    
             }
@@ -427,9 +435,12 @@ namespace XMLGenerator
                     Coords coords = new Coords(row, col);
                     button.Name = "field"+'_'+(col+1).ToString() + '_'+row.ToString();
                     button.Content = table.cells[coords.GetHashCode()].tabCellParametr;
-                    button.Height = 50;
+                    button.Height = 30;
                     button.Width = 150;
                     button.Click += EditCellClick;
+                    getRes(button);
+                    button.Background = Brushes.LightGray;
+                    button.BorderBrush = Brushes.LightGray;
 
                     panel.Children.Add(button);
 
@@ -442,6 +453,7 @@ namespace XMLGenerator
            
             
         }
+        
 
         public static Coords GetCoords(string buttonName)
         {
@@ -473,10 +485,8 @@ namespace XMLGenerator
             w.FontsizeField.Text = cell.headerCellFontSize.ToString();
             w.col.Text = coord.colCoord.ToString();
             w.row.Text = coord.rowCoord.ToString();
+
             w.ShowDialog();
-
-
-
 
         }
 
@@ -512,7 +522,11 @@ namespace XMLGenerator
             objectXML.rowNum++;
             MainWindow.objectXML = objectXML;
         }
-
+        public static void ErrorDialog()
+        {
+            MessageBox.Show("Требуется ввести имя", "Ошибка при вводе имени",
+            MessageBoxButton.OK, MessageBoxImage.Error);
+        }
         public static void AddCol(ObjectXML objectXML)
         {
             Coords temp = new Coords(0, objectXML.colNum);
