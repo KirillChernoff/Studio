@@ -208,6 +208,31 @@ namespace XMLGenerator
                     _tabCellParametr = value;
                 }
             }
+            private string _name;
+            public string Name
+            {
+                get
+                {
+                    return _name;
+                }
+                set
+                {
+                    _name = value;
+                }
+            }
+
+            private string _number;
+            public string Number
+            {
+                get
+                {
+                    return _number;
+                }
+                set
+                {
+                    _number = value;
+                }
+            }
 
             public TabCell()
             {
@@ -351,8 +376,22 @@ namespace XMLGenerator
             XDocument xdoc = XDocument.Load(FileName);
             int row = 1;
             int col = 0;
-            foreach (XElement el in xdoc.Root.Elements("TabRow")) { 
-                
+            foreach (XElement el in xdoc.Root.Elements("TabRow")) {
+
+                string RowName="";
+                string RowNumber="";
+                try
+                {
+                    RowName = el.Attribute("Name").Value;
+                    RowNumber = el.Attribute("Number").Value;
+                }
+                catch
+                {
+
+                    RowName = "  ";
+                    RowNumber = "  ";
+                }
+
                 foreach (XElement elem in el.Elements())
                 {
                     TabCell temp = new TabCell();
@@ -361,6 +400,8 @@ namespace XMLGenerator
                     temp.tabCellAlign = elem.Attribute("Align").Value;
                     temp.tabCellParametr = elem.Attribute("Parametr").Value;
                     temp.tabCellPrecision = elem.Attribute("Precision").Value;
+                    temp.Name = RowName;
+                    temp.Number = RowNumber;
 
                     try
                     {
@@ -633,8 +674,20 @@ namespace XMLGenerator
 
             for(int row = 1; row < objectXml.rowNum; row++) {
 
-                XElement tableRow = new XElement("TabRow");  
-                              
+                XElement tableRow;
+
+                if (objectXml.cells[new Coords(row, 0).GetHashCode()].Name != "  ")
+                {
+
+                    tableRow = new XElement("TabRow", 
+                        new XAttribute("Name",objectXml.cells[new Coords(row, 0).GetHashCode()].Name), 
+                        new XAttribute("Number",objectXml.cells[new Coords(row, 0).GetHashCode()].Number));
+                }
+                else
+                {
+                    tableRow = new XElement("TabRow");
+                }
+
                 for (int col = 0; col < objectXml.colNum; col++)
                 {
                     Coords coords = new Coords(row, col);
