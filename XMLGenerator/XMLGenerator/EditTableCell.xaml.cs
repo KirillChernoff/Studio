@@ -35,5 +35,20 @@ namespace XMLGenerator
         {
             this.Close();
         }
+
+        private void RestoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            ParametrField.Text = "";
+            AlignField.Text = "Center";
+            PrecisionField.Text = "N";
+        }
+
+        private void CancChButton_Click(object sender, RoutedEventArgs e)
+        {
+            ParametrField.Text = MainWindow.objectXML.cells[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].tabCellParametr;
+            AlignField.Text = MainWindow.objectXML.cells[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].tabCellAlign;
+            PrecisionField.Text = MainWindow.objectXML.cells[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].tabCellPrecision;
+
+        }
     }
 }

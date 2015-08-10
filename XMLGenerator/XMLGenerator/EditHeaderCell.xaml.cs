@@ -47,5 +47,24 @@ namespace XMLGenerator
             this.Close();
         }
 
+        private void CancChButton_Click(object sender, RoutedEventArgs e)
+        {
+            HeaderField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellHeader;
+            AlignField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellAlign;
+            HeightField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellHeight.ToString();
+            WidthField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellWidth.ToString();
+            NameField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellName;
+            FontsizeField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellFontSize.ToString();
+        }
+
+        private void RestoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            HeaderField.Text = "";
+            AlignField.Text = "Center";
+            HeightField.Text = "25";
+            WidthField.Text = "80";
+            NameField.Text = "";
+            FontsizeField.Text = "14";
+        }
     }
 }

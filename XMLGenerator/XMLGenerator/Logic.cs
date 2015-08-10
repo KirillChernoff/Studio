@@ -150,6 +150,12 @@ namespace XMLGenerator
 
             public HeaderCell()
             {
+                _headerCellAlign = "Center";
+                _headerCellFontSize = 14;
+                _headerCellHeight = 25;
+                _headerCellWidth = 80;
+                _headerCellName = "";
+                _headerCellHeader = "Header";
             }
             public HeaderCell( int CellHeight, int CellWidth, int CellFontSize, string CellName, string CellAlign, string CellHeader)
             {
@@ -205,8 +211,8 @@ namespace XMLGenerator
 
             public TabCell()
             {
-                _tabCellAlign = "";
-                _tabCellPrecision = "";
+                _tabCellAlign = "Center";
+                _tabCellPrecision = "N";
                 _tabCellParametr = "";
             }
             public TabCell(string CellAlign, string CellPrecision, string CellParametr)
@@ -270,10 +276,12 @@ namespace XMLGenerator
 
             public ObjectXML()
             {
-                _colNum = 0;
-                _rowNum = 1;
+                _colNum = 1;
+                _rowNum = 2;
                 _cells = new Dictionary<int, TabCell>();
+                _cells.Add(new Coords(1, 0).GetHashCode(), new TabCell());
                 _header = new Dictionary<int, HeaderCell>();
+                _header.Add(new Coords(0, 0).GetHashCode(), new HeaderCell());
             }
             public ObjectXML(int rowNum, int colNum, Dictionary<int, HeaderCell> Header, Dictionary<int, TabCell> Cell)
             {
@@ -300,7 +308,9 @@ namespace XMLGenerator
         public static Dictionary<int,HeaderCell> ReadXMLHeader(string FileName)
         {
             Dictionary<int, HeaderCell> HeaderCells = new Dictionary<int, HeaderCell>();
-            XDocument xdoc = XDocument.Load(FileName);
+
+            XDocument xdoc=new XDocument();
+            xdoc = XDocument.Load(FileName);
             int col = 0, row = 0;
 
             HeaderCell temp;
@@ -397,7 +407,7 @@ namespace XMLGenerator
                 getRes(button);
 
                 button.Background=Brushes.LightGray;
-                button.BorderBrush = Brushes.LightGray;
+                button.BorderBrush = Brushes.Black;
 
                 panel1.Children.Add(button);    
             }
@@ -423,7 +433,7 @@ namespace XMLGenerator
                     getRes(button);
 
                     button.Background = Brushes.LightGray;
-                    button.BorderBrush = Brushes.LightGray;
+                    button.BorderBrush = Brushes.Black;
 
                     panel.Children.Add(button);
 
@@ -497,12 +507,11 @@ namespace XMLGenerator
         public static void EditHeaderClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
+            t = GetCoords((sender as Button).Name.ToString());
             EditHeaderCell w = new EditHeaderCell();
             ObjectXML xml = new ObjectXML();
-            HeaderCell cell = xml.header[t.GetHashCode()];
-
-            t = GetCoords((sender as Button).Name.ToString());
             xml = MainWindow.GetObjectXML();
+            HeaderCell cell = xml.header[t.GetHashCode()];
 
             OpenEditHeaderCellWindow(w, cell,t);
         }
@@ -515,30 +524,37 @@ namespace XMLGenerator
 
         public static void AddRow(ObjectXML objectXML)
         {
-            for(int i = 0; i < objectXML.colNum; i++)
+            if (objectXML.rowNum < MainWindow.MaxRow)
             {
-                objectXML.cells.Add(new Coords(objectXML.rowNum , i).GetHashCode(), new TabCell("","",""));
+                for (int i = 0; i < objectXML.colNum; i++)
+                {
+                    Coords t = new Coords(objectXML.rowNum, i);
+                    objectXML.cells.Add(t.GetHashCode(), new TabCell());
+                }
+
+                objectXML.rowNum++;
+
+                MainWindow.objectXML = objectXML;
             }
-
-            objectXML.rowNum++;
-
-            MainWindow.objectXML = objectXML;
         }
 
         public static void AddCol(ObjectXML objectXML)
         {
-            Coords temp = new Coords(0, objectXML.colNum);
-
-            objectXML.header.Add(temp.GetHashCode(), new HeaderCell(80,25,14,"", "", ""));
-
-            for(int i = 1; i < objectXML.rowNum; i++)
+            if (objectXML.colNum < MainWindow.MaxCol)
             {
-                objectXML.cells.Add(new Coords(i, objectXML.colNum).GetHashCode(), new TabCell("", "", ""));
+                Coords temp = new Coords(0, objectXML.colNum);
+
+                objectXML.header.Add(temp.GetHashCode(), new HeaderCell());
+
+                for (int i = 1; i < objectXML.rowNum; i++)
+                {
+                    objectXML.cells.Add(new Coords(i, objectXML.colNum).GetHashCode(), new TabCell());
+                }
+
+                objectXML.colNum++;
+
+                MainWindow.objectXML = objectXML;
             }
-
-            objectXML.colNum++;
-
-            MainWindow.objectXML = objectXML;
         }
 
         public delegate void saving();
@@ -579,15 +595,17 @@ namespace XMLGenerator
 
         public static void SaveAs(ObjectXML objectXML)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            
 
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.FilterIndex = 1;
             saveFileDialog1.RestoreDirectory = true;
             saveFileDialog1.AddExtension = true;
             saveFileDialog1.ShowDialog();
 
-            WriteXml(objectXML, saveFileDialog1.FileName+".xml");
+            WriteXml(objectXML, saveFileDialog1.FileName);
+            MainWindow.PathXML = saveFileDialog1.FileName;
         }
 
         public static void WriteXml(ObjectXML objectXml, string filename)
@@ -630,6 +648,47 @@ namespace XMLGenerator
             }
             
             doc.Save(filename);
+        }
+
+        public static void DelRow(ObjectXML objectXML)
+        {
+            if (objectXML.rowNum > 2)
+            {
+                for (int i = 0; i < objectXML.colNum; i++)
+                {
+                    objectXML.cells.Remove(new Coords(objectXML.rowNum - 1, i).GetHashCode());
+                }
+
+                objectXML.rowNum--;
+
+                MainWindow.objectXML = objectXML;
+            }
+
+        }
+
+        public static void DelCol(ObjectXML objectXML)
+        {
+            if (objectXML.colNum>1){
+                Coords temp = new Coords(0, objectXML.colNum - 1);
+
+                objectXML.header.Remove(temp.GetHashCode());
+
+                for (int i = 1; i < objectXML.rowNum; i++)
+                {
+                    objectXML.cells.Remove(new Coords(i, objectXML.colNum - 1).GetHashCode());
+                }
+
+                objectXML.colNum--;
+
+                MainWindow.objectXML = objectXML;
+            }
+
+        }
+
+        public static void FileErrorDialog()
+        {
+            MessageBox.Show("Неверный или поврежденный файл", "Ошибка чтения файла",
+            MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         public static void ShowAbout()

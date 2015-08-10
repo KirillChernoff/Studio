@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Name="mainwindow">
+        Title="MainWindow" Height="450" Width="800" Name="mainwindow" >
     <Window.Resources>
 
         <Style x:Key="FocusVisual">
@@ -91,49 +91,55 @@
         </Style>
 
     </Window.Resources>
-  
-    
-    
-  
-        
-        
 
-            <Grid>
+
+
+
+
+
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition  />
             <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="112"/>
-                    <ColumnDefinition Width="112"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="112"/>
-                    <ColumnDefinition Width="112"/>
-                    <ColumnDefinition Width="112"/>
+        </Grid.RowDefinitions>
 
-                </Grid.ColumnDefinitions>
-          
-        <Menu Height="20" Grid.ColumnSpan="7">
+        <Menu Height="20" >
             <MenuItem Name="Menu" Header="File">
-                <MenuItem Name="CreateNew" Header="Create.." Click="ChooseNewButtonClick"/>
-                <MenuItem Name="OpenExt" Header="Open.." Click="ChooseEditButtonClick"/>
-                <MenuItem Name="Save" Header="Save" Click="SaveClick"/>
-                <MenuItem Name="SaveAs" Header="Save As.." Click="SaveAs_Click"/>
+                <MenuItem Name="CreateNewBtn" Header="Create.." Click="ChooseNewButtonClick"/>
+                <MenuItem Name="OpenExtBtn" Header="Open.." Click="ChooseEditButtonClick"/>
+                <Separator/>
+                <MenuItem Name="SaveMenuBtn" Header="Save" Click="SaveClick"/>
+                <MenuItem Name="SaveAsMenuBtn" Header="Save As.." Click="SaveAs_Click"/>
+                <Separator/>
                 <MenuItem Name="Exit" Header="Exit" Click="ExitClick"/>
             </MenuItem>
+            <MenuItem Name="Settings" Header="Settings" Click="Settings_Click"/>
             <MenuItem Name="About" Header="About">
                 <MenuItem Name="AboutProgram" Header="About" Click="AboutProgram_Click"/>
             </MenuItem>
         </Menu>
-                <ListBox x:Name="ListBox1" Grid.Row="1" Grid.ColumnSpan="7" />
+        <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="White" />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AddRowBtn" Grid.Column="0" Content="Add Row" Click="AddRowClick" Visibility="Hidden"/>
+            <Button x:Name="AddColBtn" Grid.Column="1" Content="Add Column" Click="AddColClick" Visibility="Hidden" />
+            <Button x:Name="DelRowBtn" Grid.Column="2" Content="Detele Row" Click="DelRow_Click" Visibility="Hidden"/>
+            <Button x:Name="DelColBtn" Grid.Column="3" Content="Delete Column" Click="DelCol_Click" Visibility="Hidden"/>
+            <Button x:Name="SaveBtn" Grid.Column="4" Content="Save" Click="SaveClick" Visibility="Hidden"/>
+            <Button x:Name="SaveAsBtn" Grid.Column="5" Content="Save as.." Click="SaveAs_Click" Visibility="Hidden"/>
+        </Grid>
 
+    </Grid>
 
-        <Button x:Name="AddRow" Content="Add Row" Click="AddRowClick" Grid.Row="2" Grid.Column="0" />
-        <Button x:Name="AddCol" Content="Add Column" Click="AddColClick" Grid.Row="2" Grid.Column="1" />
-            </Grid>
-       
 
 </Window>
 
