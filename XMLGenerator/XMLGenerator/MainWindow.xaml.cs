@@ -139,32 +139,21 @@ namespace XMLGenerator
                 Logic.WriteXml(objectXML, PathXML);
                 ForCompareXML = objectXML;
             }
-            catch (ArgumentNullException)
+            catch (Exception ex)
             {
-                try
+                if (ex is ArgumentNullException || ex is ArgumentException)
                 {
-                    Logic.SaveAs(objectXML);
-                    ForCompareXML = objectXML;
-                    this.Title = PathXML;
+                    try
+                    {
+                        Logic.SaveAs(objectXML);
+                        ForCompareXML = objectXML;
+                        this.Title = PathXML;
+                    }
+                    catch (ArgumentException)
+                    {
+                        return;
+                    }
                 }
-                catch (ArgumentException)
-                {
-                    return;
-                }
-            }
-            catch (ArgumentException)
-            {
-                try
-                {
-                    Logic.SaveAs(objectXML);
-                    ForCompareXML = objectXML;
-                    this.Title=PathXML ;
-                }
-                catch (ArgumentException)
-                {
-                    return;
-                }
-
             }
         }
 

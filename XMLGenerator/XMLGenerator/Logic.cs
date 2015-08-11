@@ -87,6 +87,7 @@ namespace XMLGenerator
                     else _headerCellHeight = Math.Abs(value);
                 }
             }
+
             private string _headerCellName;
             public string headerCellName
             {
@@ -99,6 +100,7 @@ namespace XMLGenerator
                     _headerCellName = value;
                 }
             }
+
             private int _headerCellWidth;
             public int headerCellWidth
             {
@@ -113,6 +115,7 @@ namespace XMLGenerator
                     else _headerCellWidth = Math.Abs(value);
                 }
             }
+
             private int _headerCellFontSize;
             public int headerCellFontSize
             {
@@ -128,6 +131,7 @@ namespace XMLGenerator
                 }
 
             }
+
             private string _headerCellAlign;
             public string headerCellAlign
             {
@@ -141,6 +145,7 @@ namespace XMLGenerator
                 }
 
             }
+
             private string _headerCellHeader;
             public string headerCellHeader
             {
@@ -189,7 +194,6 @@ namespace XMLGenerator
 
         public class TabCell
         {
-            
             private string _tabCellAlign;
             public string tabCellAlign
             {
@@ -202,6 +206,7 @@ namespace XMLGenerator
                     _tabCellAlign = value;
                 }
             }
+
             private string _tabCellPrecision;
             public string tabCellPrecision
             {
@@ -424,10 +429,12 @@ namespace XMLGenerator
             XDocument xdoc = XDocument.Load(FileName);
             int row = 1;
             int col = 0;
-            foreach (XElement el in xdoc.Root.Elements("TabRow")) {
 
-                string RowName="";
-                string RowNumber="";
+            string RowName = "";
+            string RowNumber = "";
+
+            foreach (XElement el in xdoc.Root.Elements("TabRow")) 
+            {
                 try
                 {
                     RowName = el.Attribute("Name").Value;
@@ -435,7 +442,6 @@ namespace XMLGenerator
                 }
                 catch
                 {
-
                     RowName = "  ";
                     RowNumber = "  ";
                 }
@@ -529,13 +535,7 @@ namespace XMLGenerator
                 }
 
                 ListBox1.Items.Add(panel);
-
             }
-
-
-        
-           
-            
         }
 
         public static Coords GetCoords(string buttonName)
@@ -576,7 +576,6 @@ namespace XMLGenerator
             w.row.Text = coord.rowCoord.ToString();
 
             w.ShowDialog();
-
         }
 
         public static void EditCellClick(object sender, RoutedEventArgs e)
@@ -670,7 +669,7 @@ namespace XMLGenerator
                                 }
                                 catch
                                 {
-
+                                    //?????
                                 }
                             }
                             return true;
@@ -726,8 +725,6 @@ namespace XMLGenerator
 
         public static void SaveAs(ObjectXML objectXML)
         {
-            
-
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
             saveFileDialog1.FilterIndex = 1;
