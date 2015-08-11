@@ -13,13 +13,13 @@
             <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="1" Grid.Row="1" Text="Enter maximum number of rows"/>
         <TextBox x:Name="maxRow" Grid.Column="1" Grid.Row="2"/>
@@ -31,11 +31,11 @@
 
         <Grid Grid.Row="6" Grid.ColumnSpan="3" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Name="OkBtn" Grid.Column="0" Content="OK" Click="OkBtn_Click"/>
-            <Button Name="CancelBtn" Grid.Column="1" Content="Cancel" Click="CancelBtn_Click"/>
+            <Button Name="OkBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="OK" Click="OkBtn_Click"/>
+            <Button Name="CancelBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Cancel" Click="CancelBtn_Click"/>
         </Grid>
     </Grid>
 </Window>

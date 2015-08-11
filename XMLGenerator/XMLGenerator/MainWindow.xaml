@@ -123,18 +123,18 @@
         <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="White" />
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="112*"/>
-                <ColumnDefinition Width="112*"/>
-                <ColumnDefinition Width="112*"/>
-                <ColumnDefinition Width="112*"/>
-                <ColumnDefinition Width="112*"/>
-                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="AddRowBtn" Grid.Column="0" Content="Add Row" Click="AddRowClick" Visibility="Hidden"/>
-            <Button x:Name="AddColBtn" Grid.Column="1" Content="Add Column" Click="AddColClick" Visibility="Hidden" />
-            <Button x:Name="DelRowBtn" Grid.Column="2" Content="Detele Row" Click="DelRow_Click" Visibility="Hidden"/>
-            <Button x:Name="DelColBtn" Grid.Column="3" Content="Delete Column" Click="DelCol_Click" Visibility="Hidden"/>
-            <Button x:Name="SaveBtn" Grid.Column="4" Content="Save" Click="SaveClick" Visibility="Hidden"/>
+            <Button x:Name="AddRowBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="Add Row" Click="AddRowClick" Visibility="Hidden"/>
+            <Button x:Name="AddColBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Add Column" Click="AddColClick" Visibility="Hidden" />
+            <Button x:Name="DelRowBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="2" Content="Detele Row" Click="DelRow_Click" Visibility="Hidden"/>
+            <Button x:Name="DelColBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="3" Content="Delete Column" Click="DelCol_Click" Visibility="Hidden"/>
+            <Button x:Name="SaveBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="4" Content="Save" Click="SaveClick" Visibility="Hidden"/>
             <Button x:Name="SaveAsBtn" Grid.Column="5" Content="Save as.." Click="SaveAs_Click" Visibility="Hidden"/>
         </Grid>
 
