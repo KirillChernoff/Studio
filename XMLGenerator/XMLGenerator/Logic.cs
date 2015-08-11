@@ -54,7 +54,13 @@ namespace XMLGenerator
             {
                 return _colCoord+_rowCoord*100000;
             }
-            
+            public override bool Equals(object obj)
+            {
+                if (obj == null) return false;
+                Coords t = obj as Coords;
+                return (rowCoord == t.rowCoord && colCoord == t.colCoord);
+            }
+
             public Coords()
             {
             }
@@ -148,6 +154,18 @@ namespace XMLGenerator
                 }
             }
 
+            public override bool Equals(object obj)
+            {
+                if (obj == null) return false;
+                HeaderCell t = obj as HeaderCell;
+                return (headerCellAlign==t.headerCellAlign &&
+                    headerCellFontSize==t.headerCellFontSize &&
+                    headerCellHeader==t.headerCellHeader &&
+                    headerCellHeight==t.headerCellHeight &&
+                    headerCellName==t.headerCellName &&
+                    headerCellWidth==t.headerCellWidth);
+            }
+
             public HeaderCell()
             {
                 _headerCellAlign = "Center";
@@ -220,7 +238,6 @@ namespace XMLGenerator
                     _name = value;
                 }
             }
-
             private string _number;
             public string Number
             {
@@ -234,11 +251,25 @@ namespace XMLGenerator
                 }
             }
 
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null) return false;
+                TabCell t = obj as TabCell;
+                return (tabCellAlign == t.tabCellAlign &&
+                    Name == t.Name &&
+                    tabCellParametr == t.tabCellParametr &&
+                    Number == t.Number &&
+                    tabCellPrecision == t.tabCellPrecision);
+            }
+
             public TabCell()
             {
                 _tabCellAlign = "Center";
                 _tabCellPrecision = "N";
                 _tabCellParametr = "";
+                _name = "  ";
+                _number = "  ";
             }
             public TabCell(string CellAlign, string CellPrecision, string CellParametr)
             {
@@ -246,7 +277,12 @@ namespace XMLGenerator
                 _tabCellPrecision = CellPrecision;
                 _tabCellParametr = CellParametr;
             }
+            
         }
+        public static  bool EqualCells(TabCell first, TabCell Second)
+            {
+                return (first.Name == Second.Name && first.Number == Second.Number && first.tabCellAlign == Second.tabCellAlign && first.tabCellParametr == Second.tabCellParametr && first.tabCellPrecision == Second.tabCellPrecision);
+            }
 
         internal class ObjectXML
         {
@@ -297,6 +333,18 @@ namespace XMLGenerator
                 {
                     _header = value;
                 }
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null) return false;
+                ObjectXML t = obj as ObjectXML;
+
+                return ((Enumerable.SequenceEqual(header, t.header)) &&
+                    (Enumerable.SequenceEqual(cells, t.cells)) &&
+                    (rowNum == t.rowNum) &&
+                    (colNum == t.colNum));
+
             }
 
             public ObjectXML()
@@ -598,6 +646,48 @@ namespace XMLGenerator
             }
         }
 
+        
+        public static bool CompareXml(ObjectXML a, ObjectXML b)
+        {
+            if (!Equals(a,b))
+            {
+
+                MessageBoxResult result = MessageBox.Show("Save Changes?", "Save Changes?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        {
+                            try
+                            {
+                                WriteXml(a, MainWindow.PathXML);
+                            }
+                            catch
+                            {
+                                try
+                                {
+                                    SaveAs(a);
+                                }
+                                catch
+                                {
+
+                                }
+                            }
+                            return true;
+                        }
+
+                        
+
+                    case MessageBoxResult.No:
+                        return true;
+
+                    case MessageBoxResult.Cancel:
+                        return false;
+                }
+            }
+            return true;
+        }
+
         public delegate void saving();
 
         public static event  saving save;
@@ -645,14 +735,15 @@ namespace XMLGenerator
             saveFileDialog1.AddExtension = true;
             saveFileDialog1.ShowDialog();
 
-            WriteXml(objectXML, saveFileDialog1.FileName);
             MainWindow.PathXML = saveFileDialog1.FileName;
+            WriteXml(objectXML, saveFileDialog1.FileName);
         }
 
         public static void WriteXml(ObjectXML objectXml, string filename)
         {
             XDocument doc = new XDocument();
             XElement Root = new XElement("DataSetTable");
+            
 
             doc.Add(Root);
 
@@ -699,7 +790,7 @@ namespace XMLGenerator
 
                 doc.Root.Add(tableRow);
             }
-            
+            filename = MainWindow.PathXML;
             doc.Save(filename);
         }
 

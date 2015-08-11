@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
+using System.ComponentModel;
 
 namespace XMLGenerator
 {
@@ -27,9 +28,13 @@ namespace XMLGenerator
             Logic.save += this.Refresh;
             InitializeComponent();
         }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            if (!Logic.CompareXml(objectXML, ForCompareXML)) e.Cancel=true;
+            base.OnClosing(e);
+        }
         
-        
-
+        private Logic.ObjectXML ForCompareXML = new Logic.ObjectXML();
         internal static Logic.ObjectXML objectXML = new Logic.ObjectXML();
         public static string PathXML;
         public ListBox getListBox()
@@ -57,6 +62,8 @@ namespace XMLGenerator
 
         public void ChooseNewButtonClick(object sender, System.EventArgs e)
         {
+            if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
+            ForCompareXML = new Logic.ObjectXML();
             objectXML = new Logic.ObjectXML();
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
@@ -66,11 +73,16 @@ namespace XMLGenerator
             DelRowBtn.Visibility = Visibility.Visible;
             SaveAsBtn.Visibility = Visibility.Visible;
             SaveBtn.Visibility = Visibility.Visible;
+            this.Title = "Untitled";
+            PathXML = null;
+
                 
         }
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
+
+            if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
 
             OpenFileDialog myDialog = new OpenFileDialog();
 
@@ -84,6 +96,7 @@ namespace XMLGenerator
             try
             {
                 objectXML = Logic.ReadXml(PathXML);
+                ForCompareXML = Logic.ReadXml(PathXML);
                 ListBox1.Items.Clear();
                 Logic.DisplayXML(ListBox1, objectXML);
 
@@ -93,7 +106,7 @@ namespace XMLGenerator
                 DelRowBtn.Visibility = Visibility.Visible;
                 SaveAsBtn.Visibility = Visibility.Visible;
                 SaveBtn.Visibility = Visibility.Visible;
-
+                this.Title = PathXML;
             }
             catch (ArgumentException)
             {
@@ -103,8 +116,6 @@ namespace XMLGenerator
             {
                 Logic.FileErrorDialog();
             }
-
-            this.Title = PathXML;
         }
 
         private void AddRowClick(object sender, RoutedEventArgs e)
@@ -126,12 +137,14 @@ namespace XMLGenerator
             try
             {
                 Logic.WriteXml(objectXML, PathXML);
+                ForCompareXML = objectXML;
             }
             catch (ArgumentNullException)
             {
                 try
                 {
                     Logic.SaveAs(objectXML);
+                    ForCompareXML = objectXML;
                     this.Title = PathXML;
                 }
                 catch (ArgumentException)
@@ -144,7 +157,7 @@ namespace XMLGenerator
                 try
                 {
                     Logic.SaveAs(objectXML);
-
+                    ForCompareXML = objectXML;
                     this.Title=PathXML ;
                 }
                 catch (ArgumentException)
@@ -160,8 +173,9 @@ namespace XMLGenerator
             try
             {
                 Logic.SaveAs(objectXML);
-                
-                this.Title = PathXML;
+                if (PathXML != null) 
+                    this.Title = PathXML;
+                ForCompareXML = objectXML;
             }
             catch (ArgumentException)
             {
@@ -176,6 +190,8 @@ namespace XMLGenerator
 
         public void ExitClick(object sender, System.EventArgs e)
         {
+
+            if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
             this.Close();
         }
 
