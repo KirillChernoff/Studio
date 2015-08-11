@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
+using System.ComponentModel;
 
 namespace XMLGenerator
 {
@@ -20,107 +22,198 @@ namespace XMLGenerator
     public partial class MainWindow : Window
     {
 
-        const string File_MAIN = "_MAIN.xml";
-
-        public void ExitClick(object sender, System.EventArgs e)
+        public MainWindow()
         {
-            this.Close();
+            Logic.getRes += this.findStyles;
+            Logic.save += this.Refresh;
+            InitializeComponent();
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            if (!Logic.CompareXml(objectXML, ForCompareXML)) e.Cancel=true;
+            base.OnClosing(e);
+        }
+        
+        private Logic.ObjectXML ForCompareXML = new Logic.ObjectXML();
+        internal static Logic.ObjectXML objectXML = new Logic.ObjectXML();
+        public static string PathXML;
+        public ListBox getListBox()
+        {
+            return ListBox1;
+        }
+        public static  int MaxRow = 20;
+        public static int MaxCol = 20;
+
+
+        internal static Logic.ObjectXML GetObjectXML()
+        {
+            return objectXML;
+        }
+
+        public void findStyles(object sender)
+        {
+            (sender as Button).Style = (Style)FindResource("DefaultButtonStyle");
+        }
+
+        public void Refresh()
+        {
+            Logic.DisplayXML(ListBox1, objectXML);
         }
 
         public void ChooseNewButtonClick(object sender, System.EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
+            if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
+            ForCompareXML = new Logic.ObjectXML();
+            objectXML = new Logic.ObjectXML();
+            ListBox1.Items.Clear();
+            Logic.DisplayXML(ListBox1, objectXML);
+            AddColBtn.Visibility = Visibility.Visible;
+            AddRowBtn.Visibility = Visibility.Visible;
+            DelColBtn.Visibility = Visibility.Visible;
+            DelRowBtn.Visibility = Visibility.Visible;
+            SaveAsBtn.Visibility = Visibility.Visible;
+            SaveBtn.Visibility = Visibility.Visible;
+            this.Title = "Untitled";
+            PathXML = null;
+
+                
         }
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-            Logic.Table TestTable = Logic.ReadXml(File_MAIN);
-        }
 
-        
+            if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
 
-        public MainWindow()
-        {
+            OpenFileDialog myDialog = new OpenFileDialog();
 
-            InitializeComponent();
-        }
-
-        private void tabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void UseTemplate1Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void UseTemplate2Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void UseTemplate3Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void UseTemplate4Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+            myDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
+            myDialog.CheckFileExists = true;
+            myDialog.Multiselect = false;
+            myDialog.ShowDialog();
+            PathXML = myDialog.FileName;
 
 
-        private void UseTemplate5Button_Click(object sender, RoutedEventArgs e)
-        {
+            try
+            {
+                objectXML = Logic.ReadXml(PathXML);
+                ForCompareXML = Logic.ReadXml(PathXML);
+                ListBox1.Items.Clear();
+                Logic.DisplayXML(ListBox1, objectXML);
 
-        }
+                AddColBtn.Visibility = Visibility.Visible;
+                AddRowBtn.Visibility = Visibility.Visible;
+                DelColBtn.Visibility = Visibility.Visible;
+                DelRowBtn.Visibility = Visibility.Visible;
+                SaveAsBtn.Visibility = Visibility.Visible;
+                SaveBtn.Visibility = Visibility.Visible;
+                this.Title = PathXML;
+            }
+            catch (ArgumentException)
+            {
 
-        private void UseTemplate6Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void UseTemplate7Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void UseTemplate8Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void BackToMainClick(object sender, RoutedEventArgs e)
-        {
-            tabControl1.SelectedIndex = 0;
+            }
+            catch (XmlException)
+            {
+                Logic.FileErrorDialog();
+            }
         }
 
         private void AddRowClick(object sender, RoutedEventArgs e)
         {
-            Logic.Table table = new Logic.Table();
-            table = Logic.ReadXml(File_MAIN);
-            //Logic.DisplayXML(table);
-
-            //Logic.DisplayXML(ListBox1, table);
-
-            Logic.DisplayXML(this, table);
+            Logic.AddRow(objectXML);
+            ListBox1.Items.Clear();
+            Logic.DisplayXML(ListBox1, objectXML);
         }
 
         private void AddColClick(object sender, RoutedEventArgs e)
         {
-            listbox1.Items.Add("test");
+            Logic.AddCol(objectXML);
+            ListBox1.Items.Clear();
+            Logic.DisplayXML(ListBox1, objectXML);
         }
 
         private void SaveClick(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Logic.WriteXml(objectXML, PathXML);
+                ForCompareXML = objectXML;
+            }
+            catch (ArgumentNullException)
+            {
+                try
+                {
+                    Logic.SaveAs(objectXML);
+                    ForCompareXML = objectXML;
+                    this.Title = PathXML;
+                }
+                catch (ArgumentException)
+                {
+                    return;
+                }
+            }
+            catch (ArgumentException)
+            {
+                try
+                {
+                    Logic.SaveAs(objectXML);
+                    ForCompareXML = objectXML;
+                    this.Title=PathXML ;
+                }
+                catch (ArgumentException)
+                {
+                    return;
+                }
 
+            }
         }
 
-        private void CancelClick(object sender, RoutedEventArgs e)
+        private void SaveAs_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Logic.SaveAs(objectXML);
+                if (PathXML != null) 
+                    this.Title = PathXML;
+                ForCompareXML = objectXML;
+            }
+            catch (ArgumentException)
+            {
+                return;
+            }
+        }
+
+        private void AboutProgram_Click(object sender, RoutedEventArgs e)
+        {
+            Logic.ShowAbout();
+        }
+
+        public void ExitClick(object sender, System.EventArgs e)
         {
 
+            if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
+            this.Close();
         }
 
-        
+        private void DelRow_Click(object sender, RoutedEventArgs e)
+        {
+            Logic.DelRow(objectXML);
+            ListBox1.Items.Clear();
+            Logic.DisplayXML(ListBox1, objectXML);
+        }
+
+        private void DelCol_Click(object sender, RoutedEventArgs e)
+        {
+            Logic.DelCol(objectXML);
+            ListBox1.Items.Clear();
+            Logic.DisplayXML(ListBox1, objectXML);
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            Settings Sett = new Settings();
+
+            Sett.ShowDialog();
+        }
     }
 }

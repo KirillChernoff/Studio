@@ -5,138 +5,143 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <TabControl x:Name="tabControl1" SelectionChanged="tabControl1_SelectionChanged"  >
-        <TabItem x:Name="First" Header="Hello tab" Visibility="Visible" >
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="100" />
+        Title="MainWindow" Height="450" Width="800" Name="mainwindow" >
+    <Window.Resources>
 
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition Height="30" />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <TextBlock Text="Выберите действие" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"  ></TextBlock>
-                <Button x:Name="ChooseNewButton" Content="Create new" Click="ChooseNewButtonClick"  Grid.Row="9" Grid.Column="2"/>
-                <Button x:Name="ChooseEditButton" Content="Edit existing" Click="ChooseEditButtonClick" Grid.Row="9" Grid.Column="5"/>
-                <Button x:Name="Exit" Content="Exit" Click="ExitClick" Grid.Row="0" Grid.Column="7"/>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2"
+                       SnapsToDevicePixels="true"
+                       Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                       StrokeDashArray="1 2"
+                       StrokeThickness="1" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-            </Grid>
-        </TabItem>
-        <TabItem x:Name="NewXML" Header="Create New" Visibility="Visible">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="95.2" />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="100" />
+        <SolidColorBrush x:Key="Button.Static.Background"
+                     Color="#FFDDDDDD" />
+        <SolidColorBrush x:Key="Button.Static.Border"
+                     Color="#FF707070" />
+        <SolidColorBrush x:Key="Button.MouseOver.Background"
+                     Color="#FFBEE6FD" />
+        <SolidColorBrush x:Key="Button.MouseOver.Border"
+                     Color="#FF3C7FB1" />
+        <SolidColorBrush x:Key="Button.Pressed.Background"
+                     Color="#FFC4E5F6" />
+        <SolidColorBrush x:Key="Button.Pressed.Border"
+                     Color="#FF2C628B" />
+        <SolidColorBrush x:Key="Button.Disabled.Background"
+                     Color="#FFF4F4F4" />
+        <SolidColorBrush x:Key="Button.Disabled.Border"
+                     Color="#FFADB2B5" />
+        <SolidColorBrush x:Key="Button.Disabled.Foreground"
+                     Color="#FF838383" />
 
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="20*" />
-                    <RowDefinition Height="17*" />
-                    <RowDefinition Height="18*" />
-                    <RowDefinition Height="19*" />
-                    <RowDefinition Height="20*" />
-                </Grid.RowDefinitions>
-                <TextBlock Text="Choose Template" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1"  />
-                <Button x:Name="UseTemplate1Button" Content="Use template 1" Click="UseTemplate1Button_Click"  Grid.Row="2" Grid.Column="1"  />
-                <TextBlock x:Name="Template1Desc" Text="Template 1 Description" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="UseTemplate2Button" Content="Use template 2" Click="UseTemplate2Button_Click"  Grid.Row="3" Grid.Column="1"  />
-                <TextBlock x:Name="Template2Desc" Text="Template 2 Description" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="UseTemplate3Button" Content="Use template 3" Click="UseTemplate3Button_Click"  Grid.Row="4" Grid.Column="1"  />
-                <TextBlock x:Name="Template3Desc" Text="Template 3 Description" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="UseTemplate4Button" Content="Use template 4" Click="UseTemplate4Button_Click"  Grid.Row="5" Grid.Column="1"  />
-                <TextBlock x:Name="Template4Desc" Text="Template 4 Description" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="UseTemplate5Button" Content="Use template 5" Click="UseTemplate5Button_Click"  Grid.Row="6" Grid.Column="1"  />
-                <TextBlock x:Name="Template5Desc" Text="Template 5 Description" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="UseTemplate6Button" Content="Use template 6" Click="UseTemplate6Button_Click"  Grid.Row="7" Grid.Column="1"  />
-                <TextBlock x:Name="Template6Desc" Text="Template 6 Description" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="UseTemplate7Button" Content="Use template 7" Click="UseTemplate7Button_Click"  Grid.Row="8" Grid.Column="1"  />
-                <TextBlock x:Name="Template7Desc" Text="Template 7 Description" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="UseTemplate8Button" Content="Use template 8" Click="UseTemplate8Button_Click"  Grid.Row="9" Grid.Column="1"  />
-                <TextBlock x:Name="Template8Desc" Text="Template 8 Description" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="3"/>
-                <Button x:Name="Exit1" Content="Exit" Click="ExitClick" Grid.Row="0" Grid.Column="7" />
-                <Button x:Name="Back" Content="Back" Click="BackToMainClick" Grid.Row="0" Grid.Column="6" />
+        <Style  x:Name="Style1" x:Key="DefaultButtonStyle"
+           TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}" />
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                            </Trigger>
+                            <!--<Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="border" Property="Background" Value="{StaticResource Button.MouseOver.Background}" />
+                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}" />
+              </Trigger>-->
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Pressed.Background}" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Pressed.Border}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Disabled.Background}" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Disabled.Border}" />
+                                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource Button.Disabled.Foreground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-            </Grid>
-        </TabItem>
-        <TabItem x:Name="EditTab" Header="Edit" Visibility="Visible" >
-
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition  />
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="112"/>
-                    <ColumnDefinition Width="112"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="112"/>
-                    <ColumnDefinition Width="112"/>
-                    <ColumnDefinition Width="112"/>
-
-                </Grid.ColumnDefinitions>
-
-                <ListBox x:Name="ListBox1">
-                    
-                </ListBox>
+    </Window.Resources>
 
 
-                <Button x:Name="AddRow" Content="Add Row" Click="AddRowClick" Grid.Row="1" Grid.Column="0" />
-                <Button x:Name="AddCol" Content="Add Column" Click="AddColClick" Grid.Row="1" Grid.Column="1" />
-                <Button x:Name="Save" Content="Save" Click="SaveClick" Grid.Row="1" Grid.Column="6" />
-                <Button x:Name="Cancel" Content="Cancel" Click="CancelClick" Grid.Row="1" Grid.Column="4" />
-            </Grid>
-        </TabItem>
-        <TabItem x:Name="EditTab1" Header="Edit" Visibility="Visible" >
-            <ListBox x:Name="listbox1">
-                
-                
-                
-            </ListBox>
-            
-            
 
 
-        </TabItem>
 
-    </TabControl>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition  />
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Menu Height="20" >
+            <MenuItem Name="Menu" Header="File">
+                <MenuItem Name="CreateNewBtn" Header="Create.." Click="ChooseNewButtonClick"/>
+                <MenuItem Name="OpenExtBtn" Header="Open.." Click="ChooseEditButtonClick"/>
+                <Separator/>
+                <MenuItem Name="SaveMenuBtn" Header="Save" Click="SaveClick"/>
+                <MenuItem Name="SaveAsMenuBtn" Header="Save As.." Click="SaveAs_Click"/>
+                <Separator/>
+                <MenuItem Name="Exit" Header="Exit" Click="ExitClick"/>
+            </MenuItem>
+            <MenuItem Name="Settings" Header="Settings" Click="Settings_Click"/>
+            <MenuItem Name="About" Header="About">
+                <MenuItem Name="AboutProgram" Header="About" Click="AboutProgram_Click"/>
+            </MenuItem>
+        </Menu>
+        <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="White" />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+                <ColumnDefinition Width="112*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AddRowBtn" Grid.Column="0" Content="Add Row" Click="AddRowClick" Visibility="Hidden"/>
+            <Button x:Name="AddColBtn" Grid.Column="1" Content="Add Column" Click="AddColClick" Visibility="Hidden" />
+            <Button x:Name="DelRowBtn" Grid.Column="2" Content="Detele Row" Click="DelRow_Click" Visibility="Hidden"/>
+            <Button x:Name="DelColBtn" Grid.Column="3" Content="Delete Column" Click="DelCol_Click" Visibility="Hidden"/>
+            <Button x:Name="SaveBtn" Grid.Column="4" Content="Save" Click="SaveClick" Visibility="Hidden"/>
+            <Button x:Name="SaveAsBtn" Grid.Column="5" Content="Save as.." Click="SaveAs_Click" Visibility="Hidden"/>
+        </Grid>
+
+    </Grid>
+
 
 </Window>
+
+
+    

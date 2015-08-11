@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:sys="clr-namespace:System;assembly=mscorlib"
+            x:Name="Document">
+
+  <Grid.Resources>
+    <sys:Double x:Key="fontSize">14</sys:Double>
+    <sys:Double x:Key="fontSizeSub">10</sys:Double>
+
+    <GridLength x:Key="rowHeader">20</GridLength>
+    <GridLength x:Key="rowValue">25</GridLength>
+
+    <GridLength x:Key="space">5</GridLength>
+
+  </Grid.Resources>
+
+  <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="{StaticResource space}"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="{StaticResource space}"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="{StaticResource space}"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="{StaticResource space}"/>
+    </Grid.RowDefinitions>
+
+
+    <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="10"/>
+      </Grid.ColumnDefinitions>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <Border Grid.Row="0" Grid.Column="1">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="ИМЦ-07" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+          <TextBlock Text="{Binding Path=[IVKNumb].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+          <TextBlock Text="{Binding Path=[CompNum].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+        </StackPanel>
+      </Border>
+
+      <Border Grid.Row="0" Grid.Column="3">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{Binding Path=[DtNow].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        </StackPanel>
+      </Border>
+
+      <Border Grid.Row="1" Grid.Column="2">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+          <TextBlock Text="{Binding Path=[NamRp].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,5,0"/>
+          <TextBlock Text="{Binding Path=[OMS].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0"/>
+        </StackPanel>
+      </Border>
+
+      <Border Grid.Row="2" Grid.Column="2">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+          <TextBlock Text="За период с" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+          <TextBlock Text="{Binding Path=[SMDat].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0"/>
+          <TextBlock Text="{Binding Path=[SMTim].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,5,0"/>
+          <TextBlock Text="до" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+          <TextBlock Text="{Binding Path=[FMDat].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0"/>
+          <TextBlock Text="{Binding Path=[FMTim].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0"/>
+          <TextBlock Text="{Binding Path=[RepOk].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0"/>
+        </StackPanel>
+      </Border>
+
+      <Border Grid.Row="3" Grid.Column="2">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+          <TextBlock Text="Время измерения, чч:мм" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+          <TextBlock Text="{Binding Path=[MPer].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0"/>
+          <TextBlock Text="{Binding Path=[Simul].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0"/>
+        </StackPanel>
+      </Border>
+    </Grid>
+
+    <Grid Grid.Row="3" Grid.Column="1" VerticalAlignment="Top">
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10"/>
+        <ColumnDefinition Width="70"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="0"/>
+        <ColumnDefinition Width="0"/>
+        <ColumnDefinition Width="0"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="10"/>
+      </Grid.ColumnDefinitions>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="{StaticResource rowHeader}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+      </Grid.RowDefinitions>
+
+      <!--Заголовок-->
+      <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="ИЛ1" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="ИЛ2" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="ИЛ3" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="ИЛ4" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="ИЛ5" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="ИЛ6" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="БИЛ" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 1 таблицы-->
+      <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="M, т" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[MSm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 2 таблицы-->
+      <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="V, м³" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[VSm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 3 таблицы-->
+      <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+          V<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="0"/>, м³
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VsL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VsL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VsL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VsL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VsL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[VsL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[VsS].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 4 таблицы-->
+      <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="t, °С" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+      </Border>
+      <Border Grid.Row="4" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="4" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="4" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="4" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="4" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="4" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="4" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[Tm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 5 таблицы-->
+      <Border Grid.Row="5" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="P, МПа" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+      </Border>
+      <Border Grid.Row="5" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[PmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="5" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[PmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="5" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[PmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="5" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[PmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="5" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[PmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="5" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[PmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="5" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[Pm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 6 таблицы-->
+      <Border Grid.Row="6" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="ρ, кг/м³" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+      </Border>
+      <Border Grid.Row="6" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[DmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="6" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[DmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="6" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[DmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="6" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[DmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="6" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[DmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="6" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[DmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="6" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[Dm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+
+      <!--Строка 7 таблицы-->
+      <Border Grid.Row="7" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="W, т/ч" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+      </Border>
+      <Border Grid.Row="7" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MRatmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="7" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MRatmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="7" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MRatmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="7" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MRatmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="7" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MRatmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="7" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[MRatmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="7" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[MRatm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 8 таблицы-->
+      <Border Grid.Row="8" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+          M<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="H"/>, т
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="8" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBMmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="8" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBMmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="8" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBMmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="8" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBMmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="8" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBMmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="8" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBMmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="8" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[TBMSm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 9 таблицы-->
+      <Border Grid.Row="9" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+          M<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="K"/>, т
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="9" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEMmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="9" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEMmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="9" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEMmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="9" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEMmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="9" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEMmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="9" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEMmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="9" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[TEMSm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 10 таблицы-->
+      <Border Grid.Row="10" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+          V<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="H"/>, м³
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="10" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="10" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="10" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="10" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="10" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="10" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="10" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[TBVSm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 11 таблицы-->
+      <Border Grid.Row="11" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+          V<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="K"/>, м³
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="11" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEVmL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="11" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEVmL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="11" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEVmL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="11" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEVmL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="11" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEVmL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="11" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TEVmL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="11" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[TEVSm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 12 таблицы-->
+      <Border Grid.Row="12" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+          V<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="0H"/>, м³
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="12" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVsL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="12" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVsL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="12" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVsL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="12" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVsL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="12" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVsL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="12" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="{Binding Path=[TBVsL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="12" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock Text="{Binding Path=[TBVsS].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+      <!--Строка 13 таблицы-->
+      <Border Grid.Row="13" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+          V<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="0K"/>, м³
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="13" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[TEVsL1].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="13" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[TEVsL2].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="13" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[TEVsL3].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="13" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[TEVsL4].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="13" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[TEVsL5].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="13" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[TEVsL6].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="13" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0.5">
+        <TextBlock Text="{Binding Path=[TEVsS].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+
+    </Grid>
+
+    <Grid Grid.Row="5" Grid.Column="1" VerticalAlignment="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10"/>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+   <!-- <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+		    <ColumnDefinition Width="*"/> -->
+        <ColumnDefinition Width="10"/>
+      </Grid.ColumnDefinitions>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="{StaticResource rowHeader}"/>
+        <RowDefinition Height="{StaticResource rowValue}"/>
+      </Grid.RowDefinitions>
+
+      <!--Заголовок-->
+      <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center">
+          t<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="ПП"/>, °С
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center">
+          P<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="ПП"/>, МПа
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">	  
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center">
+          ρ<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="ПП"/>, кг/м³
+        </TextBlock>
+	  </Border>
+      <Border Grid.Row="0" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center">
+          ρ<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="20"/>, кг/м³
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center">
+          ρ<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="15"/>, кг/м³
+        </TextBlock>
+      </Border>
+     <Border Grid.Row="0" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center">
+          Q<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="БИК"/>,м³/ч
+        </TextBlock>
+      </Border>
+ <!-- <Border Grid.Row="0" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center">
+          φ<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="В"/>, %
+        </TextBlock>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="9" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock Text="ν, мм²/с" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="10" BorderBrush="Black" BorderThickness="0.5,0.5,0,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center">
+          ν<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="20"/>, мм²/с
+        </TextBlock>
+      </Border>
+	   <Border Grid.Row="0" Grid.Column="11" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0">
+        <TextBlock FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center">
+          ν<Run BaselineAlignment="Subscript" FontSize="{StaticResource fontSizeSub}" FontFamily="Franklin Gothic Book" Text="15"/>, мм²/с
+        </TextBlock> 
+      </Border> -->
+
+      <!--Строка 1 таблицы-->
+      <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="БИК" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[Tbm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[Pbm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[Dbm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="5" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[D20m].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="6" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[D15m].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+       <Border Grid.Row="1" Grid.Column="7" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0.5">
+        <TextBlock Text="{Binding Path=[Qbm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+     <!-- <Border Grid.Row="1" Grid.Column="8" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[VWm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="9" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[vm].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="10" BorderBrush="Black" BorderThickness="0.5,0.5,0,0.5">
+        <TextBlock Text="{Binding Path=[vb20m].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="11" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0.5">
+        <TextBlock Text="{Binding Path=[vb15m].Data}" FontSize="{StaticResource fontSize}" FontFamily="Franklin Gothic Book" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Border>	   -->
+    </Grid>
+</Grid>
