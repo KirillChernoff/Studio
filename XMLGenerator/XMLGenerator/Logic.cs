@@ -474,6 +474,8 @@ namespace XMLGenerator
 
             StackPanel panel1 = new StackPanel();
             panel1.Orientation = Orientation.Horizontal;
+            ListBox1.VerticalAlignment = VerticalAlignment.Center;
+            ListBox1.HorizontalAlignment = HorizontalAlignment.Center;
 
             for (int col = 0; col < table.colNum; col++)
             {

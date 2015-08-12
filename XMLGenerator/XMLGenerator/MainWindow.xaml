@@ -95,11 +95,11 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition  />
+            <RowDefinition />
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <Menu Height="20" >
+        <Menu  >
             <MenuItem Name="Menu" Header="File">
                 <MenuItem Name="CreateNewBtn" Header="Create.." Click="ChooseNewButtonClick"/>
                 <MenuItem Name="OpenExtBtn" Header="Open.." Click="ChooseEditButtonClick"/>
@@ -114,8 +114,8 @@
                 <MenuItem Name="AboutProgram" Header="About" Click="AboutProgram_Click"/>
             </MenuItem>
         </Menu>
-        <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="White"      Margin="0,0,0,0" />
-        <Grid Grid.Row="2">
+        <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="White"/>
+        <Grid Grid.Row="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
