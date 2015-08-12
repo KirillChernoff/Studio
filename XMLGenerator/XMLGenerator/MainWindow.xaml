@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Name="mainwindow" >
+        Title="XML Generator" Height="450" Width="800" Name="mainwindow" WindowStartupLocation="CenterScreen" Icon="XMLGenerator.ico">
     <Window.Resources>
 
         <Style x:Key="FocusVisual">
@@ -92,12 +92,6 @@
 
     </Window.Resources>
 
-
-
-
-
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -110,8 +104,8 @@
                 <MenuItem Name="CreateNewBtn" Header="Create.." Click="ChooseNewButtonClick"/>
                 <MenuItem Name="OpenExtBtn" Header="Open.." Click="ChooseEditButtonClick"/>
                 <Separator/>
-                <MenuItem Name="SaveMenuBtn" Header="Save" Click="SaveClick"/>
-                <MenuItem Name="SaveAsMenuBtn" Header="Save As.." Click="SaveAs_Click"/>
+                <MenuItem Name="SaveMenuBtn" Header="Save" Click="SaveClick" IsEnabled="False"/>
+                <MenuItem Name="SaveAsMenuBtn" Header="Save As.." Click="SaveAs_Click" IsEnabled="False"/>
                 <Separator/>
                 <MenuItem Name="Exit" Header="Exit" Click="ExitClick"/>
             </MenuItem>
@@ -120,7 +114,7 @@
                 <MenuItem Name="AboutProgram" Header="About" Click="AboutProgram_Click"/>
             </MenuItem>
         </Menu>
-        <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="White" />
+        <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="White"      Margin="0,0,0,0" />
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

@@ -20,10 +20,10 @@ using Microsoft.Win32;
 namespace XMLGenerator
 {
 
-     class  Logic 
+    class Logic
     {
-    
-        public class Coords 
+
+        internal class Coords
         {
             private int _rowCoord;
             public int rowCoord
@@ -52,7 +52,7 @@ namespace XMLGenerator
 
             public override int GetHashCode()
             {
-                return _colCoord+_rowCoord*100000;
+                return _colCoord + _rowCoord * 100000;
             }
             public override bool Equals(object obj)
             {
@@ -163,12 +163,12 @@ namespace XMLGenerator
             {
                 if (obj == null) return false;
                 HeaderCell t = obj as HeaderCell;
-                return (headerCellAlign==t.headerCellAlign &&
-                    headerCellFontSize==t.headerCellFontSize &&
-                    headerCellHeader==t.headerCellHeader &&
-                    headerCellHeight==t.headerCellHeight &&
-                    headerCellName==t.headerCellName &&
-                    headerCellWidth==t.headerCellWidth);
+                return (headerCellAlign == t.headerCellAlign &&
+                    headerCellFontSize == t.headerCellFontSize &&
+                    headerCellHeader == t.headerCellHeader &&
+                    headerCellHeight == t.headerCellHeight &&
+                    headerCellName == t.headerCellName &&
+                    headerCellWidth == t.headerCellWidth);
             }
 
             public HeaderCell()
@@ -180,7 +180,7 @@ namespace XMLGenerator
                 _headerCellName = "";
                 _headerCellHeader = "Header";
             }
-            public HeaderCell( int CellHeight, int CellWidth, int CellFontSize, string CellName, string CellAlign, string CellHeader)
+            public HeaderCell(int CellHeight, int CellWidth, int CellFontSize, string CellName, string CellAlign, string CellHeader)
             {
                 _headerCellHeight = CellHeight;
                 _headerCellWidth = CellWidth;
@@ -223,7 +223,7 @@ namespace XMLGenerator
             public string tabCellParametr
             {
                 get
-                { 
+                {
                     return _tabCellParametr;
                 }
                 set
@@ -282,12 +282,15 @@ namespace XMLGenerator
                 _tabCellPrecision = CellPrecision;
                 _tabCellParametr = CellParametr;
             }
-            
+
         }
-        public static  bool EqualCells(TabCell first, TabCell Second)
-            {
-                return (first.Name == Second.Name && first.Number == Second.Number && first.tabCellAlign == Second.tabCellAlign && first.tabCellParametr == Second.tabCellParametr && first.tabCellPrecision == Second.tabCellPrecision);
-            }
+
+
+
+        public static bool EqualCells(TabCell first, TabCell Second)
+        {
+            return (first.Name == Second.Name && first.Number == Second.Number && first.tabCellAlign == Second.tabCellAlign && first.tabCellParametr == Second.tabCellParametr && first.tabCellPrecision == Second.tabCellPrecision);
+        }
 
         internal class ObjectXML
         {
@@ -316,7 +319,7 @@ namespace XMLGenerator
                 }
             }
             private Dictionary<int, TabCell> _cells;
-            public Dictionary<int,TabCell> cells
+            public Dictionary<int, TabCell> cells
             {
                 get
                 {
@@ -327,8 +330,8 @@ namespace XMLGenerator
                     _cells = value;
                 }
             }
-            private Dictionary<int,HeaderCell> _header;
-            public Dictionary<int,HeaderCell> header
+            private Dictionary<int, HeaderCell> _header;
+            public Dictionary<int, HeaderCell> header
             {
                 get
                 {
@@ -349,7 +352,6 @@ namespace XMLGenerator
                     (Enumerable.SequenceEqual(cells, t.cells)) &&
                     (rowNum == t.rowNum) &&
                     (colNum == t.colNum));
-
             }
 
             public ObjectXML()
@@ -378,16 +380,16 @@ namespace XMLGenerator
             table.cells = ReadXMLCells(FileName);
 
             table.colNum = table.header.Count;
-            table.rowNum = (table.cells.Count / table.header.Count) +1;
+            table.rowNum = (table.cells.Count / table.header.Count) + 1;
 
             return table;
         }
 
-        public static Dictionary<int,HeaderCell> ReadXMLHeader(string FileName)
+        public static Dictionary<int, HeaderCell> ReadXMLHeader(string FileName)
         {
             Dictionary<int, HeaderCell> HeaderCells = new Dictionary<int, HeaderCell>();
 
-            XDocument xdoc=new XDocument();
+            XDocument xdoc = new XDocument();
             xdoc = XDocument.Load(FileName);
             int col = 0, row = 0;
 
@@ -397,35 +399,27 @@ namespace XMLGenerator
             foreach (XElement el in xdoc.Root.Element("TabColumns").Elements())
             {
                 temp = new HeaderCell();
-                
+
                 temp.headerCellAlign = el.Attribute("Align").Value;
                 temp.headerCellName = el.Attribute("Name").Value;
-                temp.headerCellFontSize = Convert.ToInt32(el.Attribute("Fontsize").Value,10);
+                temp.headerCellFontSize = Convert.ToInt32(el.Attribute("Fontsize").Value, 10);
                 temp.headerCellHeight = Convert.ToInt32(el.Attribute("Height").Value, 10);
                 temp.headerCellWidth = Convert.ToInt32(el.Attribute("Width").Value, 10);
                 temp.headerCellHeader = el.Attribute("Header").Value;
 
                 coordinate = new Coords(row, col);
 
-                try
-                {
-                    HeaderCells.Add(coordinate.GetHashCode(), temp);
-                    
-                }
-                catch (ArgumentException)
-                {
-                    
-                }
+                HeaderCells.Add(coordinate.GetHashCode(), temp);
 
                 col++;
             }
-            
+
             return HeaderCells;
         }
 
         public static Dictionary<int, TabCell> ReadXMLCells(string FileName)
         {
-            Dictionary<int, TabCell> TabCells = new Dictionary<int, TabCell> ();
+            Dictionary<int, TabCell> TabCells = new Dictionary<int, TabCell>();
             XDocument xdoc = XDocument.Load(FileName);
             int row = 1;
             int col = 0;
@@ -433,7 +427,7 @@ namespace XMLGenerator
             string RowName = "";
             string RowNumber = "";
 
-            foreach (XElement el in xdoc.Root.Elements("TabRow")) 
+            foreach (XElement el in xdoc.Root.Elements("TabRow"))
             {
                 try
                 {
@@ -457,19 +451,12 @@ namespace XMLGenerator
                     temp.Name = RowName;
                     temp.Number = RowNumber;
 
-                    try
-                    {
-                        TabCells.Add(coordinate.GetHashCode(), temp);
-                    }
-                    catch (ArgumentException)
-                    {
-                        Console.WriteLine("An element with Key = \"txt\" already exists.");
-                    }
+                    TabCells.Add(coordinate.GetHashCode(), temp);
 
                     col++;
                     temp = null;
-                    
-                    
+
+
                 }
                 col = 0;
                 row++;
@@ -478,8 +465,8 @@ namespace XMLGenerator
         }
 
         public delegate void resGet(object sender);
-        
-        public static  event resGet getRes;
+
+        public static event resGet getRes;
 
         internal static void DisplayXML(ListBox ListBox1, ObjectXML table)
         {
@@ -491,27 +478,28 @@ namespace XMLGenerator
             for (int col = 0; col < table.colNum; col++)
             {
                 Button button = new Button();
-                Coords coords= new Coords(0, col);
+                Coords coords = new Coords(0, col);
 
                 button.Name = "field" + '_' + (col + 1).ToString() + '_' + 0.ToString();
                 button.Content = table.header[coords.GetHashCode()].headerCellHeader;
-                button.Height = 30;
-                button.Width = 150;
+                button.Height = table.header[coords.GetHashCode()].headerCellHeight;
+                button.Width = table.header[coords.GetHashCode()].headerCellWidth; ;
                 button.Click += EditHeaderClick;
-
                 getRes(button);
 
-                button.Background=Brushes.LightGray;
+                button.Background = Brushes.LightGray;
                 button.BorderBrush = Brushes.Black;
 
-                panel1.Children.Add(button);    
+                if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.Blue;
+
+                panel1.Children.Add(button);
             }
 
             ListBox1.Items.Add(panel1);
 
-            for (int row=1; row < table.rowNum; row++)
+            for (int row = 1; row < table.rowNum; row++)
             {
-                
+
                 StackPanel panel = new StackPanel();
                 panel.Orientation = Orientation.Horizontal;
                 for (int col = 0; col < table.colNum; col++)
@@ -519,10 +507,10 @@ namespace XMLGenerator
                     Button button = new Button();
                     Coords coords = new Coords(row, col);
 
-                    button.Name = "field"+'_'+(col+1).ToString() + '_'+row.ToString();
+                    button.Name = "field" + '_' + (col + 1).ToString() + '_' + row.ToString();
                     button.Content = table.cells[coords.GetHashCode()].tabCellParametr;
-                    button.Height = 30;
-                    button.Width = 150;
+                    button.Height = table.header[new Coords(0, col).GetHashCode()].headerCellHeight;
+                    button.Width = table.header[new Coords(0, col).GetHashCode()].headerCellWidth;
                     button.Click += EditCellClick;
 
                     getRes(button);
@@ -530,8 +518,9 @@ namespace XMLGenerator
                     button.Background = Brushes.LightGray;
                     button.BorderBrush = Brushes.Black;
 
-                    panel.Children.Add(button);
+                    if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.Blue;
 
+                    panel.Children.Add(button);
                 }
 
                 ListBox1.Items.Add(panel);
@@ -544,13 +533,13 @@ namespace XMLGenerator
 
             string[] temp = buttonName.Split('_');
 
-            coord.rowCoord = int.Parse( temp[2]);
-            coord.colCoord = int.Parse(temp[1])-1;
+            coord.rowCoord = int.Parse(temp[2]);
+            coord.colCoord = int.Parse(temp[1]) - 1;
 
             return coord;
         }
 
-        public static void OpenEditTableCellWindow( EditTableCell w, TabCell cell, Coords coord)
+        public static void OpenEditTableCellWindow(EditTableCell w, TabCell cell, Coords coord)
         {
             w.ParametrField.Text = cell.tabCellParametr;
             w.AlignField.Text = cell.tabCellAlign;
@@ -560,7 +549,6 @@ namespace XMLGenerator
             w.row.Text = coord.rowCoord.ToString();
 
             w.ShowDialog();
-
         }
 
         public static void OpenEditHeaderCellWindow(EditHeaderCell w, HeaderCell cell, Coords coord)
@@ -587,7 +575,8 @@ namespace XMLGenerator
 
             t = GetCoords((sender as Button).Name.ToString());
             xml = MainWindow.GetObjectXML();
-            cell=xml.cells[t.GetHashCode()];
+            cell = xml.cells[t.GetHashCode()];
+            MainWindow.LastActiveCoords = t;
 
             OpenEditTableCellWindow(w, cell, t);
         }
@@ -600,10 +589,11 @@ namespace XMLGenerator
             ObjectXML xml = new ObjectXML();
             xml = MainWindow.GetObjectXML();
             HeaderCell cell = xml.header[t.GetHashCode()];
+            MainWindow.LastActiveCoords = t;
 
-            OpenEditHeaderCellWindow(w, cell,t);
+            OpenEditHeaderCellWindow(w, cell, t);
         }
-        
+
         public static void ErrorDialog()
         {
             MessageBox.Show("Введено неверное значение", "Ошибка при вводе значения",
@@ -618,6 +608,7 @@ namespace XMLGenerator
                 {
                     Coords t = new Coords(objectXML.rowNum, i);
                     objectXML.cells.Add(t.GetHashCode(), new TabCell());
+                    MainWindow.LastActiveCoords = t;
                 }
 
                 objectXML.rowNum++;
@@ -636,7 +627,9 @@ namespace XMLGenerator
 
                 for (int i = 1; i < objectXML.rowNum; i++)
                 {
-                    objectXML.cells.Add(new Coords(i, objectXML.colNum).GetHashCode(), new TabCell());
+                    temp = new Coords(i, objectXML.colNum);
+                    objectXML.cells.Add(temp.GetHashCode(), new TabCell());
+                    MainWindow.LastActiveCoords = temp;
                 }
 
                 objectXML.colNum++;
@@ -645,37 +638,27 @@ namespace XMLGenerator
             }
         }
 
-        
         public static bool CompareXml(ObjectXML a, ObjectXML b)
         {
-            if (!Equals(a,b))
+            if (!Equals(a, b))
             {
-
                 MessageBoxResult result = MessageBox.Show("Save Changes?", "Save Changes?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
 
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
                         {
-                            try
+                            if (MainWindow.PathXML != null)
                             {
                                 WriteXml(a, MainWindow.PathXML);
+                                return true;
                             }
-                            catch
+                            else
                             {
-                                try
-                                {
-                                    SaveAs(a);
-                                }
-                                catch
-                                {
-                                    //?????
-                                }
+                                SaveAs(a);
+                                return true;
                             }
-                            return true;
                         }
-
-                        
 
                     case MessageBoxResult.No:
                         return true;
@@ -689,16 +672,16 @@ namespace XMLGenerator
 
         public delegate void saving();
 
-        public static event  saving save;
-        
+        public static event saving save;
+
         public static void SaveHeader(EditHeaderCell w, ObjectXML objectXML)
         {
             HeaderCell t = new HeaderCell(
-                Math.Abs(int.Parse(w.HeightField.Text)), 
-                Math.Abs(int.Parse(w.WidthField.Text)), 
-                Math.Abs(int.Parse(w.FontsizeField.Text)), 
-                w.NameField.Text, 
-                w.AlignField.Text, 
+                Math.Abs(int.Parse(w.HeightField.Text)),
+                Math.Abs(int.Parse(w.WidthField.Text)),
+                Math.Abs(int.Parse(w.FontsizeField.Text)),
+                w.NameField.Text,
+                w.AlignField.Text,
                 w.HeaderField.Text);
 
             objectXML.header[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
@@ -706,14 +689,13 @@ namespace XMLGenerator
             MainWindow.objectXML = objectXML;
 
             save();
+        }
 
-        }        
-
-        public static void SaveCell(EditTableCell w,ObjectXML objectXML)
+        public static void SaveCell(EditTableCell w, ObjectXML objectXML)
         {
-            TabCell t = new TabCell( 
-                w.AlignField.Text, 
-                w.PrecisionField.Text, 
+            TabCell t = new TabCell(
+                w.AlignField.Text,
+                w.PrecisionField.Text,
                 w.ParametrField.Text);
 
             objectXML.cells[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
@@ -733,20 +715,19 @@ namespace XMLGenerator
             saveFileDialog1.ShowDialog();
 
             MainWindow.PathXML = saveFileDialog1.FileName;
-            WriteXml(objectXML, saveFileDialog1.FileName);
+            if (!WriteXml(objectXML, saveFileDialog1.FileName)) return;
         }
 
-        public static void WriteXml(ObjectXML objectXml, string filename)
+        public static bool WriteXml(ObjectXML objectXml, string filename)
         {
             XDocument doc = new XDocument();
             XElement Root = new XElement("DataSetTable");
-            
 
             doc.Add(Root);
 
             XElement Header = new XElement("TabColumns");
 
-            for(int col = 0; col < objectXml.header.Count; col++)
+            for (int col = 0; col < objectXml.header.Count; col++)
             {
                 Coords coords = new Coords(0, col);
                 Header.Add(new XElement("TabColumn",
@@ -760,17 +741,17 @@ namespace XMLGenerator
 
             doc.Root.Add(Header);
 
-            for(int row = 1; row < objectXml.rowNum; row++) {
-
+            for (int row = 1; row < objectXml.rowNum; row++)
+            {
                 XElement tableRow;
 
                 if (objectXml.cells[new Coords(row, 0).GetHashCode()].Name != "  ")
                 {
-
-                    tableRow = new XElement("TabRow", 
-                        new XAttribute("Name",objectXml.cells[new Coords(row, 0).GetHashCode()].Name), 
-                        new XAttribute("Number",objectXml.cells[new Coords(row, 0).GetHashCode()].Number));
+                    tableRow = new XElement("TabRow",
+                        new XAttribute("Name", objectXml.cells[new Coords(row, 0).GetHashCode()].Name),
+                        new XAttribute("Number", objectXml.cells[new Coords(row, 0).GetHashCode()].Number));
                 }
+
                 else
                 {
                     tableRow = new XElement("TabRow");
@@ -787,14 +768,30 @@ namespace XMLGenerator
 
                 doc.Root.Add(tableRow);
             }
+
             filename = MainWindow.PathXML;
+            if (filename == null || filename == "") return false;
             doc.Save(filename);
+
+            return true;
         }
 
-        public static void DelRow(ObjectXML objectXML)
+        public static void DelRow(ObjectXML objectXML, Coords LastActive)
         {
-            if (objectXML.rowNum > 2)
+
+            if (LastActive.rowCoord != 0 && objectXML.rowNum > 2)
             {
+                if (LastActive.rowCoord < (objectXML.rowNum - 1))
+                {
+                    for (int row = LastActive.rowCoord; row < objectXML.rowNum - 2; row++)
+                    {
+                        for (int col = 0; col < objectXML.colNum - 1; col++)
+                        {
+                            Coords temp = new Coords(row, col);
+                            objectXML.cells[temp.GetHashCode()] = objectXML.cells[new Coords(row + 1, col).GetHashCode()];
+                        }
+                    }
+                }
                 for (int i = 0; i < objectXML.colNum; i++)
                 {
                     objectXML.cells.Remove(new Coords(objectXML.rowNum - 1, i).GetHashCode());
@@ -802,28 +799,43 @@ namespace XMLGenerator
 
                 objectXML.rowNum--;
 
+                if (MainWindow.LastActiveCoords.rowCoord > objectXML.rowNum - 1)
+                    MainWindow.LastActiveCoords.rowCoord = objectXML.rowNum - 1;
+
                 MainWindow.objectXML = objectXML;
             }
 
         }
 
-        public static void DelCol(ObjectXML objectXML)
+        public static void DelCol(ObjectXML objectXML, Coords LastActive)
         {
-            if (objectXML.colNum>1){
+            if (objectXML.colNum > 1)
+            {
+                for (int col = LastActive.colCoord; col < objectXML.colNum - 2; col++)
+                {
+                    objectXML.header[new Coords(0, col).GetHashCode()] = objectXML.header[new Coords(0, col + 1).GetHashCode()];
+                }
+
                 Coords temp = new Coords(0, objectXML.colNum - 1);
 
                 objectXML.header.Remove(temp.GetHashCode());
 
-                for (int i = 1; i < objectXML.rowNum; i++)
+                for (int row = 1; row < objectXML.rowNum; row++)
                 {
-                    objectXML.cells.Remove(new Coords(i, objectXML.colNum - 1).GetHashCode());
-                }
+                    for (int col = LastActive.colCoord; col < objectXML.colNum - 2; col++)
+                    {
+                        objectXML.cells[new Coords(row, col).GetHashCode()] = objectXML.cells[new Coords(row, col + 1).GetHashCode()];
+                    }
 
+                    objectXML.cells.Remove(new Coords(row, objectXML.colNum - 1).GetHashCode());
+                }
                 objectXML.colNum--;
+
+                if (MainWindow.LastActiveCoords.colCoord > objectXML.colNum - 1)
+                    MainWindow.LastActiveCoords.colCoord = objectXML.colNum - 1;
 
                 MainWindow.objectXML = objectXML;
             }
-
         }
 
         public static void FileErrorDialog()
@@ -834,7 +846,7 @@ namespace XMLGenerator
 
         public static void ShowAbout()
         {
-            MessageBox.Show("XML Generator version 0.0.1(Alpha)", "About", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("XML Generator version 0.0.3(Alpha). No rights reserved", "About", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

@@ -14,37 +14,39 @@ using System.Windows.Shapes;
 
 namespace XMLGenerator
 {
-    /// <summary>
-    /// Логика взаимодействия для EditHeaderCell.xaml
-    /// </summary>
     public partial class EditHeaderCell : Window
     {
-        
-        
+
+
         public EditHeaderCell()
         {
-            
+
             InitializeComponent();
         }
-        
-        internal  void SaveButton_Click(object sender, RoutedEventArgs e)
+
+        internal void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-            Logic.SaveHeader(this,MainWindow.GetObjectXML());
+                Logic.SaveHeader(this, MainWindow.GetObjectXML());
             }
             catch (FormatException)
             {
                 Logic.ErrorDialog();
                 return;
             }
-            
-            this.Close();
+
+            Close();
         }
+        public delegate void refresh();
+        public static refresh save;
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            MainWindow.LastActiveCoords.colCoord = int.Parse(col.Text);
+            MainWindow.LastActiveCoords.rowCoord = int.Parse(row.Text);
+            save();
+            Close();
         }
 
         private void CancChButton_Click(object sender, RoutedEventArgs e)

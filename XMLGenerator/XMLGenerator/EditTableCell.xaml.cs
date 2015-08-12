@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace XMLGenerator
 {
-    /// <summary>
-    /// Логика взаимодействия для EditTableCell.xaml
-    /// </summary>
     public partial class EditTableCell : Window
     {
         public EditTableCell()
@@ -24,16 +21,22 @@ namespace XMLGenerator
             InitializeComponent();
         }
 
+        public delegate void refresh();
+        public static refresh save;
+
         public void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
             Logic.SaveCell(this, MainWindow.GetObjectXML());
-            this.Close();
+            Close();
         }
 
-        public  void CancelButton_Click(object sender, RoutedEventArgs e)
+        public void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            MainWindow.LastActiveCoords.colCoord = int.Parse(col.Text);
+            MainWindow.LastActiveCoords.rowCoord = int.Parse(row.Text);
+            save();
+            Close();
         }
 
         private void RestoreButton_Click(object sender, RoutedEventArgs e)

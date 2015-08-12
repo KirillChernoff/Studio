@@ -22,12 +22,38 @@ namespace XMLGenerator
         public Settings()
         {
             InitializeComponent();
+            maxCol.Text = MainWindow.MaxCol.ToString();
+            maxRow.Text = MainWindow.MaxRow.ToString();
         }
 
         private void OkBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.MaxCol = int.Parse(maxCol.Text);
-            MainWindow.MaxRow = int.Parse(maxRow.Text);
+            if (maxCol.Text != null)
+            {
+                try
+                {
+                    MainWindow.MaxCol = uint.Parse(maxCol.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Max number of columns should be natural number", "Ошибка при вводе значения",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
+            if (maxRow.Text != null)
+            {
+                try
+                {
+                    MainWindow.MaxRow = uint.Parse(maxRow.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Max number of rows should be natural number", "Ошибка при вводе значения",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
             Close();
         }
 

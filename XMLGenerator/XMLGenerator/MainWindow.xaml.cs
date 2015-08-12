@@ -24,25 +24,35 @@ namespace XMLGenerator
 
         public MainWindow()
         {
-            Logic.getRes += this.findStyles;
-            Logic.save += this.Refresh;
+
+            Logic.getRes += findStyles;
+            Logic.save += Refresh;
+            EditHeaderCell.save += Refresh;
+            EditTableCell.save += Refresh;
             InitializeComponent();
         }
+
+        internal static Logic.Coords LastActiveCoords = new Logic.Coords();
+
         protected override void OnClosing(CancelEventArgs e)
         {
-            if (!Logic.CompareXml(objectXML, ForCompareXML)) e.Cancel=true;
+            if (!Logic.CompareXml(objectXML, ForCompareXML)) e.Cancel = true;
             base.OnClosing(e);
         }
-        
+
         private Logic.ObjectXML ForCompareXML = new Logic.ObjectXML();
+
         internal static Logic.ObjectXML objectXML = new Logic.ObjectXML();
+
         public static string PathXML;
+
         public ListBox getListBox()
         {
             return ListBox1;
         }
-        public static  int MaxRow = 20;
-        public static int MaxCol = 20;
+
+        public static uint MaxRow = 20;
+        public static uint MaxCol = 20;
 
 
         internal static Logic.ObjectXML GetObjectXML()
@@ -73,10 +83,12 @@ namespace XMLGenerator
             DelRowBtn.Visibility = Visibility.Visible;
             SaveAsBtn.Visibility = Visibility.Visible;
             SaveBtn.Visibility = Visibility.Visible;
-            this.Title = "Untitled";
+            SaveAsMenuBtn.IsEnabled = true;
+            SaveMenuBtn.IsEnabled = true;
+            Title = "Untitled";
             PathXML = null;
 
-                
+
         }
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
@@ -106,7 +118,9 @@ namespace XMLGenerator
                 DelRowBtn.Visibility = Visibility.Visible;
                 SaveAsBtn.Visibility = Visibility.Visible;
                 SaveBtn.Visibility = Visibility.Visible;
-                this.Title = PathXML;
+                SaveAsMenuBtn.IsEnabled = true;
+                SaveMenuBtn.IsEnabled = true;
+                Title = PathXML;
             }
             catch (ArgumentException)
             {
@@ -134,42 +148,40 @@ namespace XMLGenerator
 
         private void SaveClick(object sender, RoutedEventArgs e)
         {
-            try
+
+            MessageBoxResult saveConfirm = MessageBox.Show("Save Changes?", "Save Changes?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (saveConfirm)
             {
-                Logic.WriteXml(objectXML, PathXML);
-                ForCompareXML = objectXML;
-            }
-            catch (Exception ex)
-            {
-                if (ex is ArgumentNullException || ex is ArgumentException)
-                {
-                    try
+                case MessageBoxResult.Yes:
                     {
-                        Logic.SaveAs(objectXML);
-                        ForCompareXML = objectXML;
-                        this.Title = PathXML;
+                        if (MainWindow.PathXML != null)
+                        {
+                            if (!Logic.WriteXml(objectXML, MainWindow.PathXML)) ;
+                            ForCompareXML = objectXML;
+                            return;
+                        }
+                        else
+                        {
+                            Logic.SaveAs(objectXML);
+                            if (PathXML != null)
+                            {
+                                Title = PathXML;
+                                ForCompareXML = objectXML;
+                            }
+                            return;
+                        }
                     }
-                    catch (ArgumentException)
-                    {
-                        return;
-                    }
-                }
+                case MessageBoxResult.No:
+                    return;
             }
+
         }
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Logic.SaveAs(objectXML);
-                if (PathXML != null) 
-                    this.Title = PathXML;
-                ForCompareXML = objectXML;
-            }
-            catch (ArgumentException)
-            {
-                return;
-            }
+            Logic.SaveAs(objectXML);
+            Title = PathXML;
+            ForCompareXML = objectXML;
         }
 
         private void AboutProgram_Click(object sender, RoutedEventArgs e)
@@ -181,19 +193,19 @@ namespace XMLGenerator
         {
 
             if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
-            this.Close();
+            Close();
         }
 
         private void DelRow_Click(object sender, RoutedEventArgs e)
         {
-            Logic.DelRow(objectXML);
+            Logic.DelRow(objectXML, LastActiveCoords);
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
         }
 
         private void DelCol_Click(object sender, RoutedEventArgs e)
         {
-            Logic.DelCol(objectXML);
+            Logic.DelCol(objectXML, LastActiveCoords);
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
         }
