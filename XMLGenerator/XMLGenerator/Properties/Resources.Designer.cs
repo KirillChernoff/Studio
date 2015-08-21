@@ -59,5 +59,15 @@ namespace XMLGenerator.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] MahApps_Metro {
+            get {
+                object obj = ResourceManager.GetObject("MahApps_Metro", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

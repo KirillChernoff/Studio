@@ -12,10 +12,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace XMLGenerator
 {
-    public partial class EditTableCell : Window
+    public partial class EditTableCell : MetroWindow
     {
         public string[] MyAlign = new string[] { "Top", "Bottom", "Left", "Right", "Center" };
         public string[] MyPres = new string[] { "N", "H", "1", "2", "3", "4", "5", "6", "7", "8", "9", };

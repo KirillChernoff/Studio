@@ -1,14 +1,25 @@
-﻿<Window x:Class="XMLGenerator.MainWindow"
+﻿<Controls:MetroWindow x:Class="XMLGenerator.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
-        Title="XML Generator" Height="450" Width="800" Name="mainwindow" WindowStartupLocation="CenterScreen" Icon="XMLGenerator.ico">
-    <Window.Resources>
+        Title="XML Generator" Height="450" Width="800" Name="mainwindow" WindowStartupLocation="CenterScreen" Icon="XMLGenerator.ico" Background="Purple" 
+                      BorderBrush="Purple" >
 
-        <Style x:Key="FocusVisual">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Purple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
                     <ControlTemplate>
@@ -90,31 +101,32 @@
             </Setter>
         </Style>
 
+        </ResourceDictionary>
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="Purple">
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition />
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Menu  >
-            <MenuItem Name="Menu" Header="File">
-                <MenuItem Name="CreateNewBtn" Header="Create.." Click="ChooseNewButtonClick"/>
-                <MenuItem Name="OpenExtBtn" Header="Open.." Click="ChooseEditButtonClick"/>
+        <Menu  Background="Purple" >
+            <MenuItem Name="Menu" Header="File" Background="Purple">
+                <MenuItem Name="CreateNewBtn" Header="Create.." Click="ChooseNewButtonClick"  Background="Purple"/>
+                <MenuItem Name="OpenExtBtn" Header="Open.." Click="ChooseEditButtonClick" Background="Purple"/>
                 <Separator/>
-                <MenuItem Name="SaveMenuBtn" Header="Save" Click="SaveClick" IsEnabled="False"/>
-                <MenuItem Name="SaveAsMenuBtn" Header="Save As.." Click="SaveAs_Click" IsEnabled="False"/>
+                <MenuItem Name="SaveMenuBtn" Header="Save" Click="SaveClick" IsEnabled="False" Background="Purple"/>
+                <MenuItem Name="SaveAsMenuBtn" Header="Save As.." Click="SaveAs_Click" IsEnabled="False" Background="Purple"/>
                 <Separator/>
-                <MenuItem Name="Exit" Header="Exit" Click="ExitClick"/>
+                <MenuItem Name="Exit" Header="Exit" Click="ExitClick" Background="Purple"/>
             </MenuItem>
-            <MenuItem Name="Settings" Header="Settings" Click="Settings_Click"/>
-            <MenuItem Name="About" Header="About">
-                <MenuItem Name="AboutProgram" Header="About" Click="AboutProgram_Click"/>
+            <MenuItem Name="Settings" Header="Settings" Click="Settings_Click" Background="Purple"/>
+            <MenuItem Name="About" Header="About" Background="Purple">
+                <MenuItem Name="AboutProgram" Header="About" Click="AboutProgram_Click" Background="Purple"/>
             </MenuItem>
         </Menu>
-        <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="White"/>
+        <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="Purple" Background="Purple"/>
         <Grid Grid.Row="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -124,18 +136,18 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="AddRowBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="Add Row" Click="AddRowClick" Visibility="Hidden"/>
-            <Button x:Name="AddColBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Add Column" Click="AddColClick" Visibility="Hidden" />
-            <Button x:Name="DelRowBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="2" Content="Detele Row" Click="DelRow_Click" Visibility="Hidden"/>
-            <Button x:Name="DelColBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="3" Content="Delete Column" Click="DelCol_Click" Visibility="Hidden"/>
-            <Button x:Name="SaveBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="4" Content="Save" Click="SaveClick" Visibility="Hidden"/>
-            <Button x:Name="SaveAsBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="5" Content="Save as.." Click="SaveAs_Click" Visibility="Hidden"/>
+            <Button x:Name="AddRowBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="Add Row" Click="AddRowClick" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}" Background="Purple"/>
+            <Button x:Name="AddColBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Add Column" Click="AddColClick" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}" Background="Purple"/>
+            <Button x:Name="DelRowBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="2" Content="Detele Row" Click="DelRow_Click" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}" Background="Purple"/>
+            <Button x:Name="DelColBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="3" Content="Delete Column" Click="DelCol_Click" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}" Background="Purple"/>
+            <Button x:Name="SaveBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="4" Content="Save" Click="SaveClick" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}" Background="Purple"/>
+            <Button x:Name="SaveAsBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="5" Content="Save as.." Click="SaveAs_Click" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}" Background="Purple"/>
         </Grid>
 
     </Grid>
 
 
-</Window>
+</Controls:MetroWindow>
 
 
     

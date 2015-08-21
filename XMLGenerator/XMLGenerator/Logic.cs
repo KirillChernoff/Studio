@@ -556,10 +556,10 @@ namespace XMLGenerator
         public static void OpenEditHeaderCellWindow(EditHeaderCell w, HeaderCell cell, Coords coord)
         {
             w.HeaderField.Text = cell.headerCellHeader;
-            w.HeightField.Text = cell.headerCellHeight.ToString();
-            w.WidthField.Text = cell.headerCellWidth.ToString();
+            w.HeightField.Value = cell.headerCellHeight;
+            w.WidthField.Value = cell.headerCellWidth;
             w.NameField.Text = cell.headerCellName;
-            w.FontsizeField.Text = cell.headerCellFontSize.ToString();
+            w.FontsizeField.Value = cell.headerCellFontSize;
             w.AlignBox.SelectedItem = cell.headerCellAlign;
 
             w.col.Text = coord.colCoord.ToString();
@@ -710,9 +710,9 @@ namespace XMLGenerator
         public static void SaveHeader(EditHeaderCell w, ObjectXML objectXML)
         {
             HeaderCell t = new HeaderCell(
-                Math.Abs(int.Parse(w.HeightField.Text)),
-                Math.Abs(int.Parse(w.WidthField.Text)),
-                Math.Abs(int.Parse(w.FontsizeField.Text)),
+                (int)w.HeightField.Value,
+                (int)w.WidthField.Value,
+                (int)w.FontsizeField.Value,
                 w.NameField.Text,
                 w.AlignBox.SelectedItem.ToString() ,
                 w.HeaderField.Text);

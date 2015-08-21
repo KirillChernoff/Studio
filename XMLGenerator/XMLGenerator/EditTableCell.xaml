@@ -1,11 +1,23 @@
-﻿<Window x:Class="XMLGenerator.EditTableCell"
+﻿<Controls:MetroWindow x:Class="XMLGenerator.EditTableCell"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
-        Title="EditTableCell" Height="250" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+        Title="EditTableCell" Height="250" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="MediumPurple">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Purple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -42,14 +54,14 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="SaveButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="Save" Click="SaveButton_Click" />
-            <Button x:Name="CancelButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="3" Content="Cancel" Click="CancelButton_Click" />
-            <Button x:Name="CancChButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Cancel Changes" Click="CancChButton_Click"/>
-            <Button x:Name="RestoreButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="2" Content="Restore Default" Click="RestoreButton_Click"/>
+            <Button x:Name="SaveButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="Save" Click="SaveButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple"/>
+            <Button x:Name="CancelButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="3" Content="Cancel" Click="CancelButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple" />
+            <Button x:Name="CancChButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Cancel Changes" Click="CancChButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple"/>
+            <Button x:Name="RestoreButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="2" Content="Restore Default" Click="RestoreButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple"/>
         </Grid>
 
         <TextBlock x:Name="row" Visibility="Hidden"/>
         <TextBlock x:Name="col" Visibility="Hidden"/>
 
     </Grid>
-</Window>
+</Controls:MetroWindow>

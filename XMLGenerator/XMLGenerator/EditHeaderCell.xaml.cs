@@ -11,22 +11,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using MahApps.Metro.Controls;
 using System.Windows.Shapes;
 
 namespace XMLGenerator
 {
-    public partial class EditHeaderCell : Window
+    public partial class EditHeaderCell : MetroWindow
     {
-        protected override void OnClosed(EventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
             MainWindow.LastActiveCoords.colCoord = int.Parse(col.Text);
             MainWindow.LastActiveCoords.rowCoord = int.Parse(row.Text);
             save();
             base.OnClosed(e);
         }
-
+        
 
         public string[] MyAlign = new string[] { "Top", "Bottom", "Left", "Right", "Center" };
+
         public EditHeaderCell()
         {
             
@@ -66,20 +68,20 @@ namespace XMLGenerator
         private void CancChButton_Click(object sender, RoutedEventArgs e)
         {
             HeaderField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellHeader;
-            HeightField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellHeight.ToString();
-            WidthField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellWidth.ToString();
+            HeightField.Value= MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellHeight;
+            WidthField.Value = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellWidth;
             NameField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellName;
             AlignBox.SelectedItem= MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellAlign;
-            FontsizeField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellFontSize.ToString();
+            FontsizeField.Value = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellFontSize;
         }
 
         private void RestoreButton_Click(object sender, RoutedEventArgs e)
         {
             HeaderField.Text = "";
-            HeightField.Text = "25";
-            WidthField.Text = "80";
+            HeightField.Value = 25;
+            WidthField.Value = 80;
             NameField.Text = "";
-            FontsizeField.Text = "14";
+            FontsizeField.Value = 14;
             AlignBox.SelectedItem = "Center";
         }
 
