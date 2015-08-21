@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Xml;
 using MahApps.Metro.Controls;
 using System.ComponentModel;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace XMLGenerator
 {
@@ -189,9 +190,9 @@ namespace XMLGenerator
             ForCompareXML = objectXML;
         }
 
-        private void AboutProgram_Click(object sender, RoutedEventArgs e)
+        private  void AboutProgram_Click(object sender, RoutedEventArgs e)
         {
-            Logic.ShowAbout();
+            Logic.ShowAbout(this);
         }
 
         public void ExitClick(object sender, System.EventArgs e)

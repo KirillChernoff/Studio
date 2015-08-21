@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace XMLGenerator
 {
@@ -877,9 +878,9 @@ namespace XMLGenerator
             MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        public static void ShowAbout()
+        public static void ShowAbout(MainWindow w)
         {
-            MessageBox.Show("XML Generator version 0.0.3(Alpha). No rights reserved", "About", MessageBoxButton.OK, MessageBoxImage.Information);
+            w.ShowMessageAsync("About","XML Generator version 0.0.4(Alpha). No rights reserved");
         }
     }
 }
