@@ -87,6 +87,8 @@ namespace XMLGenerator
             SaveMenuBtn.IsEnabled = true;
             Title = "Untitled";
             PathXML = null;
+            LastActiveCoords.rowCoord = 0;
+            LastActiveCoords.colCoord = 0;
 
 
         }
@@ -121,6 +123,8 @@ namespace XMLGenerator
                 SaveAsMenuBtn.IsEnabled = true;
                 SaveMenuBtn.IsEnabled = true;
                 Title = PathXML;
+                LastActiveCoords.rowCoord = 0;
+                LastActiveCoords.colCoord = 0;
             }
             catch (ArgumentException)
             {
@@ -134,14 +138,14 @@ namespace XMLGenerator
 
         private void AddRowClick(object sender, RoutedEventArgs e)
         {
-            Logic.AddRow(objectXML);
+            Logic.AddRow(objectXML, LastActiveCoords);
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
         }
 
         private void AddColClick(object sender, RoutedEventArgs e)
         {
-            Logic.AddCol(objectXML);
+            Logic.AddCol(objectXML,LastActiveCoords);
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
         }

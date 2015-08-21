@@ -158,7 +158,7 @@ namespace XMLGenerator
                     _headerCellHeader = value;
                 }
             }
-
+       
             public override bool Equals(object obj)
             {
                 if (obj == null) return false;
@@ -492,7 +492,7 @@ namespace XMLGenerator
                 button.Background = Brushes.LightGray;
                 button.BorderBrush = Brushes.Black;
 
-                if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.Blue;
+                if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.MediumPurple;
 
                 panel1.Children.Add(button);
             }
@@ -520,7 +520,7 @@ namespace XMLGenerator
                     button.Background = Brushes.LightGray;
                     button.BorderBrush = Brushes.Black;
 
-                    if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.Blue;
+                    if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.MediumPurple;
 
                     panel.Children.Add(button);
                 }
@@ -544,8 +544,8 @@ namespace XMLGenerator
         public static void OpenEditTableCellWindow(EditTableCell w, TabCell cell, Coords coord)
         {
             w.ParametrField.Text = cell.tabCellParametr;
-            w.AlignField.Text = cell.tabCellAlign;
-            w.PrecisionField.Text = cell.tabCellPrecision;
+            w.AlignField.SelectedItem = cell.tabCellAlign;
+            w.PrecisionField.SelectedItem = cell.tabCellPrecision;
 
             w.col.Text = coord.colCoord.ToString();
             w.row.Text = coord.rowCoord.ToString();
@@ -556,11 +556,11 @@ namespace XMLGenerator
         public static void OpenEditHeaderCellWindow(EditHeaderCell w, HeaderCell cell, Coords coord)
         {
             w.HeaderField.Text = cell.headerCellHeader;
-            w.AlignField.Text = cell.headerCellAlign;
             w.HeightField.Text = cell.headerCellHeight.ToString();
             w.WidthField.Text = cell.headerCellWidth.ToString();
             w.NameField.Text = cell.headerCellName;
             w.FontsizeField.Text = cell.headerCellFontSize.ToString();
+            w.AlignBox.SelectedItem = cell.headerCellAlign;
 
             w.col.Text = coord.colCoord.ToString();
             w.row.Text = coord.rowCoord.ToString();
@@ -602,7 +602,7 @@ namespace XMLGenerator
             MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        public static void AddRow(ObjectXML objectXML)
+        public static void AddRow(ObjectXML objectXML, Coords LastActive)
         {
             if (objectXML.rowNum < MainWindow.MaxRow)
             {
@@ -610,16 +610,30 @@ namespace XMLGenerator
                 {
                     Coords t = new Coords(objectXML.rowNum, i);
                     objectXML.cells.Add(t.GetHashCode(), new TabCell());
-                    MainWindow.LastActiveCoords = t;
                 }
 
                 objectXML.rowNum++;
 
-                MainWindow.objectXML = objectXML;
+                for(int row=objectXML.rowNum-1;row> LastActive.rowCoord; row--)
+                {
+                    for(int col = 0; col < objectXML.colNum; col++)
+                    {
+                        if (row> 1)
+                        {
+                        objectXML.cells[new Coords(row, col).GetHashCode()] = objectXML.cells[new Coords(row-1, col).GetHashCode()];
+                        }
+                    }
+                }
+                for (int col = 0; col < objectXML.colNum; col++)
+                {
+                    objectXML.cells[new Coords(LastActive.rowCoord+1, col).GetHashCode()] =new TabCell();
+                }
+            
+            MainWindow.objectXML = objectXML;
             }
         }
 
-        public static void AddCol(ObjectXML objectXML)
+        public static void AddCol(ObjectXML objectXML, Coords LastActive)
         {
             if (objectXML.colNum < MainWindow.MaxCol)
             {
@@ -631,10 +645,27 @@ namespace XMLGenerator
                 {
                     temp = new Coords(i, objectXML.colNum);
                     objectXML.cells.Add(temp.GetHashCode(), new TabCell());
-                    MainWindow.LastActiveCoords = temp;
                 }
 
                 objectXML.colNum++;
+
+                for(int col = objectXML.colNum - 1; col > LastActive.colCoord; col--)
+                {
+                    objectXML.header[new Coords(0, col).GetHashCode()] = objectXML.header[new Coords(0, col-1).GetHashCode()];
+                }
+                objectXML.header[new Coords(0, LastActive.colCoord + 1).GetHashCode()] = new HeaderCell();
+
+                for(int row = 1; row< objectXML.rowNum; row++)
+                {
+                    for (int col = objectXML.colNum - 1; col > LastActive.colCoord; col--)
+                    {
+                        objectXML.cells[new Coords(row, col).GetHashCode()] = objectXML.cells[new Coords(row, col-1).GetHashCode()];
+                    }
+                }
+                for (int row = 0  ; row <objectXML.rowNum ; row++)//если поменять на -- то будет драть МНОГО памяти
+                {
+                    objectXML.cells[new Coords(row, LastActive.colCoord+1).GetHashCode()] = new TabCell();
+                }
 
                 MainWindow.objectXML = objectXML;
             }
@@ -683,7 +714,7 @@ namespace XMLGenerator
                 Math.Abs(int.Parse(w.WidthField.Text)),
                 Math.Abs(int.Parse(w.FontsizeField.Text)),
                 w.NameField.Text,
-                w.AlignField.Text,
+                w.AlignBox.SelectedItem.ToString() ,
                 w.HeaderField.Text);
 
             objectXML.header[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
@@ -696,8 +727,8 @@ namespace XMLGenerator
         public static void SaveCell(EditTableCell w, ObjectXML objectXML)
         {
             TabCell t = new TabCell(
-                w.AlignField.Text,
-                w.PrecisionField.Text,
+                w.AlignField.SelectedItem.ToString(),
+                w.PrecisionField.SelectedItem.ToString(),
                 w.ParametrField.Text);
 
             objectXML.cells[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
