@@ -6,7 +6,7 @@
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
-        Title="XML Generator" Height="450" Width="800" Name="mainwindow" WindowStartupLocation="CenterScreen" Icon="XMLGenerator.ico" Background="Purple" 
+        Title="XML Generator" Height="800" Width="1200" Name="mainwindow" WindowStartupLocation="CenterScreen" Icon="XMLGenerator.ico" Background="Purple" 
                       BorderBrush="Purple" >
 
     <Window.Resources>

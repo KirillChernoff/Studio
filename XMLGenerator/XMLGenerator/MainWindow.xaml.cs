@@ -17,6 +17,7 @@ using System.Xml;
 using MahApps.Metro.Controls;
 using System.ComponentModel;
 using MahApps.Metro.Controls.Dialogs;
+using System.Reflection;
 
 namespace XMLGenerator
 {
@@ -117,6 +118,8 @@ namespace XMLGenerator
 
             PathXML = myDialog.FileName;
 
+            if (PathXML == null|| PathXML=="") return;
+
             try
             {
                 LoadFile fileload = new LoadFile(Logic.ReadXml);
@@ -142,14 +145,11 @@ namespace XMLGenerator
                 LastActiveCoords.rowCoord = 0;
                 LastActiveCoords.colCoord = 0;
             }
-            catch (ArgumentException)
-            {
-
-            }
             catch (XmlException)
             {
                 Logic.FileErrorDialog(this);
             }
+            
 
         }
 
