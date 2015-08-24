@@ -28,8 +28,8 @@ namespace XMLGenerator
         }
 
         public delegate void refresh();
-        public static refresh save;
 
+        public static refresh save;
 
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -38,8 +38,6 @@ namespace XMLGenerator
             save();
             base.OnClosing(e);
         }
-
-
 
         public void SaveButton_Click(object sender, RoutedEventArgs e)
         {

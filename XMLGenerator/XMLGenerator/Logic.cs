@@ -159,7 +159,7 @@ namespace XMLGenerator
                     _headerCellHeader = value;
                 }
             }
-       
+
             public override bool Equals(object obj)
             {
                 if (obj == null) return false;
@@ -220,6 +220,7 @@ namespace XMLGenerator
                     _tabCellPrecision = value;
                 }
             }
+
             private string _tabCellParametr;
             public string tabCellParametr
             {
@@ -232,6 +233,7 @@ namespace XMLGenerator
                     _tabCellParametr = value;
                 }
             }
+
             private string _name;
             public string Name
             {
@@ -244,6 +246,7 @@ namespace XMLGenerator
                     _name = value;
                 }
             }
+
             private string _number;
             public string Number
             {
@@ -277,6 +280,7 @@ namespace XMLGenerator
                 _name = "  ";
                 _number = "  ";
             }
+
             public TabCell(string CellAlign, string CellPrecision, string CellParametr)
             {
                 _tabCellAlign = CellAlign;
@@ -286,11 +290,13 @@ namespace XMLGenerator
 
         }
 
-
-
         public static bool EqualCells(TabCell first, TabCell Second)
         {
-            return (first.Name == Second.Name && first.Number == Second.Number && first.tabCellAlign == Second.tabCellAlign && first.tabCellParametr == Second.tabCellParametr && first.tabCellPrecision == Second.tabCellPrecision);
+            return (first.Name == Second.Name && 
+                first.Number == Second.Number && 
+                first.tabCellAlign == Second.tabCellAlign && 
+                first.tabCellParametr == Second.tabCellParametr && 
+                first.tabCellPrecision == Second.tabCellPrecision);
         }
 
         internal class ObjectXML
@@ -307,6 +313,7 @@ namespace XMLGenerator
                     _rowNum = value;
                 }
             }
+
             int _colNum;
             public int colNum
             {
@@ -319,6 +326,7 @@ namespace XMLGenerator
                     _colNum = value;
                 }
             }
+
             private Dictionary<int, TabCell> _cells;
             public Dictionary<int, TabCell> cells
             {
@@ -331,6 +339,7 @@ namespace XMLGenerator
                     _cells = value;
                 }
             }
+
             private Dictionary<int, HeaderCell> _header;
             public Dictionary<int, HeaderCell> header
             {
@@ -364,6 +373,7 @@ namespace XMLGenerator
                 _header = new Dictionary<int, HeaderCell>();
                 _header.Add(new Coords(0, 0).GetHashCode(), new HeaderCell());
             }
+
             public ObjectXML(int rowNum, int colNum, Dictionary<int, HeaderCell> Header, Dictionary<int, TabCell> Cell)
             {
                 _colNum = colNum;
@@ -456,7 +466,6 @@ namespace XMLGenerator
 
                     col++;
                     temp = null;
-
 
                 }
                 col = 0;
@@ -615,22 +624,22 @@ namespace XMLGenerator
 
                 objectXML.rowNum++;
 
-                for(int row=objectXML.rowNum-1;row> LastActive.rowCoord; row--)
+                for (int row = objectXML.rowNum - 1; row > LastActive.rowCoord; row--)
                 {
-                    for(int col = 0; col < objectXML.colNum; col++)
+                    for (int col = 0; col < objectXML.colNum; col++)
                     {
-                        if (row> 1)
+                        if (row > 1)
                         {
-                        objectXML.cells[new Coords(row, col).GetHashCode()] = objectXML.cells[new Coords(row-1, col).GetHashCode()];
+                            objectXML.cells[new Coords(row, col).GetHashCode()] = objectXML.cells[new Coords(row - 1, col).GetHashCode()];
                         }
                     }
                 }
                 for (int col = 0; col < objectXML.colNum; col++)
                 {
-                    objectXML.cells[new Coords(LastActive.rowCoord+1, col).GetHashCode()] =new TabCell();
+                    objectXML.cells[new Coords(LastActive.rowCoord + 1, col).GetHashCode()] = new TabCell();
                 }
-            
-            MainWindow.objectXML = objectXML;
+
+                MainWindow.objectXML = objectXML;
             }
         }
 
@@ -650,22 +659,22 @@ namespace XMLGenerator
 
                 objectXML.colNum++;
 
-                for(int col = objectXML.colNum - 1; col > LastActive.colCoord; col--)
+                for (int col = objectXML.colNum - 1; col > LastActive.colCoord; col--)
                 {
-                    objectXML.header[new Coords(0, col).GetHashCode()] = objectXML.header[new Coords(0, col-1).GetHashCode()];
+                    objectXML.header[new Coords(0, col).GetHashCode()] = objectXML.header[new Coords(0, col - 1).GetHashCode()];
                 }
                 objectXML.header[new Coords(0, LastActive.colCoord + 1).GetHashCode()] = new HeaderCell();
 
-                for(int row = 1; row< objectXML.rowNum; row++)
+                for (int row = 1; row < objectXML.rowNum; row++)
                 {
                     for (int col = objectXML.colNum - 1; col > LastActive.colCoord; col--)
                     {
-                        objectXML.cells[new Coords(row, col).GetHashCode()] = objectXML.cells[new Coords(row, col-1).GetHashCode()];
+                        objectXML.cells[new Coords(row, col).GetHashCode()] = objectXML.cells[new Coords(row, col - 1).GetHashCode()];
                     }
                 }
-                for (int row = 0  ; row <objectXML.rowNum ; row++)//если поменять на -- то будет драть МНОГО памяти
+                for (int row = 0; row < objectXML.rowNum; row++)//если поменять на -- то будет драть МНОГО памяти
                 {
-                    objectXML.cells[new Coords(row, LastActive.colCoord+1).GetHashCode()] = new TabCell();
+                    objectXML.cells[new Coords(row, LastActive.colCoord + 1).GetHashCode()] = new TabCell();
                 }
 
                 MainWindow.objectXML = objectXML;
@@ -715,7 +724,7 @@ namespace XMLGenerator
                 (int)w.WidthField.Value,
                 (int)w.FontsizeField.Value,
                 w.NameField.Text,
-                w.AlignBox.SelectedItem.ToString() ,
+                w.AlignBox.SelectedItem.ToString(),
                 w.HeaderField.Text);
 
             objectXML.header[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
@@ -819,7 +828,7 @@ namespace XMLGenerator
                 {
                     for (int row = LastActive.rowCoord; row < objectXML.rowNum - 2; row++)
                     {
-                        for (int col = 0; col < objectXML.colNum ; col++)
+                        for (int col = 0; col < objectXML.colNum; col++)
                         {
                             Coords temp = new Coords(row, col);
                             objectXML.cells[temp.GetHashCode()] = objectXML.cells[new Coords(row + 1, col).GetHashCode()];
@@ -879,7 +888,7 @@ namespace XMLGenerator
 
         public static void ShowAbout(MainWindow w)
         {
-            w.ShowMessageAsync("About","XML Generator version 0.0.4(Alpha). No rights reserved");
+            w.ShowMessageAsync("About", "XML Generator version 0.0.4(Alpha). No rights reserved");
         }
     }
 }

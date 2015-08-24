@@ -25,39 +25,51 @@
         </Grid.RowDefinitions>
         <Grid>
             <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="37*"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="37*"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Text="Parametr :" Grid.Row="1" Grid.Column="1"  />
-        <TextBox x:Name="ParametrField" Grid.Column="2" Grid.Row="1" />
-        <TextBlock Text="Precision :" Grid.Row="3" Grid.Column="1" />
-        <ComboBox x:Name="PrecisionField" Grid.Column="2" Grid.Row="3" />
-        <TextBlock Text="Align :" Grid.Row="5" Grid.Column="1" />
-        <ComboBox x:Name="AlignField" Grid.Column="2" Grid.Row="5" />
-    </Grid>
-    <Grid Grid.Row="1">
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="37*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="37*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="Parametr :" Grid.Row="1" Grid.Column="1"  />
+            <TextBox x:Name="ParametrField" Grid.Column="2" Grid.Row="1" />
+            
+            <TextBlock Text="Precision :" Grid.Row="3" Grid.Column="1" />
+            <ComboBox x:Name="PrecisionField" Grid.Column="2" Grid.Row="3" />
+            
+            <TextBlock Text="Align :" Grid.Row="5" Grid.Column="1" />
+            <ComboBox x:Name="AlignField" Grid.Column="2" Grid.Row="5" />
+            
+        </Grid>
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="SaveButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="Save" Click="SaveButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple"/>
-            <Button x:Name="CancelButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="3" Content="Cancel" Click="CancelButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple" />
-            <Button x:Name="CancChButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Cancel Changes" Click="CancChButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple"/>
-            <Button x:Name="RestoreButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="2" Content="Restore Default" Click="RestoreButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple"/>
+            <Button x:Name="SaveButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="Save" 
+                    Click="SaveButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple"/>
+            
+            <Button x:Name="CancelButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="3" Content="Cancel" 
+                    Click="CancelButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple" />
+            
+            <Button x:Name="CancChButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Cancel Changes" 
+                    Click="CancChButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple"/>
+            
+            <Button x:Name="RestoreButton" Height="{DynamicResource xgBtnHeight}" Grid.Column="2" Content="Restore Default" 
+                    Click="RestoreButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="MediumPurple"/>
+            
         </Grid>
 
         <TextBlock x:Name="row" Visibility="Hidden"/>

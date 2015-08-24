@@ -27,11 +27,13 @@ namespace XMLGenerator
         public MainWindow()
         {
 
+            InitializeComponent();
+
             Logic.getRes += findStyles;
             Logic.save += Refresh;
+
             EditHeaderCell.save += Refresh;
             EditTableCell.save += Refresh;
-            InitializeComponent();
         }
 
         internal static Logic.Coords LastActiveCoords = new Logic.Coords();
@@ -56,7 +58,6 @@ namespace XMLGenerator
         public static uint MaxRow = 20;
         public static uint MaxCol = 20;
 
-
         internal static Logic.ObjectXML GetObjectXML()
         {
             return objectXML;
@@ -74,24 +75,29 @@ namespace XMLGenerator
 
         public void ChooseNewButtonClick(object sender, System.EventArgs e)
         {
-            if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
+            if (!Logic.CompareXml(objectXML, ForCompareXML))
+                return;
+
             ForCompareXML = new Logic.ObjectXML();
             objectXML = new Logic.ObjectXML();
+
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
+
             AddColBtn.Visibility = Visibility.Visible;
             AddRowBtn.Visibility = Visibility.Visible;
             DelColBtn.Visibility = Visibility.Visible;
             DelRowBtn.Visibility = Visibility.Visible;
             SaveAsBtn.Visibility = Visibility.Visible;
             SaveBtn.Visibility = Visibility.Visible;
+
             SaveAsMenuBtn.IsEnabled = true;
             SaveMenuBtn.IsEnabled = true;
+
             Title = "Untitled";
             PathXML = null;
             LastActiveCoords.rowCoord = 0;
             LastActiveCoords.colCoord = 0;
-
 
         }
 
@@ -99,7 +105,8 @@ namespace XMLGenerator
 
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-            if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
+            if (!Logic.CompareXml(objectXML, ForCompareXML))
+                return;
 
             OpenFileDialog myDialog = new OpenFileDialog();
 
@@ -107,15 +114,17 @@ namespace XMLGenerator
             myDialog.CheckFileExists = true;
             myDialog.Multiselect = false;
             myDialog.ShowDialog();
-            PathXML = myDialog.FileName;
 
+            PathXML = myDialog.FileName;
 
             try
             {
                 LoadFile fileload = new LoadFile(Logic.ReadXml);
                 IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
-                objectXML =fileload.EndInvoke(result);
+                objectXML = fileload.EndInvoke(result);
+
                 ForCompareXML = objectXML;
+
                 ListBox1.Items.Clear();
                 Logic.DisplayXML(ListBox1, objectXML);
 
@@ -125,8 +134,10 @@ namespace XMLGenerator
                 DelRowBtn.Visibility = Visibility.Visible;
                 SaveAsBtn.Visibility = Visibility.Visible;
                 SaveBtn.Visibility = Visibility.Visible;
+
                 SaveAsMenuBtn.IsEnabled = true;
                 SaveMenuBtn.IsEnabled = true;
+
                 Title = PathXML;
                 LastActiveCoords.rowCoord = 0;
                 LastActiveCoords.colCoord = 0;
@@ -139,7 +150,7 @@ namespace XMLGenerator
             {
                 Logic.FileErrorDialog(this);
             }
-            
+
         }
 
         private void AddRowClick(object sender, RoutedEventArgs e)
@@ -151,7 +162,7 @@ namespace XMLGenerator
 
         private void AddColClick(object sender, RoutedEventArgs e)
         {
-            Logic.AddCol(objectXML,LastActiveCoords);
+            Logic.AddCol(objectXML, LastActiveCoords);
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
         }
@@ -194,14 +205,13 @@ namespace XMLGenerator
             ForCompareXML = objectXML;
         }
 
-        private  void AboutProgram_Click(object sender, RoutedEventArgs e)
+        private void AboutProgram_Click(object sender, RoutedEventArgs e)
         {
             Logic.ShowAbout(this);
         }
 
         public void ExitClick(object sender, System.EventArgs e)
         {
-
             if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
             Close();
         }

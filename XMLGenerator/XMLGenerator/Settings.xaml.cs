@@ -15,25 +15,22 @@ using System.Windows.Shapes;
 
 namespace XMLGenerator
 {
-    /// <summary>
-    /// Логика взаимодействия для Settings.xaml
-    /// </summary>
     public partial class Settings : MetroWindow
     {
         public Settings()
         {
             InitializeComponent();
+
             maxCol.Value = MainWindow.MaxCol;
             maxRow.Value = MainWindow.MaxRow;
         }
 
         private void OkBtn_Click(object sender, RoutedEventArgs e)
         {
-            
-                    MainWindow.MaxCol = (uint)maxCol.Value;
-                
-                    MainWindow.MaxRow = (uint)maxRow.Value;
-               
+
+            MainWindow.MaxCol = (uint)maxCol.Value;
+            MainWindow.MaxRow = (uint)maxRow.Value;
+
             Close();
         }
 

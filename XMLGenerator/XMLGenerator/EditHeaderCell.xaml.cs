@@ -25,35 +25,26 @@ namespace XMLGenerator
             save();
             base.OnClosed(e);
         }
-        
-
         public string[] MyAlign = new string[] { "Top", "Bottom", "Left", "Right", "Center" };
 
         public EditHeaderCell()
         {
-            
-
             InitializeComponent();
+
             AlignBox.ItemsSource = MyAlign;
         }
 
         internal void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                MainWindow.LastActiveCoords.colCoord = int.Parse(col.Text);
-                MainWindow.LastActiveCoords.rowCoord = int.Parse(row.Text);
-                Logic.SaveHeader(this, MainWindow.GetObjectXML());
-            }
-            catch (FormatException)
-            {
-                Logic.ErrorDialog();
-                return;
-            }
+            MainWindow.LastActiveCoords.colCoord = int.Parse(col.Text);
+            MainWindow.LastActiveCoords.rowCoord = int.Parse(row.Text);
+            Logic.SaveHeader(this, MainWindow.GetObjectXML());
 
             Close();
         }
+
         public delegate void refresh();
+
         public static refresh save;
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -68,10 +59,10 @@ namespace XMLGenerator
         private void CancChButton_Click(object sender, RoutedEventArgs e)
         {
             HeaderField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellHeader;
-            HeightField.Value= MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellHeight;
+            HeightField.Value = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellHeight;
             WidthField.Value = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellWidth;
             NameField.Text = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellName;
-            AlignBox.SelectedItem= MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellAlign;
+            AlignBox.SelectedItem = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellAlign;
             FontsizeField.Value = MainWindow.objectXML.header[new Logic.Coords(int.Parse(row.Text), int.Parse(col.Text)).GetHashCode()].headerCellFontSize;
         }
 
@@ -84,6 +75,5 @@ namespace XMLGenerator
             FontsizeField.Value = 14;
             AlignBox.SelectedItem = "Center";
         }
-
     }
 }
