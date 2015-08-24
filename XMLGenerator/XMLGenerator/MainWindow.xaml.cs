@@ -95,9 +95,10 @@ namespace XMLGenerator
 
         }
 
+        private delegate Logic.ObjectXML LoadFile(string PathXML);
+
         public void ChooseEditButtonClick(object sender, System.EventArgs e)
         {
-
             if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
 
             OpenFileDialog myDialog = new OpenFileDialog();
@@ -111,8 +112,10 @@ namespace XMLGenerator
 
             try
             {
-                objectXML = Logic.ReadXml(PathXML);
-                ForCompareXML = Logic.ReadXml(PathXML);
+                LoadFile fileload = new LoadFile(Logic.ReadXml);
+                IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
+                objectXML =fileload.EndInvoke(result);
+                ForCompareXML = objectXML;
                 ListBox1.Items.Clear();
                 Logic.DisplayXML(ListBox1, objectXML);
 
@@ -136,6 +139,7 @@ namespace XMLGenerator
             {
                 Logic.FileErrorDialog(this);
             }
+            
         }
 
         private void AddRowClick(object sender, RoutedEventArgs e)
