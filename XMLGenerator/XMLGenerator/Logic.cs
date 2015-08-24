@@ -819,7 +819,7 @@ namespace XMLGenerator
                 {
                     for (int row = LastActive.rowCoord; row < objectXML.rowNum - 2; row++)
                     {
-                        for (int col = 0; col < objectXML.colNum - 1; col++)
+                        for (int col = 0; col < objectXML.colNum ; col++)
                         {
                             Coords temp = new Coords(row, col);
                             objectXML.cells[temp.GetHashCode()] = objectXML.cells[new Coords(row + 1, col).GetHashCode()];
@@ -872,10 +872,9 @@ namespace XMLGenerator
             }
         }
 
-        public static void FileErrorDialog()
+        public static void FileErrorDialog(MainWindow w)
         {
-            MessageBox.Show("Неверный или поврежденный файл", "Ошибка чтения файла",
-            MessageBoxButton.OK, MessageBoxImage.Error);
+            w.ShowMessageAsync("Неверный или поврежденный файл", "Ошибка чтения файла");
         }
 
         public static void ShowAbout(MainWindow w)

@@ -134,7 +134,7 @@ namespace XMLGenerator
             }
             catch (XmlException)
             {
-                Logic.FileErrorDialog();
+                Logic.FileErrorDialog(this);
             }
         }
 
