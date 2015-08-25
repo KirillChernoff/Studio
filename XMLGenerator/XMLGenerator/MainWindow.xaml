@@ -141,17 +141,15 @@
             
             <StackPanel x:Name="EditHeader" Grid.Column="1" Grid.Row="1" Visibility="Collapsed" Width="250">
 
-                <StackPanel>
+                <StackPanel Height="70">
                     <Grid >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
-
-                        <Button x:Name="SaveButton" Grid.Column="0" Height="{DynamicResource xgBtnHeight}" Content="Apply" 
-                    Click="HeaderSaveButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="Purple"/>
 
                         <Button x:Name="CancelButton" Grid.Column="3" Height="{DynamicResource xgBtnHeight}" Content="Cancel" 
                     Click="HeaderCancelButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="Purple" />
@@ -160,44 +158,48 @@
                     </Grid>
                 </StackPanel>
 
-                <ListBox Background="Purple">
+                <ListBox Background="Purple" Height="{DynamicResource xgBtnHeight}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Header :" Grid.Column="0" Background="Purple"/>
                         <TextBox x:Name="HeaderField" Grid.Column="1" Background="Purple" BorderBrush="Black" />
                     </Grid>
                 </ListBox>
 
-                <ListBox Background="Purple">
+                <ListBox Background="Purple" Height="{DynamicResource xgBtnHeight}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Height :" Grid.Column="0" Background="Purple"/>
                         <Controls:NumericUpDown Minimum="1" Maximum="200" Interval="10" x:Name="HeightField" Grid.Column="1" Background="Purple" BorderBrush="Black"/>
                     </Grid>
                 </ListBox>
 
-                <ListBox Background="Purple">
+                <ListBox Background="Purple" Height="{DynamicResource xgBtnHeight}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Width :"  Grid.Column="0" Background="Purple"/>
                         <Controls:NumericUpDown Minimum="1" Maximum="200" Interval="10" x:Name="WidthField" Grid.Column="1" Background="Purple" BorderBrush="Black"/>
                     </Grid>
                 </ListBox>
 
-                <ListBox Background="Purple">
+                <ListBox Background="Purple" Height="{DynamicResource xgBtnHeight}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Name :" Grid.Column="0" Background="Purple"/>
                         <TextBox x:Name="HeaderNameField" Grid.Column="1" Background="Purple" BorderBrush="Black"/>
@@ -205,11 +207,12 @@
                     </Grid>
                 </ListBox>
 
-                <ListBox Background="Purple">
+                <ListBox Background="Purple" Height="{DynamicResource xgBtnHeight}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="FontSize :" Grid.Column="0" Background="Purple"/>
                         <Controls:NumericUpDown Minimum="1" Maximum="40" Interval="1" x:Name="FontsizeField" Grid.Column="1" Background="Purple" BorderBrush="Black"/>
@@ -217,14 +220,15 @@
                     </Grid>
                 </ListBox>
 
-                <ListBox Background="Purple">
+                <ListBox Background="Purple" Height="{DynamicResource xgBtnHeight}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Align :" Grid.Column="0" Background="Purple" />
-                        <ComboBox x:Name="HeaderAlignBox" Grid.Column="4" Background="Purple" BorderBrush="Black"/>
+                        <ComboBox x:Name="HeaderAlignBox" Grid.Column="1" Background="Purple" BorderBrush="Black"/>
 
                     </Grid>
                 </ListBox>
@@ -232,17 +236,15 @@
             </StackPanel>
 
             <StackPanel x:Name="EditCell" Grid.Column="2" Grid.Row="1" Visibility="Collapsed" Width="250" >
-                <StackPanel>
+                <StackPanel Height="70">
                     <Grid >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
-
-                        <Button x:Name="CellSaveButton" Grid.Column="0" Height="{DynamicResource xgBtnHeight}" Content="Apply" 
-                    Click="CellSaveButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="Purple" />
 
                         <Button x:Name="CellCancelButton" Grid.Column="3" Height="{DynamicResource xgBtnHeight}" Content="Cancel" 
                     Click="CellCancelButton_Click" Style="{DynamicResource SquareButtonStyle}" Background="Purple"  />
@@ -250,11 +252,12 @@
 
                     </Grid>
                 </StackPanel>
-                <ListBox Background="Purple" IsEnabled="False">
+                <ListBox Background="Purple" Height="{DynamicResource xgBtnHeight}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Text="Parametr :" Grid.Column="0"/>
@@ -263,11 +266,12 @@
                     </Grid>
                 </ListBox>
 
-                <ListBox Background="Purple">
+                <ListBox Background="Purple" Height="{DynamicResource xgBtnHeight}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Align :" Grid.Column="0"/>
                         <ComboBox x:Name="CellAlignBox" Grid.Column="1" Background="Purple" BorderBrush="Black"/>
@@ -275,11 +279,12 @@
                     </Grid>
                 </ListBox>
 
-                <ListBox Background="Purple">
+                <ListBox Background="Purple" Height="{DynamicResource xgBtnHeight}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Precision :" Grid.Column="0"/>
                         <ComboBox x:Name="CellPrecisionBox" Grid.Column="1" Background="Purple" BorderBrush="Black"/>

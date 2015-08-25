@@ -32,6 +32,9 @@ namespace XMLGenerator
 
             Logic.getRes += findStyles;
             Logic.save += Refresh;
+            Logic.saveCell += SaveCell;
+            Logic.saveHeader += SaveHeader;
+            
             Logic.HeaderClick += HeaderEdit;
             Logic.CellClick += CellEdit;
 
@@ -43,11 +46,8 @@ namespace XMLGenerator
             HeaderAlignBox.ItemsSource = MyAlign;
             
         }
-
-
-
+        
         internal static Logic.Coords LastActiveCoords = new Logic.Coords();
-
 
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -88,6 +88,8 @@ namespace XMLGenerator
             objectXML = new Logic.ObjectXML();
 
             ListBox1.Items.Clear();
+            EditCell.Visibility = Visibility.Collapsed;
+            EditHeader.Visibility = Visibility.Collapsed;
             Logic.DisplayXML(ListBox1, objectXML);
 
             AddColBtn.Visibility = Visibility.Visible;
@@ -102,6 +104,7 @@ namespace XMLGenerator
 
             Title = "Untitled";
             PathXML = null;
+            Logic.ClearControls(this);
             LastActiveCoords.rowCoord = 0;
             LastActiveCoords.colCoord = 0;
 
@@ -131,8 +134,11 @@ namespace XMLGenerator
                 IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
                 objectXML = fileload.EndInvoke(result);
 
-                ForCompareXML = objectXML;
+                result = fileload.BeginInvoke(PathXML, null, null);
+                ForCompareXML = fileload.EndInvoke(result);
 
+                EditCell.Visibility = Visibility.Collapsed;
+                EditHeader.Visibility = Visibility.Collapsed;
                 ListBox1.Items.Clear();
                 Logic.DisplayXML(ListBox1, objectXML);
 
@@ -147,6 +153,7 @@ namespace XMLGenerator
                 SaveMenuBtn.IsEnabled = true;
 
                 Title = PathXML;
+                Logic.ClearControls(this);
                 LastActiveCoords.rowCoord = 0;
                 LastActiveCoords.colCoord = 0;
             }
@@ -183,7 +190,11 @@ namespace XMLGenerator
                         if (MainWindow.PathXML != null)
                         {
                             if (!Logic.WriteXml(objectXML, MainWindow.PathXML)) ;
-                            ForCompareXML = objectXML;
+                            {
+                                LoadFile fileload = new LoadFile(Logic.ReadXml);
+                                IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
+                                ForCompareXML= fileload.EndInvoke(result);
+                            }
                             return;
                         }
                         else
@@ -192,7 +203,9 @@ namespace XMLGenerator
                             if (PathXML != null)
                             {
                                 Title = PathXML;
-                                ForCompareXML = objectXML;
+                                LoadFile fileload = new LoadFile(Logic.ReadXml);
+                                IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
+                                ForCompareXML = fileload.EndInvoke(result);
                             }
                             return;
                         }
@@ -207,7 +220,9 @@ namespace XMLGenerator
         {
             Logic.SaveAs(objectXML);
             Title = PathXML;
-            ForCompareXML = objectXML;
+            LoadFile fileload = new LoadFile(Logic.ReadXml);
+            IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
+            ForCompareXML = fileload.EndInvoke(result);
         }
 
         public void ExitClick(object sender, System.EventArgs e)
@@ -221,6 +236,7 @@ namespace XMLGenerator
             Logic.DelRow(objectXML, LastActiveCoords);
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
+            Logic.ClearControls(this);
         }
 
         private void DelCol_Click(object sender, RoutedEventArgs e)
@@ -228,6 +244,7 @@ namespace XMLGenerator
             Logic.DelCol(objectXML, LastActiveCoords);
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
+            Logic.ClearControls(this);
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)
@@ -266,59 +283,10 @@ namespace XMLGenerator
 
         }
 
-        #region Header Edit Buttons Event Handlers
-
-        private void HeaderSaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            Logic.SaveHeader(this, MainWindow.GetObjectXML());
-        }
-
-        private void HeaderCancChButton_Click(object sender, RoutedEventArgs e)
-        {
-            HeaderField.Text = objectXML.header[LastActiveCoords.GetHashCode()].headerCellHeader;
-            HeightField.Value = objectXML.header[LastActiveCoords.GetHashCode()].headerCellHeight;
-            WidthField.Value = objectXML.header[LastActiveCoords.GetHashCode()].headerCellWidth;
-            HeaderNameField.Text = objectXML.header[LastActiveCoords.GetHashCode()].headerCellName;
-            HeaderAlignBox.SelectedItem = objectXML.header[LastActiveCoords.GetHashCode()].headerCellAlign;
-            FontsizeField.Value = objectXML.header[LastActiveCoords.GetHashCode()].headerCellFontSize;
-        }
-        
-        private void HeaderRestoreButton_Click(object sender, RoutedEventArgs e)
-        {
-            HeaderField.Text = "";
-            HeightField.Value = 25;
-            WidthField.Value = 80;
-            HeaderNameField.Text = "";
-            FontsizeField.Value = 14;
-            HeaderAlignBox.SelectedItem = "Center";
-        }
-
         private void HeaderCancelButton_Click(object sender, RoutedEventArgs e)
         {
             Refresh();
             EditHeader.Visibility = Visibility.Collapsed;
-        }
-
-        #endregion Edit Header Buttons Event Handlers
-
-        #region Edit Cell Buttons Events Handlers 
-        private void CellSaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            Logic.SaveCell(this, MainWindow.GetObjectXML());
-        }
-
-        private void CellCancChButton_Click(object sender, RoutedEventArgs e)
-        {
-            CellParametrField.Text = objectXML.cells[LastActiveCoords.GetHashCode()].tabCellParametr;
-            CellAlignBox.SelectedItem = objectXML.cells[LastActiveCoords.GetHashCode()].tabCellAlign;
-            CellPrecisionBox.SelectedItem = objectXML.cells[LastActiveCoords.GetHashCode()].tabCellPrecision;
-        }
-
-        private void CellRestoreButton_Click(object sender, RoutedEventArgs e)
-        {
-            CellParametrField.Text = "";
-            CellAlignBox.SelectedItem ="Center";
-            CellPrecisionBox.SelectedItem = "N";
         }
         
         private void CellCancelButton_Click(object sender, RoutedEventArgs e)
@@ -326,6 +294,15 @@ namespace XMLGenerator
             Refresh();
             EditCell.Visibility = Visibility.Collapsed;
         }
-        #endregion
+
+        public void SaveHeader()
+        {
+            Logic.SaveHeader(this, objectXML);
+        }
+
+        public void SaveCell()
+        {
+            Logic.SaveCell(this, objectXML);
+        }
     }
 }

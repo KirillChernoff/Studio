@@ -72,7 +72,7 @@ namespace XMLGenerator
             }
         }
 
-        public class HeaderCell
+        internal class HeaderCell
         {
             private int _headerCellHeight;
             public int headerCellHeight
@@ -556,7 +556,16 @@ namespace XMLGenerator
 
         public static void EditCellClick(object sender, RoutedEventArgs e)
         {
+
             Coords t = new Coords();
+            try
+            {
+                if ((MainWindow.LastActiveCoords.rowCoord == 0) && MainWindow.LastActiveCoords != null) saveHeader(); else saveCell();
+            }
+            catch
+            {
+
+            }
             t = GetCoords((sender as Button).Name.ToString());
             MainWindow.LastActiveCoords = t;
             save();
@@ -569,6 +578,14 @@ namespace XMLGenerator
         public static void EditHeaderClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
+            try
+            {
+            if ((MainWindow.LastActiveCoords.rowCoord == 0)&& MainWindow.LastActiveCoords!=null) saveHeader(); else saveCell();
+            }
+            catch
+            {
+
+            }
             t = GetCoords((sender as Button).Name.ToString());
             MainWindow.LastActiveCoords = t;
             save();
@@ -692,6 +709,8 @@ namespace XMLGenerator
         public delegate void saving();
 
         public static event saving save;
+        public static event saving saveHeader;
+        public static event saving saveCell;
 
         public static void SaveHeader(MainWindow w, ObjectXML objectXML)
         {
@@ -706,8 +725,6 @@ namespace XMLGenerator
             objectXML.header[MainWindow.LastActiveCoords.GetHashCode()] = t;
             
             MainWindow.objectXML = objectXML;
-
-            save();
         }
 
         public static void SaveCell(MainWindow w, ObjectXML objectXML)
@@ -720,8 +737,6 @@ namespace XMLGenerator
             objectXML.cells[MainWindow.LastActiveCoords.GetHashCode().GetHashCode()] = t;
 
             MainWindow.objectXML = objectXML;
-
-            save();
         }
 
         public static void SaveAs(ObjectXML objectXML)
@@ -739,6 +754,7 @@ namespace XMLGenerator
 
         public static bool WriteXml(ObjectXML objectXml, string filename)
         {
+            if (filename == null|| filename=="") return true;
             XDocument doc = new XDocument();
             XElement Root = new XElement("DataSetTable");
 
@@ -793,6 +809,20 @@ namespace XMLGenerator
             doc.Save(filename);
 
             return true;
+        }
+
+        public static void ClearControls(MainWindow w)
+        { 
+            w.HeaderField.Text = null;
+            w.HeightField.Value = null;
+            w.WidthField.Value = null;
+            w.HeaderNameField.Text = null;
+            w.HeaderAlignBox.SelectedItem = null;
+            w.FontsizeField.Value = null;
+
+            w.CellParametrField.Text = null;
+            w.CellAlignBox.SelectedItem = null;
+            w.CellPrecisionBox.SelectedItem = null;
         }
 
         public static void DelRow(ObjectXML objectXML, Coords LastActive)
@@ -864,7 +894,7 @@ namespace XMLGenerator
 
         public static void ShowAbout(MainWindow w)
         {
-            w.ShowMessageAsync("About", "XML Generator version 0.0.4(Alpha). No rights reserved");
+            w.ShowMessageAsync("About", "XML Generator version 0.0.5(Alpha). No rights reserved");
         }
     }
 }
