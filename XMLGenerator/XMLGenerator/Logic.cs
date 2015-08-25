@@ -496,8 +496,9 @@ namespace XMLGenerator
                 button.Name = "field" + '_' + (col + 1).ToString() + '_' + 0.ToString();
                 button.Content = table.header[coords.GetHashCode()].headerCellHeader;
                 button.Height = table.header[coords.GetHashCode()].headerCellHeight;
-                button.Width = table.header[coords.GetHashCode()].headerCellWidth; ;
+                button.Width = table.header[coords.GetHashCode()].headerCellWidth;
                 button.Click += EditHeaderClick;
+                button.Foreground = Brushes.Black;
                 getRes(button);
 
                 button.Background = Brushes.LightGray;
@@ -524,6 +525,7 @@ namespace XMLGenerator
                     button.Content = table.cells[coords.GetHashCode()].tabCellParametr;
                     button.Height = table.header[new Coords(0, col).GetHashCode()].headerCellHeight;
                     button.Width = table.header[new Coords(0, col).GetHashCode()].headerCellWidth;
+                    button.Foreground = Brushes.Black;
                     button.Click += EditCellClick;
 
                     getRes(button);
@@ -552,60 +554,33 @@ namespace XMLGenerator
             return coord;
         }
 
-        public static void OpenEditTableCellWindow(EditTableCell w, TabCell cell, Coords coord)
-        {
-            w.ParametrField.Text = cell.tabCellParametr;
-            w.AlignField.SelectedItem = cell.tabCellAlign;
-            w.PrecisionField.SelectedItem = cell.tabCellPrecision;
-
-            w.col.Text = coord.colCoord.ToString();
-            w.row.Text = coord.rowCoord.ToString();
-
-            w.ShowDialog();
-        }
-
-        public static void OpenEditHeaderCellWindow(EditHeaderCell w, HeaderCell cell, Coords coord)
-        {
-            w.HeaderField.Text = cell.headerCellHeader;
-            w.HeightField.Value = cell.headerCellHeight;
-            w.WidthField.Value = cell.headerCellWidth;
-            w.NameField.Text = cell.headerCellName;
-            w.FontsizeField.Value = cell.headerCellFontSize;
-            w.AlignBox.SelectedItem = cell.headerCellAlign;
-
-            w.col.Text = coord.colCoord.ToString();
-            w.row.Text = coord.rowCoord.ToString();
-
-            w.ShowDialog();
-        }
-
         public static void EditCellClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
-            EditTableCell w = new EditTableCell();
-            ObjectXML xml = new ObjectXML();
-            TabCell cell = new TabCell();
-
             t = GetCoords((sender as Button).Name.ToString());
-            xml = MainWindow.GetObjectXML();
-            cell = xml.cells[t.GetHashCode()];
             MainWindow.LastActiveCoords = t;
-
-            OpenEditTableCellWindow(w, cell, t);
+            save();
+            CellClick(t.rowCoord, t.colCoord);
+            
         }
+
+        
 
         public static void EditHeaderClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
             t = GetCoords((sender as Button).Name.ToString());
-            EditHeaderCell w = new EditHeaderCell();
-            ObjectXML xml = new ObjectXML();
-            xml = MainWindow.GetObjectXML();
-            HeaderCell cell = xml.header[t.GetHashCode()];
             MainWindow.LastActiveCoords = t;
-
-            OpenEditHeaderCellWindow(w, cell, t);
+            save();
+            HeaderClick (t.rowCoord,t.colCoord);
+            
         }
+
+        public delegate void EditClick(int row, int col);
+
+        public static event EditClick HeaderClick;
+
+        public static event EditClick CellClick;
 
         public static void ErrorDialog()
         {
@@ -718,31 +693,31 @@ namespace XMLGenerator
 
         public static event saving save;
 
-        public static void SaveHeader(EditHeaderCell w, ObjectXML objectXML)
+        public static void SaveHeader(MainWindow w, ObjectXML objectXML)
         {
             HeaderCell t = new HeaderCell(
                 (int)w.HeightField.Value,
                 (int)w.WidthField.Value,
                 (int)w.FontsizeField.Value,
-                w.NameField.Text,
-                w.AlignBox.SelectedItem.ToString(),
+                w.HeaderNameField.Text,
+                w.HeaderAlignBox.SelectedItem.ToString(),
                 w.HeaderField.Text);
 
-            objectXML.header[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
-
+            objectXML.header[MainWindow.LastActiveCoords.GetHashCode()] = t;
+            
             MainWindow.objectXML = objectXML;
 
             save();
         }
 
-        public static void SaveCell(EditTableCell w, ObjectXML objectXML)
+        public static void SaveCell(MainWindow w, ObjectXML objectXML)
         {
             TabCell t = new TabCell(
-                w.AlignField.SelectedItem.ToString(),
-                w.PrecisionField.SelectedItem.ToString(),
-                w.ParametrField.Text);
+                w.CellAlignBox.SelectedItem.ToString(),
+                w.CellPrecisionBox.SelectedItem.ToString(),
+                w.CellParametrField.Text);
 
-            objectXML.cells[new Coords(int.Parse(w.row.Text), int.Parse(w.col.Text)).GetHashCode()] = t;
+            objectXML.cells[MainWindow.LastActiveCoords.GetHashCode().GetHashCode()] = t;
 
             MainWindow.objectXML = objectXML;
 
