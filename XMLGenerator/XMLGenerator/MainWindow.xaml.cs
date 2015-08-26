@@ -221,7 +221,8 @@ namespace XMLGenerator
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
             Logic.SaveAs(objectXML);
-            Title = PathXML;
+            if(PathXML!=null&&PathXML!="")
+                Title = PathXML;
             if (PathXML == null || PathXML == "") return;
             LoadFile fileload = new LoadFile(Logic.ReadXml);
             IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);

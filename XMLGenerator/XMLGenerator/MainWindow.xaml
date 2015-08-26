@@ -165,14 +165,14 @@
                 
                 <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Height :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                    <Controls:NumericUpDown Minimum="1" Maximum="200" Interval="10" x:Name="HeightField"
+                    <Controls:NumericUpDown Minimum="10" Maximum="200" Interval="10" x:Name="HeightField"
                                               BorderBrush="Black" Width="{DynamicResource propNameWidth}" 
                                             Foreground="Black" Margin="0,5,0,5"/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Width :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                    <Controls:NumericUpDown Minimum="1" Maximum="200" Interval="10" x:Name="WidthField"
+                    <Controls:NumericUpDown Minimum="10" Maximum="400" Interval="10" x:Name="WidthField"
                                                BorderBrush="Black" Width="{DynamicResource propNameWidth}"
                                             Foreground="Black" Margin="0,5,0,5"/>
                 </StackPanel>

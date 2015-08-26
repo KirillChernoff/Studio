@@ -614,9 +614,7 @@ namespace XMLGenerator
             CellClick(t.rowCoord, t.colCoord);
             
         }
-
         
-
         public static void EditHeaderClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
@@ -789,8 +787,8 @@ namespace XMLGenerator
             saveFileDialog1.RestoreDirectory = true;
             saveFileDialog1.AddExtension = true;
             saveFileDialog1.ShowDialog();
-
-            MainWindow.PathXML = saveFileDialog1.FileName;
+            if(saveFileDialog1.FileName!=null && saveFileDialog1.FileName!="")
+                MainWindow.PathXML = saveFileDialog1.FileName;
             if (!WriteXml(objectXML, saveFileDialog1.FileName)) return;
         }
 

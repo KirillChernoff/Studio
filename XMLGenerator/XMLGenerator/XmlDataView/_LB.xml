@@ -1,169 +1,168 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <DataSetTable>
-	<TabColumns>
-		<TabColumn Name="Col1" Header="" Align="Center" Width="70" Height="25" Fontsize="14" />
-		<TabColumn Name="Col2" Header="Режим" Align="Center" Width="70" Height="25" Fontsize="14" />
-		<TabColumn Name="Col3" Header="Q, м³/ч" Align="Center" Width="90" Height="25" Fontsize="14" />
-		<TabColumn Name="Col4" Header="W, т/ч " Align="Center" Width="90" Height="25" Fontsize="14" />
-		<TabColumn Name="Col5" Header="Q, %" Align="Center" Width="90" Height="25" Fontsize="14" />
-		<TabColumn Name="Col6" Header="t, &#176;С" Align="Center" Width="90" Height="25" Fontsize="14" />
-		<TabColumn Name="Col7" Header="P, МПа" Align="Center" Width="90" Height="25" Fontsize="14" />
-		<TabColumn Name="Col8" Header="ρ, кг/м³" Align="Center" Width="90" Height="25" Fontsize="14" />
-		<TabColumn Name="Col9" Header="ΔPф,МПа" Align="Center" Width="90" Height="25" Fontsize="14" />
-	</TabColumns>
-	<TabRow Name="Line" Number="1">
-		<TabCell Parametr="ИЛ 1" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn01.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn01.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn01.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn01.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn01.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn01.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn01.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn01.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="2">
-		<TabCell Parametr="ИЛ 2" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn02.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn02.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn02.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn02.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn02.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn02.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn02.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn02.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="3">
-		<TabCell Parametr="ИЛ 3" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn03.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn03.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn03.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn03.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn03.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn03.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn03.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn03.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="4">
-		<TabCell Parametr="ИЛ 4" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn04.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn04.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn04.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn04.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn04.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn04.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn04.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn04.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="5">
-		<TabCell Parametr="ИЛ 5" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn05.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn05.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn05.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn05.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn05.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn05.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn05.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn05.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="6">
-		<TabCell Parametr="ИЛ 6" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn06.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn06.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn06.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn06.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn06.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn06.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn06.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn06.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="7">
-		<TabCell Parametr="ИЛ 7" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn07.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn07.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn07.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn07.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn07.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn07.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn07.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn07.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="8">
-		<TabCell Parametr="ИЛ 8" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn08.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn08.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn08.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn08.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn08.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn08.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn08.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn08.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="9">
-		<TabCell Parametr="ИЛ 9" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn09.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn09.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn09.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn09.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn09.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn09.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn09.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn09.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="10">
-		<TabCell Parametr="ИЛ 10" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn10.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn10.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn10.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn10.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn10.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn10.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn10.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn10.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="11">
-		<TabCell Parametr="ИЛ 11" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn11.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn11.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn11.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn11.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn11.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn11.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn11.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn11.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow Name="Line" Number="12">
-		<TabCell Parametr="ИЛ 12" Precision="N" Align="Center" />
-		<TabCell Parametr="Mod.CDat.LB.Cn12.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn12.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn12.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn12.RatP" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn12.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn12.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn12.Den" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Cn12.dPrsF" Precision="N" Align="Center" />
-	</TabRow>
-	
-	<TabRow>
-		<TabCell Parametr="Вх" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.ILet.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.ILet.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-	</TabRow>
-	<TabRow>
-		<TabCell Parametr="Вых" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Bl.VRat" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.Bl.MRat" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.OLet.Tem" Precision="N" Align="Center" />
-		<TabCell Parametr="Val.CDat.LB.OLet.Prs" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-		<TabCell Parametr="" Precision="N" Align="Center" />
-	</TabRow>
+  <TabColumns>
+    <TabColumn Name="Col1" Fontsize="14" Height="25" Width="70" Align="Center" Header="" />
+    <TabColumn Name="Col2" Fontsize="14" Height="25" Width="70" Align="Center" Header="Режим" />
+    <TabColumn Name="Col3" Fontsize="14" Height="25" Width="90" Align="Center" Header="Q, м³/ч" />
+    <TabColumn Name="Col4" Fontsize="14" Height="25" Width="90" Align="Center" Header="W, т/ч " />
+    <TabColumn Name="Col5" Fontsize="14" Height="25" Width="90" Align="Center" Header="Q, %" />
+    <TabColumn Name="Col6" Fontsize="14" Height="25" Width="90" Align="Center" Header="t, °С" />
+    <TabColumn Name="Col7" Fontsize="14" Height="25" Width="90" Align="Center" Header="P, МПа" />
+    <TabColumn Name="Col8" Fontsize="14" Height="25" Width="90" Align="Center" Header="ρ, кг/м³" />
+    <TabColumn Name="Col9" Fontsize="14" Height="25" Width="90" Align="Center" Header="ΔPф,МПа" />
+  </TabColumns>
+  <TabRow Name="Line" Number="1">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 1" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn01.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn01.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn01.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn01.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn01.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn01.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn01.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn01.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="2">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 2" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn02.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn02.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn02.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn02.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn02.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn02.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn02.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn02.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="3">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 3" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn03.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn03.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn03.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn03.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn03.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn03.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn03.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn03.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="4">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 4" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn04.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn04.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn04.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn04.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn04.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn04.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn04.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn04.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="5">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 5" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn05.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn05.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn05.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn05.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn05.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn05.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn05.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn05.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="6">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 6" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn06.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn06.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn06.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn06.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn06.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn06.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn06.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn06.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="7">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 7" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn07.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn07.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn07.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn07.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn07.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn07.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn07.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn07.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="8">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 8" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn08.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn08.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn08.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn08.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn08.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn08.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn08.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn08.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="9">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 9" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn09.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn09.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn09.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn09.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn09.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn09.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn09.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn09.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="10">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 10" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn10.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn10.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn10.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn10.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn10.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn10.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn10.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn10.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="11">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 11" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn11.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn11.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn11.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn11.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn11.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn11.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn11.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn11.dPrsF" />
+  </TabRow>
+  <TabRow Name="Line" Number="12">
+    <TabCell Align="Center" Precision="N" Parametr="ИЛ 12" />
+    <TabCell Align="Center" Precision="N" Parametr="Mod.CDat.LB.Cn12.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn12.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn12.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn12.RatP" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn12.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn12.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn12.Den" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Cn12.dPrsF" />
+  </TabRow>
+  <TabRow>
+    <TabCell Align="Center" Precision="N" Parametr="Вх" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.ILet.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.ILet.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+  </TabRow>
+  <TabRow>
+    <TabCell Align="Center" Precision="N" Parametr="Вых" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Bl.VRat" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.Bl.MRat" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.OLet.Tem" />
+    <TabCell Align="Center" Precision="N" Parametr="Val.CDat.LB.OLet.Prs" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+    <TabCell Align="Center" Precision="N" Parametr="" />
+  </TabRow>
 </DataSetTable>
