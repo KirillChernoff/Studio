@@ -441,16 +441,17 @@ namespace XMLGenerator
 
             foreach (XElement el in xdoc.Root.Elements("TabRow"))
             {
-                try
+                if (el.HasAttributes)
                 {
                     RowName = el.Attribute("Name").Value;
                     RowNumber = el.Attribute("Number").Value;
                 }
-                catch
+                else
                 {
                     RowName = "  ";
                     RowNumber = "  ";
                 }
+                
 
                 foreach (XElement elem in el.Elements())
                 {
@@ -497,10 +498,15 @@ namespace XMLGenerator
                 button.Content = table.header[coords.GetHashCode()].headerCellHeader;
                 button.Height = table.header[coords.GetHashCode()].headerCellHeight;
                 button.Width = table.header[coords.GetHashCode()].headerCellWidth;
+                button.FontSize = table.header[coords.GetHashCode()].headerCellFontSize;
+                
                 button.Click += EditHeaderClick;
                 button.Foreground = Brushes.Black;
+
+                AlignChange(ref button, coords);
                 getRes(button);
 
+                button.Padding = new Thickness(5, 0, 5, 0);
                 button.Background = Brushes.LightGray;
                 button.BorderBrush = Brushes.Black;
 
@@ -525,10 +531,12 @@ namespace XMLGenerator
                     button.Content = table.cells[coords.GetHashCode()].tabCellParametr;
                     button.Height = table.header[new Coords(0, col).GetHashCode()].headerCellHeight;
                     button.Width = table.header[new Coords(0, col).GetHashCode()].headerCellWidth;
+                    button.FontSize = table.header[new Coords(0, col).GetHashCode()].headerCellFontSize;
                     button.Foreground = Brushes.Black;
+                    button.Padding = new Thickness(5,0,5,0);
                     button.Click += EditCellClick;
-
                     getRes(button);
+                    AlignChange(ref button, coords);
 
                     button.Background = Brushes.LightGray;
                     button.BorderBrush = Brushes.Black;
@@ -539,6 +547,40 @@ namespace XMLGenerator
                 }
 
                 ListBox1.Items.Add(panel);
+            }
+        }
+
+        private static void AlignChange(ref Button btn, Coords coord)
+        {
+            string temp;
+            if (coord.rowCoord == 0) temp = MainWindow.objectXML.header[coord.GetHashCode()].headerCellAlign;
+            else temp = MainWindow.objectXML.cells[coord.GetHashCode()].tabCellAlign;
+            switch (temp)
+            {
+                case "Center":
+                    btn.HorizontalContentAlignment = HorizontalAlignment.Center;
+                    btn.VerticalContentAlignment = VerticalAlignment.Center;
+                    break;
+                case "Left":
+                        btn.HorizontalContentAlignment = HorizontalAlignment.Left;
+                        btn.VerticalContentAlignment = VerticalAlignment.Center;
+                    break;
+                case "Right":
+                        btn.HorizontalContentAlignment = HorizontalAlignment.Right;
+                        btn.VerticalContentAlignment = VerticalAlignment.Center;
+                    break;
+                case "Top":
+                        btn.HorizontalContentAlignment = HorizontalAlignment.Center;
+                        btn.VerticalContentAlignment = VerticalAlignment.Top;
+                    break;
+                case "Bottom":
+                        btn.HorizontalContentAlignment = HorizontalAlignment.Center;
+                        btn.VerticalContentAlignment = VerticalAlignment.Bottom;
+                    break;
+                default:
+                        btn.HorizontalContentAlignment = HorizontalAlignment.Center;
+                        btn.VerticalContentAlignment = VerticalAlignment.Center;
+                    break;
             }
         }
 

@@ -117,6 +117,8 @@ namespace XMLGenerator
             if (!Logic.CompareXml(objectXML, ForCompareXML))
                 return;
 
+            PathXML = null;
+
             OpenFileDialog myDialog = new OpenFileDialog();
 
             myDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
@@ -187,7 +189,7 @@ namespace XMLGenerator
             {
                 case MessageBoxResult.Yes:
                     {
-                        if (MainWindow.PathXML != null)
+                        if (MainWindow.PathXML != null || PathXML!="")
                         {
                             if (!Logic.WriteXml(objectXML, MainWindow.PathXML)) ;
                             {
@@ -200,7 +202,7 @@ namespace XMLGenerator
                         else
                         {
                             Logic.SaveAs(objectXML);
-                            if (PathXML != null)
+                            if (PathXML != null || PathXML!="")
                             {
                                 Title = PathXML;
                                 LoadFile fileload = new LoadFile(Logic.ReadXml);
@@ -220,6 +222,7 @@ namespace XMLGenerator
         {
             Logic.SaveAs(objectXML);
             Title = PathXML;
+            if (PathXML == null || PathXML == "") return;
             LoadFile fileload = new LoadFile(Logic.ReadXml);
             IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
             ForCompareXML = fileload.EndInvoke(result);

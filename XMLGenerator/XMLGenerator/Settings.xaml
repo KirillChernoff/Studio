@@ -6,55 +6,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
-        Title="Settings" Height="220" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="Purple" BorderBrush="Black">
+        Title="Settings" Height="220" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  BorderThickness="2" BorderBrush="Black">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Purple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Cobalt.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30"/>
-                <ColumnDefinition Width="240"/>
-                <ColumnDefinition Width="30"/>
-            </Grid.ColumnDefinitions>
+    <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
-            <TextBlock Grid.Column="1" Grid.Row="0" Text="Enter maximum number of rows" Margin="0,10,0,0" />
-            <Controls:NumericUpDown Minimum="1" Maximum="40" Interval="1" x:Name="maxRow" Grid.Column="1" Grid.Row="1"/>
-            
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="Enter maximum number of columns" Margin="0,10,0,0" />
-            <Controls:NumericUpDown Minimum="1" Maximum="40" Interval="1" x:Name="maxCol" Grid.Column="1" Grid.Row="3"/>
-            
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="Enter maximum number of rows" Margin="0,10,0,0" />
+                <Controls:NumericUpDown Minimum="1" Maximum="40" Interval="1" x:Name="maxRow" Grid.Column="1" Grid.Row="1"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="Enter maximum number of columns" Margin="0,10,0,0" />
+                <Controls:NumericUpDown Minimum="1" Maximum="40" Interval="1" x:Name="maxCol" Grid.Column="1" Grid.Row="3"/>
+
+            </Grid>
+
+
+
+            <Grid Grid.Row="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="OkBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="OK" Click="OkBtn_Click" Style="{DynamicResource SquareButtonStyle}"  />
+                <Button Name="CancelBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Cancel" Click="CancelBtn_Click" Style="{DynamicResource SquareButtonStyle}"  />
+            </Grid>
         </Grid>
-
-
-
-        <Grid Grid.Row="2" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Name="OkBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="OK" Click="OkBtn_Click" Style="{DynamicResource SquareButtonStyle}" Background="Purple"/>
-            <Button Name="CancelBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Cancel" Click="CancelBtn_Click" Style="{DynamicResource SquareButtonStyle}" Background="Purple"/>
-        </Grid>
-    </Grid>
 </Controls:MetroWindow>
