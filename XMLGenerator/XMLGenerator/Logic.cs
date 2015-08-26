@@ -157,6 +157,7 @@ namespace XMLGenerator
                 set
                 {
                     _headerCellHeader = value;
+
                 }
             }
 
@@ -292,10 +293,10 @@ namespace XMLGenerator
 
         public static bool EqualCells(TabCell first, TabCell Second)
         {
-            return (first.Name == Second.Name && 
-                first.Number == Second.Number && 
-                first.tabCellAlign == Second.tabCellAlign && 
-                first.tabCellParametr == Second.tabCellParametr && 
+            return (first.Name == Second.Name &&
+                first.Number == Second.Number &&
+                first.tabCellAlign == Second.tabCellAlign &&
+                first.tabCellParametr == Second.tabCellParametr &&
                 first.tabCellPrecision == Second.tabCellPrecision);
         }
 
@@ -401,7 +402,7 @@ namespace XMLGenerator
             Dictionary<int, HeaderCell> HeaderCells = new Dictionary<int, HeaderCell>();
 
             XDocument xdoc = new XDocument();
-             
+
             xdoc = XDocument.Load(FileName);
             int col = 0, row = 0;
 
@@ -451,7 +452,7 @@ namespace XMLGenerator
                     RowName = "  ";
                     RowNumber = "  ";
                 }
-                
+
 
                 foreach (XElement elem in el.Elements())
                 {
@@ -499,7 +500,7 @@ namespace XMLGenerator
                 button.Height = table.header[coords.GetHashCode()].headerCellHeight;
                 button.Width = table.header[coords.GetHashCode()].headerCellWidth;
                 button.FontSize = table.header[coords.GetHashCode()].headerCellFontSize;
-                
+
                 button.Click += EditHeaderClick;
                 button.Foreground = Brushes.Black;
 
@@ -533,7 +534,7 @@ namespace XMLGenerator
                     button.Width = table.header[new Coords(0, col).GetHashCode()].headerCellWidth;
                     button.FontSize = table.header[new Coords(0, col).GetHashCode()].headerCellFontSize;
                     button.Foreground = Brushes.Black;
-                    button.Padding = new Thickness(5,0,5,0);
+                    button.Padding = new Thickness(5, 0, 5, 0);
                     button.Click += EditCellClick;
                     getRes(button);
                     AlignChange(ref button, coords);
@@ -562,24 +563,24 @@ namespace XMLGenerator
                     btn.VerticalContentAlignment = VerticalAlignment.Center;
                     break;
                 case "Left":
-                        btn.HorizontalContentAlignment = HorizontalAlignment.Left;
-                        btn.VerticalContentAlignment = VerticalAlignment.Center;
+                    btn.HorizontalContentAlignment = HorizontalAlignment.Left;
+                    btn.VerticalContentAlignment = VerticalAlignment.Center;
                     break;
                 case "Right":
-                        btn.HorizontalContentAlignment = HorizontalAlignment.Right;
-                        btn.VerticalContentAlignment = VerticalAlignment.Center;
+                    btn.HorizontalContentAlignment = HorizontalAlignment.Right;
+                    btn.VerticalContentAlignment = VerticalAlignment.Center;
                     break;
                 case "Top":
-                        btn.HorizontalContentAlignment = HorizontalAlignment.Center;
-                        btn.VerticalContentAlignment = VerticalAlignment.Top;
+                    btn.HorizontalContentAlignment = HorizontalAlignment.Center;
+                    btn.VerticalContentAlignment = VerticalAlignment.Top;
                     break;
                 case "Bottom":
-                        btn.HorizontalContentAlignment = HorizontalAlignment.Center;
-                        btn.VerticalContentAlignment = VerticalAlignment.Bottom;
+                    btn.HorizontalContentAlignment = HorizontalAlignment.Center;
+                    btn.VerticalContentAlignment = VerticalAlignment.Bottom;
                     break;
                 default:
-                        btn.HorizontalContentAlignment = HorizontalAlignment.Center;
-                        btn.VerticalContentAlignment = VerticalAlignment.Center;
+                    btn.HorizontalContentAlignment = HorizontalAlignment.Center;
+                    btn.VerticalContentAlignment = VerticalAlignment.Center;
                     break;
             }
         }
@@ -600,37 +601,27 @@ namespace XMLGenerator
         {
 
             Coords t = new Coords();
-            try
-            {
-                if ((MainWindow.LastActiveCoords.rowCoord == 0) && MainWindow.LastActiveCoords != null) saveHeader(); else saveCell();
-            }
-            catch
-            {
 
-            }
+            if ((MainWindow.LastActiveCoords.rowCoord == 0) && MainWindow.LastActiveCoords != null) saveHeader(); else saveCell();
+
             t = GetCoords((sender as Button).Name.ToString());
             MainWindow.LastActiveCoords = t;
             save();
             CellClick(t.rowCoord, t.colCoord);
-            
+
         }
-        
+
         public static void EditHeaderClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
-            try
-            {
-            if ((MainWindow.LastActiveCoords.rowCoord == 0)&& MainWindow.LastActiveCoords!=null) saveHeader(); else saveCell();
-            }
-            catch
-            {
 
-            }
+            if ((MainWindow.LastActiveCoords.rowCoord == 0) && MainWindow.LastActiveCoords != null ) saveHeader(); else saveCell();
+
             t = GetCoords((sender as Button).Name.ToString());
             MainWindow.LastActiveCoords = t;
             save();
-            HeaderClick (t.rowCoord,t.colCoord);
-            
+            HeaderClick(t.rowCoord, t.colCoord);
+
         }
 
         public delegate void EditClick(int row, int col);
@@ -754,6 +745,7 @@ namespace XMLGenerator
 
         public static void SaveHeader(MainWindow w, ObjectXML objectXML)
         {
+            if (w.HeightField.Value == null) return;
             HeaderCell t = new HeaderCell(
                 (int)w.HeightField.Value,
                 (int)w.WidthField.Value,
@@ -763,12 +755,13 @@ namespace XMLGenerator
                 w.HeaderField.Text);
 
             objectXML.header[MainWindow.LastActiveCoords.GetHashCode()] = t;
-            
+
             MainWindow.objectXML = objectXML;
         }
 
         public static void SaveCell(MainWindow w, ObjectXML objectXML)
         {
+            if (w.CellAlignBox.SelectedItem == null) return;
             TabCell t = new TabCell(
                 w.CellAlignBox.SelectedItem.ToString(),
                 w.CellPrecisionBox.SelectedItem.ToString(),
@@ -787,14 +780,14 @@ namespace XMLGenerator
             saveFileDialog1.RestoreDirectory = true;
             saveFileDialog1.AddExtension = true;
             saveFileDialog1.ShowDialog();
-            if(saveFileDialog1.FileName!=null && saveFileDialog1.FileName!="")
+            if (saveFileDialog1.FileName != null && saveFileDialog1.FileName != "")
                 MainWindow.PathXML = saveFileDialog1.FileName;
             if (!WriteXml(objectXML, saveFileDialog1.FileName)) return;
         }
 
         public static bool WriteXml(ObjectXML objectXml, string filename)
         {
-            if (filename == null|| filename=="") return true;
+            if (filename == null || filename == "") return true;
             XDocument doc = new XDocument();
             XElement Root = new XElement("DataSetTable");
 
@@ -852,7 +845,7 @@ namespace XMLGenerator
         }
 
         public static void ClearControls(MainWindow w)
-        { 
+        {
             w.HeaderField.Text = null;
             w.HeightField.Value = null;
             w.WidthField.Value = null;

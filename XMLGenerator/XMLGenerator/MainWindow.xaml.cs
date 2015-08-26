@@ -48,6 +48,7 @@ namespace XMLGenerator
         }
         
         internal static Logic.Coords LastActiveCoords = new Logic.Coords();
+        
 
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -267,7 +268,7 @@ namespace XMLGenerator
         {
             EditHeader.Visibility = Visibility.Visible;
             EditCell.Visibility = Visibility.Collapsed;
-
+           
             HeaderField.Text = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeader;
             HeightField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeight;
             WidthField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellWidth;
