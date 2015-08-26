@@ -189,9 +189,9 @@ namespace XMLGenerator
             {
                 case MessageBoxResult.Yes:
                     {
-                        if (MainWindow.PathXML != null || PathXML!="")
+                        if (PathXML != null && PathXML!="")
                         {
-                            if (!Logic.WriteXml(objectXML, MainWindow.PathXML)) ;
+                            if (!Logic.WriteXml(objectXML, MainWindow.PathXML)) 
                             {
                                 LoadFile fileload = new LoadFile(Logic.ReadXml);
                                 IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
@@ -202,7 +202,7 @@ namespace XMLGenerator
                         else
                         {
                             Logic.SaveAs(objectXML);
-                            if (PathXML != null || PathXML!="")
+                            if (PathXML != null && PathXML!="")
                             {
                                 Title = PathXML;
                                 LoadFile fileload = new LoadFile(Logic.ReadXml);
