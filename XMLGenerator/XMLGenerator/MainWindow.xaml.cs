@@ -34,21 +34,21 @@ namespace XMLGenerator
             Logic.save += Refresh;
             Logic.saveCell += SaveCell;
             Logic.saveHeader += SaveHeader;
-            
+
             Logic.HeaderClick += HeaderEdit;
             Logic.CellClick += CellEdit;
 
-            string[] MyAlign = new string[] { "Top", "Bottom", "Left", "Right", "Center" }; 
+            string[] MyAlign = new string[] { "Top", "Bottom", "Left", "Right", "Center" };
             string[] MyPres = new string[] { "N", "H", "1", "2", "3", "4", "5", "6", "7", "8", "9", };
 
             CellPrecisionBox.ItemsSource = MyPres;
             CellAlignBox.ItemsSource = MyAlign;
             HeaderAlignBox.ItemsSource = MyAlign;
-            
+
         }
-        
+
         internal static Logic.Coords LastActiveCoords = new Logic.Coords();
-        
+
 
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -190,25 +190,29 @@ namespace XMLGenerator
             {
                 case MessageBoxResult.Yes:
                     {
-                        if (PathXML != null && PathXML!="")
+                        if (PathXML != null && PathXML != "")
                         {
-                            if (!Logic.WriteXml(objectXML, MainWindow.PathXML)) 
+                            if (!Logic.WriteXml(objectXML, MainWindow.PathXML))
                             {
                                 LoadFile fileload = new LoadFile(Logic.ReadXml);
                                 IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
-                                ForCompareXML= fileload.EndInvoke(result);
+                                ForCompareXML = fileload.EndInvoke(result);
+                                result = fileload.BeginInvoke(PathXML, null, null);
+                                objectXML = fileload.EndInvoke(result);
                             }
                             return;
                         }
                         else
                         {
                             Logic.SaveAs(objectXML);
-                            if (PathXML != null && PathXML!="")
+                            if (PathXML != null && PathXML != "")
                             {
                                 Title = PathXML;
                                 LoadFile fileload = new LoadFile(Logic.ReadXml);
                                 IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
                                 ForCompareXML = fileload.EndInvoke(result);
+                                result = fileload.BeginInvoke(PathXML, null, null);
+                                objectXML = fileload.EndInvoke(result);
                             }
                             return;
                         }
@@ -222,12 +226,14 @@ namespace XMLGenerator
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
             Logic.SaveAs(objectXML);
-            if(PathXML!=null&&PathXML!="")
+            if (PathXML != null && PathXML != "")
                 Title = PathXML;
             if (PathXML == null || PathXML == "") return;
             LoadFile fileload = new LoadFile(Logic.ReadXml);
             IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
             ForCompareXML = fileload.EndInvoke(result);
+            result = fileload.BeginInvoke(PathXML, null, null);
+            objectXML = fileload.EndInvoke(result);
         }
 
         public void ExitClick(object sender, System.EventArgs e)
@@ -268,7 +274,7 @@ namespace XMLGenerator
         {
             EditHeader.Visibility = Visibility.Visible;
             EditCell.Visibility = Visibility.Collapsed;
-           
+
             HeaderField.Text = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeader;
             HeightField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeight;
             WidthField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellWidth;
@@ -277,7 +283,7 @@ namespace XMLGenerator
             FontsizeField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellFontSize;
         }
 
-        public void CellEdit(int row,int col)
+        public void CellEdit(int row, int col)
         {
             EditHeader.Visibility = Visibility.Collapsed;
             EditCell.Visibility = Visibility.Visible;
@@ -293,7 +299,7 @@ namespace XMLGenerator
             Refresh();
             EditHeader.Visibility = Visibility.Collapsed;
         }
-        
+
         private void CellCancelButton_Click(object sender, RoutedEventArgs e)
         {
             Refresh();

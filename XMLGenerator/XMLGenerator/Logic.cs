@@ -825,7 +825,7 @@ namespace XMLGenerator
             {
                 XElement tableRow;
 
-                if (objectXml.cells[new Coords(row, 0).GetHashCode()].Name != "  ")
+                if (objectXml.cells[new Coords(row, 0).GetHashCode()].Name != "  " && objectXml.cells[new Coords(row, 0).GetHashCode()].Name!=null)
                 {
                     tableRow = new XElement("TabRow",
                         new XAttribute("Name", objectXml.cells[new Coords(row, 0).GetHashCode()].Name),
