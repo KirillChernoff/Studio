@@ -415,9 +415,21 @@ namespace XMLGenerator
 
                 temp.headerCellAlign = el.Attribute("Align").Value;
                 temp.headerCellName = el.Attribute("Name").Value;
-                temp.headerCellFontSize = Convert.ToInt32(el.Attribute("Fontsize").Value, 10);
-                temp.headerCellHeight = Convert.ToInt32(el.Attribute("Height").Value, 10);
-                temp.headerCellWidth = Convert.ToInt32(el.Attribute("Width").Value, 10);
+                int t;
+                if (int.TryParse(el.Attribute("Fontsize").Value, out t))
+                {
+                    temp.headerCellFontSize = t;
+                }
+
+                if (int.TryParse(el.Attribute("Height").Value, out t))
+                {
+                    temp.headerCellHeight = t;
+                }
+
+                if (int.TryParse(el.Attribute("Width").Value, out t))
+                {
+                    temp.headerCellWidth = t;
+                }
                 temp.headerCellHeader = el.Attribute("Header").Value;
 
                 coordinate = new Coords(row, col);

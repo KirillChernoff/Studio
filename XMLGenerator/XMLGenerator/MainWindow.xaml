@@ -101,7 +101,7 @@
 
         </ResourceDictionary>
     </Window.Resources>
-    
+
     <Grid   >
 
         <Grid.RowDefinitions>
@@ -138,106 +138,106 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="LightBlue"  />
-            <Border x:Name="EditHeader" Grid.Column="1" Grid.Row="1" BorderThickness="2"  Visibility="Collapsed" BorderBrush="Black">
-                
-            <StackPanel  Width="250">
+            <Border x:Name="EditHeader" Grid.Column="1" Grid.Row="1" BorderThickness="2"  Visibility="Collapsed" BorderBrush="Black" Margin="0,0,0,10">
 
-                <StackPanel Height="70">
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                <StackPanel  Width="250">
 
-                        <Button x:Name="CancelButton" Grid.Column="1" Height="{DynamicResource xgBtnHeight}" Content="Hide" 
+                    <StackPanel Height="70">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="CancelButton" Grid.Column="1" Height="{DynamicResource xgBtnHeight}" Content="Hide" 
                     Click="HeaderCancelButton_Click" Style="{DynamicResource SquareButtonStyle}"   Margin="10,10,10,10"
                                 Foreground="Black" BorderBrush="Black"/>
 
 
-                    </Grid>
-                </StackPanel>
+                        </Grid>
+                    </StackPanel>
 
-                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Header :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
                         <TextBox x:Name="HeaderField"   BorderBrush="Black" Width="{DynamicResource propNameWidth}"
                                  Foreground="Black" Margin="0,5,0,5"/>
-                </StackPanel>
-                
-                <StackPanel Orientation="Horizontal">
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Height :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                    <Controls:NumericUpDown Minimum="10" Maximum="200" Interval="10" x:Name="HeightField"
+                        <Controls:NumericUpDown Minimum="10" Maximum="200" Interval="10" x:Name="HeightField"
                                               BorderBrush="Black" Width="{DynamicResource propNameWidth}" 
                                             Foreground="Black" Margin="0,5,0,5"/>
-                </StackPanel>
-                
-                <StackPanel Orientation="Horizontal">
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Width :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                    <Controls:NumericUpDown Minimum="10" Maximum="400" Interval="10" x:Name="WidthField"
+                        <Controls:NumericUpDown Minimum="10" Maximum="400" Interval="10" x:Name="WidthField"
                                                BorderBrush="Black" Width="{DynamicResource propNameWidth}"
                                             Foreground="Black" Margin="0,5,0,5"/>
-                </StackPanel>
-                
-                <StackPanel Orientation="Horizontal">
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Name :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                    <TextBox x:Name="HeaderNameField"   BorderBrush="Black" Width="{DynamicResource propNameWidth}"
+                        <TextBox x:Name="HeaderNameField"   BorderBrush="Black" Width="{DynamicResource propNameWidth}"
                              Foreground="Black" Margin="0,5,0,5"/>
-                </StackPanel>
-                
-                <StackPanel Orientation="Horizontal">
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="FontSize :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                    <Controls:NumericUpDown Minimum="1" Maximum="40" Interval="1" x:Name="FontsizeField" 
+                        <Controls:NumericUpDown Minimum="1" Maximum="40" Interval="1" x:Name="FontsizeField" 
                                               BorderBrush="Black" Width="{DynamicResource propNameWidth}"
                                             Foreground="Black" Margin="0,5,0,5"/>
-                </StackPanel>
-                
-                <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Align :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                    <ComboBox x:Name="HeaderAlignBox"   BorderBrush="Black" Width="{DynamicResource propNameWidth}"
-                              Foreground="Black" Margin="0,5,0,5"/>
-                </StackPanel>
+                    </StackPanel>
 
-            </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Align :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
+                        <ComboBox x:Name="HeaderAlignBox"   BorderBrush="Black" Width="{DynamicResource propNameWidth}"
+                              Foreground="Black" Margin="0,5,0,5"/>
+                    </StackPanel>
+
+                </StackPanel>
 
             </Border>
-            
-            <Border x:Name="EditCell" Visibility="Collapsed"  Grid.Column="2" Grid.Row="1" BorderThickness="2" BorderBrush="Black">
-                
-            <StackPanel Width="250" >
-                <StackPanel Height="70">
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
 
-                        <Button x:Name="CellCancelButton" Grid.Column="3" Height="{DynamicResource xgBtnHeight}" Content="Hide" 
+            <Border x:Name="EditCell" Visibility="Collapsed"  Grid.Column="2" Grid.Row="1" BorderThickness="2" BorderBrush="Black" Margin="0,0,0,10">
+
+                <StackPanel Width="250" >
+                    <StackPanel Height="70">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="CellCancelButton" Grid.Column="3" Height="{DynamicResource xgBtnHeight}" Content="Hide" 
                     Click="CellCancelButton_Click" Style="{DynamicResource SquareButtonStyle}"    Margin="10,10,10,10"
                                 Foreground="Black" BorderBrush="Black"/>
-                    </Grid>
-                </StackPanel>
+                        </Grid>
+                    </StackPanel>
 
-                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Parametr :"  Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                    <TextBox x:Name="CellParametrField" Grid.Column="1"   BorderBrush="Black"
+                        <TextBox x:Name="CellParametrField" Grid.Column="1"   BorderBrush="Black"
                              Width="{DynamicResource propNameWidth}" Margin="0,5,0,5" Foreground="Black"/>
 
-                </StackPanel>
+                    </StackPanel>
 
-                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Align :"  Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                    <ComboBox x:Name="CellAlignBox" Grid.Column="1"   BorderBrush="Black"
+                        <ComboBox x:Name="CellAlignBox" Grid.Column="1"   BorderBrush="Black"
                               Width="{DynamicResource propNameWidth}" Margin="0,5,0,5" Foreground="Black"/>
 
-                </StackPanel>
-                
-                <StackPanel Orientation="Horizontal">
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Precision :" Width="{DynamicResource propNameWidth}" Foreground="Black"  Margin="5,5,0,5"/>
-                    <ComboBox x:Name="CellPrecisionBox" Grid.Column="1"   BorderBrush="Black"
+                        <ComboBox x:Name="CellPrecisionBox" Grid.Column="1"   BorderBrush="Black"
                               Width="{DynamicResource propNameWidth}" Margin="0,5,0,5" Foreground="Black"/>
 
-                </StackPanel>
+                    </StackPanel>
 
-            </StackPanel>
+                </StackPanel>
 
             </Border>
         </Grid>
