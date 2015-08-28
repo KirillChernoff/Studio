@@ -32,8 +32,6 @@ namespace XMLGenerator
 
             Logic.getRes += findStyles;
             Logic.save += Refresh;
-            Logic.saveCell += SaveCell;
-            Logic.saveHeader += SaveHeader;
 
             Logic.HeaderClick += HeaderEdit;
             Logic.CellClick += CellEdit;
@@ -44,6 +42,7 @@ namespace XMLGenerator
             CellPrecisionBox.ItemsSource = MyPres;
             CellAlignBox.ItemsSource = MyAlign;
             HeaderAlignBox.ItemsSource = MyAlign;
+            
 
         }
 
@@ -272,23 +271,14 @@ namespace XMLGenerator
         {
             EditCell.IsOpen=false;
             EditHeader.IsOpen=true;
-
-            HeaderField.Text = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeader;
-            HeightField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeight;
-            WidthField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellWidth;
-            HeaderNameField.Text = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellName;
-            HeaderAlignBox.SelectedItem = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellAlign;
-            FontsizeField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellFontSize;
+            this.EditHeader.DataContext = objectXML.header[new Logic.Coords(row, col).GetHashCode()];
         }
 
         public void CellEdit(int row, int col)
         {
             EditHeader.IsOpen = false;
-            EditCell.IsOpen=true; 
-
-            CellParametrField.Text = objectXML.cells[new Logic.Coords(row, col).GetHashCode()].tabCellParametr;
-            CellAlignBox.SelectedItem = objectXML.cells[new Logic.Coords(row, col).GetHashCode()].tabCellAlign;
-            CellPrecisionBox.SelectedItem = objectXML.cells[new Logic.Coords(row, col).GetHashCode()].tabCellPrecision;
+            EditCell.IsOpen=true;
+            this.EditCell.DataContext = objectXML.cells[new Logic.Coords(row, col).GetHashCode()];
 
         }
 
@@ -303,17 +293,7 @@ namespace XMLGenerator
             Refresh();
             EditCell.Visibility = Visibility.Collapsed;
         }
-
-        public void SaveHeader()
-        {
-            Logic.SaveHeader(this, objectXML);
-        }
-
-        public void SaveCell()
-        {
-            Logic.SaveCell(this, objectXML);
-        }
-
+        
         private void EditHeader_IsOpenChanged(object sender, RoutedEventArgs e)
         {
            if((sender as Flyout).IsOpen)

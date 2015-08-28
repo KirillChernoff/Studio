@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 using MahApps.Metro.Controls.Dialogs;
+using System.ComponentModel;
 
 namespace XMLGenerator
 {
@@ -72,7 +73,7 @@ namespace XMLGenerator
             }
         }
 
-        internal class HeaderCell
+        internal class HeaderCell :INotifyPropertyChanged
         {
             private int _headerCellHeight;
             public int headerCellHeight
@@ -86,7 +87,8 @@ namespace XMLGenerator
                     if (value > 0)
                         _headerCellHeight = value;
                     else _headerCellHeight = Math.Abs(value);
-                }
+                    OnPropertyChanged("headerCellHeight");
+                                    }
             }
 
             private string _headerCellName;
@@ -99,6 +101,7 @@ namespace XMLGenerator
                 set
                 {
                     _headerCellName = value;
+                    OnPropertyChanged("headerCellName");
                 }
             }
 
@@ -114,6 +117,7 @@ namespace XMLGenerator
                     if (value > 0)
                         _headerCellWidth = value;
                     else _headerCellWidth = Math.Abs(value);
+                    OnPropertyChanged("headerCellWidth");
                 }
             }
 
@@ -129,6 +133,7 @@ namespace XMLGenerator
                     if (value > 0)
                         _headerCellFontSize = value;
                     else _headerCellFontSize = Math.Abs(value);
+                    OnPropertyChanged("headerCellFontSize");
                 }
 
             }
@@ -143,11 +148,21 @@ namespace XMLGenerator
                 set
                 {
                     _headerCellAlign = value;
+                    OnPropertyChanged("headerCellAlign");
                 }
 
             }
 
             private string _headerCellHeader;
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            private void OnPropertyChanged(string propertyName)
+            {
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+
             public string headerCellHeader
             {
                 get
@@ -157,6 +172,7 @@ namespace XMLGenerator
                 set
                 {
                     _headerCellHeader = value;
+                    OnPropertyChanged("headerCellHeader");
 
                 }
             }
@@ -194,7 +210,7 @@ namespace XMLGenerator
 
         }
 
-        public class TabCell
+        public class TabCell : INotifyPropertyChanged
         {
             private string _tabCellAlign;
             public string tabCellAlign
@@ -206,6 +222,7 @@ namespace XMLGenerator
                 set
                 {
                     _tabCellAlign = value;
+                    OnPropertyChanged("tabCellAlign");
                 }
             }
 
@@ -219,6 +236,7 @@ namespace XMLGenerator
                 set
                 {
                     _tabCellPrecision = value;
+                    OnPropertyChanged("tabCellPrecision");
                 }
             }
 
@@ -232,6 +250,8 @@ namespace XMLGenerator
                 set
                 {
                     _tabCellParametr = value;
+
+                    OnPropertyChanged("tabCellParametr");
                 }
             }
 
@@ -249,6 +269,9 @@ namespace XMLGenerator
             }
 
             private string _number;
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
             public string Number
             {
                 get
@@ -287,6 +310,12 @@ namespace XMLGenerator
                 _tabCellAlign = CellAlign;
                 _tabCellPrecision = CellPrecision;
                 _tabCellParametr = CellParametr;
+            }
+
+            private void OnPropertyChanged(string propertyName)
+            {
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
 
         }
@@ -474,6 +503,7 @@ namespace XMLGenerator
                     temp.tabCellAlign = elem.Attribute("Align").Value;
                     temp.tabCellParametr = elem.Attribute("Parametr").Value;
                     temp.tabCellPrecision = elem.Attribute("Precision").Value;
+                    
                     temp.Name = RowName;
                     temp.Number = RowNumber;
 
@@ -508,10 +538,11 @@ namespace XMLGenerator
                 Coords coords = new Coords(0, col);
 
                 button.Name = "field" + '_' + (col + 1).ToString() + '_' + 0.ToString();
-                button.Content = table.header[coords.GetHashCode()].headerCellHeader;
-                button.Height = table.header[coords.GetHashCode()].headerCellHeight;
-                button.Width = table.header[coords.GetHashCode()].headerCellWidth;
-                button.FontSize = table.header[coords.GetHashCode()].headerCellFontSize;
+                button.DataContext = MainWindow.objectXML.header[coords.GetHashCode()];
+                button.SetBinding(Button.ContentProperty, new Binding("headerCellHeader"));
+                button.SetBinding(Button.HeightProperty, new Binding("headerCellHeight"));
+                button.SetBinding(Button.WidthProperty, new Binding("headerCellWidth"));
+                button.SetBinding(Button.FontSizeProperty, new Binding("headerCellFontSize"));
 
                 button.Click += EditHeaderClick;
                 button.Foreground = Brushes.Black;
@@ -539,12 +570,15 @@ namespace XMLGenerator
                 {
                     Button button = new Button();
                     Coords coords = new Coords(row, col);
-
+                    Binding bindParam = new Binding();
+                    bindParam.Source = MainWindow.objectXML.cells[coords.GetHashCode()];
+                    bindParam.Path = new PropertyPath("tabCellParametr");
                     button.Name = "field" + '_' + (col + 1).ToString() + '_' + row.ToString();
-                    button.Content = table.cells[coords.GetHashCode()].tabCellParametr;
-                    button.Height = table.header[new Coords(0, col).GetHashCode()].headerCellHeight;
-                    button.Width = table.header[new Coords(0, col).GetHashCode()].headerCellWidth;
-                    button.FontSize = table.header[new Coords(0, col).GetHashCode()].headerCellFontSize;
+                    button.SetBinding(Button.ContentProperty,bindParam);
+                    button.DataContext = MainWindow.objectXML.header[new Coords(0, col).GetHashCode()];
+                    button.SetBinding(Button.HeightProperty, new Binding("headerCellHeight"));
+                    button.SetBinding(Button.WidthProperty, new Binding("headerCellWidth"));
+                    button.SetBinding(Button.FontSizeProperty, new Binding("headerCellFontSize"));
                     button.Foreground = Brushes.Black;
                     button.Padding = new Thickness(5, 0, 5, 0);
                     button.Click += EditCellClick;
@@ -613,9 +647,7 @@ namespace XMLGenerator
         {
 
             Coords t = new Coords();
-
-            if ((MainWindow.LastActiveCoords.rowCoord == 0) && MainWindow.LastActiveCoords != null) saveHeader(); else saveCell();
-
+            
             t = GetCoords((sender as Button).Name.ToString());
             MainWindow.LastActiveCoords = t;
             save();
@@ -626,9 +658,7 @@ namespace XMLGenerator
         public static void EditHeaderClick(object sender, RoutedEventArgs e)
         {
             Coords t = new Coords();
-
-            if ((MainWindow.LastActiveCoords.rowCoord == 0) && MainWindow.LastActiveCoords != null ) saveHeader(); else saveCell();
-
+            
             t = GetCoords((sender as Button).Name.ToString());
             MainWindow.LastActiveCoords = t;
             save();
@@ -752,37 +782,6 @@ namespace XMLGenerator
         public delegate void saving();
 
         public static event saving save;
-        public static event saving saveHeader;
-        public static event saving saveCell;
-
-        public static void SaveHeader(MainWindow w, ObjectXML objectXML)
-        {
-            if (w.HeightField.Value == null) return;
-            HeaderCell t = new HeaderCell(
-                (int)w.HeightField.Value,
-                (int)w.WidthField.Value,
-                (int)w.FontsizeField.Value,
-                w.HeaderNameField.Text,
-                w.HeaderAlignBox.SelectedItem.ToString(),
-                w.HeaderField.Text);
-
-            objectXML.header[MainWindow.LastActiveCoords.GetHashCode()] = t;
-
-            MainWindow.objectXML = objectXML;
-        }
-
-        public static void SaveCell(MainWindow w, ObjectXML objectXML)
-        {
-            if (w.CellAlignBox.SelectedItem == null) return;
-            TabCell t = new TabCell(
-                w.CellAlignBox.SelectedItem.ToString(),
-                w.CellPrecisionBox.SelectedItem.ToString(),
-                w.CellParametrField.Text);
-
-            objectXML.cells[MainWindow.LastActiveCoords.GetHashCode().GetHashCode()] = t;
-
-            MainWindow.objectXML = objectXML;
-        }
 
         public static void SaveAs(ObjectXML objectXML)
         {
