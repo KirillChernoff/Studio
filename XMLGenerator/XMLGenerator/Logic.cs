@@ -523,7 +523,7 @@ namespace XMLGenerator
                 button.Background = Brushes.LightGray;
                 button.BorderBrush = Brushes.Black;
 
-                if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.MediumPurple;
+                if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.LightSkyBlue;
 
                 panel1.Children.Add(button);
             }
@@ -554,7 +554,7 @@ namespace XMLGenerator
                     button.Background = Brushes.LightGray;
                     button.BorderBrush = Brushes.Black;
 
-                    if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.MediumPurple;
+                    if (coords.Equals(MainWindow.LastActiveCoords)) button.Background = Brushes.LightSkyBlue;
 
                     panel.Children.Add(button);
                 }

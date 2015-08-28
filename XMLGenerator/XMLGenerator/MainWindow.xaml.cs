@@ -49,7 +49,6 @@ namespace XMLGenerator
 
         internal static Logic.Coords LastActiveCoords = new Logic.Coords();
 
-
         protected override void OnClosing(CancelEventArgs e)
         {
             if (!Logic.CompareXml(objectXML, ForCompareXML)) e.Cancel = true;
@@ -268,11 +267,11 @@ namespace XMLGenerator
         {
             Logic.ShowAbout(this);
         }
-
+        
         public void HeaderEdit(int row, int col)
         {
-            EditHeader.IsOpen=true;
             EditCell.IsOpen=false;
+            EditHeader.IsOpen=true;
 
             HeaderField.Text = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeader;
             HeightField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeight;
@@ -284,8 +283,8 @@ namespace XMLGenerator
 
         public void CellEdit(int row, int col)
         {
-            EditHeader.IsOpen = false; ;
-            EditCell.IsOpen=true;
+            EditHeader.IsOpen = false;
+            EditCell.IsOpen=true; 
 
             CellParametrField.Text = objectXML.cells[new Logic.Coords(row, col).GetHashCode()].tabCellParametr;
             CellAlignBox.SelectedItem = objectXML.cells[new Logic.Coords(row, col).GetHashCode()].tabCellAlign;
@@ -313,6 +312,31 @@ namespace XMLGenerator
         public void SaveCell()
         {
             Logic.SaveCell(this, objectXML);
+        }
+
+        private void EditHeader_IsOpenChanged(object sender, RoutedEventArgs e)
+        {
+           if((sender as Flyout).IsOpen)
+            {
+                Adapter.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Adapter.Visibility = Visibility.Collapsed; ;
+            }
+        }
+
+        private void EditCell_IsOpenChanged(object sender, RoutedEventArgs e)
+        {
+
+            if ((sender as Flyout).IsOpen)
+            {
+                Adapter.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Adapter.Visibility = Visibility.Collapsed; ;
+            }
         }
     }
 }
