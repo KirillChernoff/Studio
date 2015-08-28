@@ -136,10 +136,10 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-        <ListBox x:Name="ListBox1" BorderBrush="LightBlue"  />
+        <ListBox x:Name="ListBox1"   />
             <Border x:Name="Adapter" Grid.Column="1" Width="250" Visibility="Collapsed"/>
         </Grid>
-            <Controls:Flyout Position="Right" Grid.Row="1"  x:Name="EditHeader" Header="Edit Header" Background="LightSkyBlue" IsOpenChanged="EditHeader_IsOpenChanged" Theme="Light" >
+            <Controls:Flyout Position="Right" Grid.Row="1"  x:Name="EditHeader" Header="Edit Header" Background="AliceBlue" IsOpenChanged="EditHeader_IsOpenChanged" Theme="Light" >
 
                 <StackPanel  Width="250">
                     
@@ -186,7 +186,7 @@
 
             </Controls:Flyout>
 
-        <Controls:Flyout Position="Right" Grid.Row="1" Header="Edit Cell" Background="LightSkyBlue" Theme="Light" IsOpenChanged="EditCell_IsOpenChanged" x:Name="EditCell" >
+        <Controls:Flyout Position="Right" Grid.Row="1" Header="Edit Cell" Background="AliceBlue" Theme="Light" IsOpenChanged="EditCell_IsOpenChanged" x:Name="EditCell" >
 
             <StackPanel Width="250" >
 
