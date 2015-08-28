@@ -7,7 +7,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <sys:Double x:Key="xgBtnHeight">50</sys:Double>
-        <sys:Double x:Key="propNameWidth">100</sys:Double>
+        <sys:Double x:Key="propNameWidth">70</sys:Double>
         <sys:Double x:Key="propContWidth">150</sys:Double>
 
         <ResourceDictionary x:Key="Metro">

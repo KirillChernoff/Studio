@@ -80,7 +80,7 @@ namespace XMLGenerator
             Logic.DisplayXML(ListBox1, objectXML);
         }
 
-        public void ChooseNewButtonClick(object sender, System.EventArgs e)
+        public void ChooseNewButtonClick(object sender, EventArgs e)
         {
             if (!Logic.CompareXml(objectXML, ForCompareXML))
                 return;
@@ -113,7 +113,7 @@ namespace XMLGenerator
 
         private delegate Logic.ObjectXML LoadFile(string PathXML);
 
-        public void ChooseEditButtonClick(object sender, System.EventArgs e)
+        public void ChooseEditButtonClick(object sender, EventArgs e)
         {
             if (!Logic.CompareXml(objectXML, ForCompareXML))
                 return;
@@ -164,8 +164,7 @@ namespace XMLGenerator
             {
                 Logic.FileErrorDialog(this);
             }
-
-
+            
         }
 
         private void AddRowClick(object sender, RoutedEventArgs e)
@@ -192,7 +191,7 @@ namespace XMLGenerator
                     {
                         if (PathXML != null && PathXML != "")
                         {
-                            if (!Logic.WriteXml(objectXML, MainWindow.PathXML))
+                            if (!Logic.WriteXml(objectXML, PathXML))
                             {
                                 LoadFile fileload = new LoadFile(Logic.ReadXml);
                                 IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
@@ -236,7 +235,7 @@ namespace XMLGenerator
             objectXML = fileload.EndInvoke(result);
         }
 
-        public void ExitClick(object sender, System.EventArgs e)
+        public void ExitClick(object sender, EventArgs e)
         {
             if (!Logic.CompareXml(objectXML, ForCompareXML)) return;
             Close();
@@ -272,8 +271,8 @@ namespace XMLGenerator
 
         public void HeaderEdit(int row, int col)
         {
-            EditHeader.Visibility = Visibility.Visible;
-            EditCell.Visibility = Visibility.Collapsed;
+            EditHeader.IsOpen=true;
+            EditCell.IsOpen=false;
 
             HeaderField.Text = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeader;
             HeightField.Value = objectXML.header[new Logic.Coords(row, col).GetHashCode()].headerCellHeight;
@@ -285,8 +284,8 @@ namespace XMLGenerator
 
         public void CellEdit(int row, int col)
         {
-            EditHeader.Visibility = Visibility.Collapsed;
-            EditCell.Visibility = Visibility.Visible;
+            EditHeader.IsOpen = false; ;
+            EditCell.IsOpen=true;
 
             CellParametrField.Text = objectXML.cells[new Logic.Coords(row, col).GetHashCode()].tabCellParametr;
             CellAlignBox.SelectedItem = objectXML.cells[new Logic.Coords(row, col).GetHashCode()].tabCellAlign;

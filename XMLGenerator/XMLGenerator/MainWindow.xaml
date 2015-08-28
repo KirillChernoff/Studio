@@ -7,9 +7,9 @@
         xmlns:local="clr-namespace:XMLGenerator"
         mc:Ignorable="d"
         Title="XML Generator" Height="800" Width="1200" Name="mainwindow" WindowStartupLocation="CenterScreen" Icon="XMLGenerator.ico"   
-                      BorderBrush="Black" BorderThickness="2" >
+                       BorderThickness="0" >
 
-    <Window.Resources>
+    <Controls:MetroWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
@@ -100,7 +100,7 @@
             </Style>
 
         </ResourceDictionary>
-    </Window.Resources>
+    </Controls:MetroWindow.Resources>
 
     <Grid   >
 
@@ -110,8 +110,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Menu    >
-            <MenuItem Name="Menu" Header="File"   Foreground="Black">
+        <Menu   BorderThickness="0,0,0,1" BorderBrush="DarkGray">
+            <MenuItem Name="Menu" Header="File"   Foreground="Black" >
                 <MenuItem Name="CreateNewBtn" Header="Create.." Click="ChooseNewButtonClick"    Foreground="Black"/>
                 <MenuItem Name="OpenExtBtn" Header="Open.." Click="ChooseEditButtonClick"   Foreground="Black"/>
 
@@ -138,108 +138,82 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <ListBox x:Name="ListBox1" Grid.Row="1" BorderBrush="LightBlue"  />
-            <Border x:Name="EditHeader" Grid.Column="1" Grid.Row="1" BorderThickness="2"  Visibility="Collapsed" BorderBrush="Black" Margin="0,0,0,10">
+            
+            <Controls:Flyout Position="Right" x:Name="EditHeader" Header="Edit Header" Theme="Accent" >
 
                 <StackPanel  Width="250">
-
-                    <StackPanel Height="70">
-                        <Grid >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Button x:Name="CancelButton" Grid.Column="1" Height="{DynamicResource xgBtnHeight}" Content="Hide" 
-                    Click="HeaderCancelButton_Click" Style="{DynamicResource SquareButtonStyle}"   Margin="10,10,10,10"
-                                Foreground="Black" BorderBrush="Black"/>
-
-
-                        </Grid>
-                    </StackPanel>
-
+                    
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Header :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                        <TextBox x:Name="HeaderField"   BorderBrush="Black" Width="{DynamicResource propNameWidth}"
+                        <TextBox x:Name="HeaderField"   BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
                                  Foreground="Black" Margin="0,5,0,5"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Height :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
                         <Controls:NumericUpDown Minimum="10" Maximum="200" Interval="10" x:Name="HeightField"
-                                              BorderBrush="Black" Width="{DynamicResource propNameWidth}" 
+                                              BorderBrush="DarkGray" Width="{DynamicResource propContWidth}" 
                                             Foreground="Black" Margin="0,5,0,5"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Width :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
                         <Controls:NumericUpDown Minimum="10" Maximum="400" Interval="10" x:Name="WidthField"
-                                               BorderBrush="Black" Width="{DynamicResource propNameWidth}"
+                                               BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
                                             Foreground="Black" Margin="0,5,0,5"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Name :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                        <TextBox x:Name="HeaderNameField"   BorderBrush="Black" Width="{DynamicResource propNameWidth}"
+                        <TextBox x:Name="HeaderNameField"   BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
                              Foreground="Black" Margin="0,5,0,5"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="FontSize :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
                         <Controls:NumericUpDown Minimum="1" Maximum="40" Interval="1" x:Name="FontsizeField" 
-                                              BorderBrush="Black" Width="{DynamicResource propNameWidth}"
+                                              BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
                                             Foreground="Black" Margin="0,5,0,5"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Align :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                        <ComboBox x:Name="HeaderAlignBox"   BorderBrush="Black" Width="{DynamicResource propNameWidth}"
+                        <ComboBox x:Name="HeaderAlignBox"   BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
                               Foreground="Black" Margin="0,5,0,5"/>
                     </StackPanel>
 
                 </StackPanel>
 
-            </Border>
+            </Controls:Flyout>
 
-            <Border x:Name="EditCell" Visibility="Collapsed"  Grid.Column="2" Grid.Row="1" BorderThickness="2" BorderBrush="Black" Margin="0,0,0,10">
+            <Controls:Flyout Position="Right"  Header="Edit Header" Theme="Adapt" x:Name="EditCell" >
 
                 <StackPanel Width="250" >
-                    <StackPanel Height="70">
-                        <Grid >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Button x:Name="CellCancelButton" Grid.Column="3" Height="{DynamicResource xgBtnHeight}" Content="Hide" 
-                    Click="CellCancelButton_Click" Style="{DynamicResource SquareButtonStyle}"    Margin="10,10,10,10"
-                                Foreground="Black" BorderBrush="Black"/>
-                        </Grid>
-                    </StackPanel>
-
+                    
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Parametr :"  Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                        <TextBox x:Name="CellParametrField" Grid.Column="1"   BorderBrush="Black"
-                             Width="{DynamicResource propNameWidth}" Margin="0,5,0,5" Foreground="Black"/>
+                        <TextBox x:Name="CellParametrField" Grid.Column="1"   BorderBrush="DarkGray"
+                             Width="{DynamicResource propContWidth}" Margin="0,5,0,5" Foreground="Black"/>
 
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Align :"  Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
-                        <ComboBox x:Name="CellAlignBox" Grid.Column="1"   BorderBrush="Black"
-                              Width="{DynamicResource propNameWidth}" Margin="0,5,0,5" Foreground="Black"/>
+                        <ComboBox x:Name="CellAlignBox" Grid.Column="1"   BorderBrush="DarkGray"
+                              Width="{DynamicResource propContWidth}" Margin="0,5,0,5" Foreground="Black"/>
 
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Precision :" Width="{DynamicResource propNameWidth}" Foreground="Black"  Margin="5,5,0,5"/>
-                        <ComboBox x:Name="CellPrecisionBox" Grid.Column="1"   BorderBrush="Black"
-                              Width="{DynamicResource propNameWidth}" Margin="0,5,0,5" Foreground="Black"/>
+                        <ComboBox x:Name="CellPrecisionBox" Grid.Column="1"   BorderBrush="DarkGray"
+                              Width="{DynamicResource propContWidth}" Margin="0,5,0,5" Foreground="Black"/>
 
                     </StackPanel>
 
                 </StackPanel>
 
-            </Border>
+            </Controls:Flyout>
         </Grid>
         <Grid Grid.Row="4" >
             <Grid.ColumnDefinitions>
@@ -253,27 +227,27 @@
 
             <Button x:Name="AddRowBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="0" Content="Add Row" 
                     Click="AddRowClick" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}"  
-                    Foreground="Black" BorderBrush="Black"/>
+                    Foreground="Black" BorderThickness="1,1,1,1" BorderBrush="DarkGray" />
 
             <Button x:Name="AddColBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="1" Content="Add Column" 
                     Click="AddColClick" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}"  
-                    Foreground="Black" BorderBrush="Black"/>
+                    Foreground="Black" BorderThickness="0,1,0,1" BorderBrush="DarkGray" />
 
             <Button x:Name="DelRowBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="2" Content="Detele Row" 
                     Click="DelRow_Click" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}"  
-                    Foreground="Black" BorderBrush="Black"/>
+                    Foreground="Black" BorderThickness="1,1,1,1" BorderBrush="DarkGray" />
 
             <Button x:Name="DelColBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="3" Content="Delete Column" 
                     Click="DelCol_Click" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}"  
-                    Foreground="Black" BorderBrush="Black"/>
+                    Foreground="Black" BorderThickness="0,1,0,1" BorderBrush="DarkGray" />
 
             <Button x:Name="SaveBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="4" Content="Save" 
                     Click="SaveClick" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}"  
-                    Foreground="Black" BorderBrush="Black"/>
+                    Foreground="Black" BorderThickness="1,1,1,1" BorderBrush="DarkGray" />
 
             <Button x:Name="SaveAsBtn" Height="{DynamicResource xgBtnHeight}" Grid.Column="5" Content="Save as.." 
                     Click="SaveAs_Click" Visibility="Hidden" Style="{DynamicResource SquareButtonStyle}"  
-                    Foreground="Black" BorderBrush="Black"/>
+                    Foreground="Black" BorderThickness="0,1,1,1" BorderBrush="DarkGray" />
 
         </Grid>
 
