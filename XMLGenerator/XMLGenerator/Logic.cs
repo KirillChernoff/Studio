@@ -938,7 +938,7 @@ namespace XMLGenerator
 
         public static void ShowAbout(MainWindow w)
         {
-            w.ShowMessageAsync("About", "XML Generator version 0.1.1(Beta). No rights reserved");
+            w.ShowMessageAsync("About", "XML Generator version 0.1.2(Beta). No rights reserved");
         }
     }
 }

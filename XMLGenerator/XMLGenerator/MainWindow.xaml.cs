@@ -45,6 +45,12 @@ namespace XMLGenerator
             
 
         }
+        
+        internal static void getTagRez(Logic.TabCell editedcell, string rez)
+        {
+            editedcell = MainWindow.objectXML.cells[LastActiveCoords.GetHashCode()];
+            editedcell.tabCellParametr = rez;
+        }
 
         internal static Logic.Coords LastActiveCoords = new Logic.Coords();
 
