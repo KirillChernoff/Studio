@@ -195,6 +195,8 @@
                     <TextBox x:Name="CellParametrField" Grid.Column="1"   BorderBrush="DarkGray"
                              Width="{DynamicResource propContWidth}" Margin="0,5,0,5" Foreground="Black"
                              Text="{Binding Path=tabCellParametr}"/>
+                    <Button x:Name="TagDictBtn" Content="..." Click="TagDictBtn_Click" Style="{DynamicResource SquareButtonStyle}" Height="25" Margin="5,0,0,0"
+                            BorderBrush="DarkGray" BorderThickness="1"/>
 
                 </StackPanel>
 

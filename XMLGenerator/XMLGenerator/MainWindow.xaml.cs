@@ -318,5 +318,11 @@ namespace XMLGenerator
                 Adapter.Visibility = Visibility.Collapsed; ;
             }
         }
+
+        private void TagDictBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TagDictionary tgDict = new TagDictionary();
+            tgDict.ShowDialog();
+        }
     }
 }
