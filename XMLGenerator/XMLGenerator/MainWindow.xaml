@@ -137,47 +137,48 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
         <ListBox x:Name="ListBox1"   />
-            <Border x:Name="Adapter" Grid.Column="1" Width="250" Visibility="Collapsed"/>
+            <Border x:Name="Adapter" Grid.Column="1" Width="250" Visibility="Collapsed" BorderThickness="0" BorderBrush="White">
+            </Border>
         </Grid>
             <Controls:Flyout Position="Right" Grid.Row="1"  x:Name="EditHeader" Header="Edit Header" Background="AliceBlue" IsOpenChanged="EditHeader_IsOpenChanged" Theme="Light" >
 
-                <StackPanel  Width="250">
+                <StackPanel  Width="270">
                     
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock Text="Header :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
+                        <TextBlock Text="Header :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="10,5,0,5"/>
                         <TextBox x:Name="HeaderField" Text="{Binding headerCellHeader,Mode=TwoWay}"    BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
-                                 Foreground="Black" Margin="0,5,0,5"/>
+                                 Foreground="Black" Margin="0,5,0,5" KeyDown="CellParametrField_KeyDown"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Height :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
+                        <TextBlock Text="Height :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="10,5,0,5"/>
                         <Controls:NumericUpDown Minimum="10" Value="{Binding headerCellHeight}" Maximum="200" Interval="10" x:Name="HeightField"
                                               BorderBrush="DarkGray" Width="{DynamicResource propContWidth}" 
                                             Foreground="Black" Margin="0,5,0,5"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Width :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
+                        <TextBlock Text="Width :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="10,5,0,5"/>
                         <Controls:NumericUpDown Minimum="10" Maximum="400" Interval="10" x:Name="WidthField" Value="{Binding Path=headerCellWidth}"
                                                BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
                                             Foreground="Black" Margin="0,5,0,5" />
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Name :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
+                        <TextBlock Text="Name :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="10,5,0,5"/>
                         <TextBox x:Name="HeaderNameField"   BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
-                             Foreground="Black" Margin="0,5,0,5" Text="{Binding Path=headerCellName}"/>
+                             Foreground="Black" Margin="0,5,0,5" Text="{Binding Path=headerCellName}" KeyDown="CellParametrField_KeyDown"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="FontSize :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
+                        <TextBlock Text="FontSize :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="10,5,0,5"/>
                         <Controls:NumericUpDown Minimum="1" Maximum="40" Interval="1" x:Name="FontsizeField" 
                                               BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
                                             Foreground="Black" Margin="0,5,0,5" Value="{Binding Path=headerCellFontSize}"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Align :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
+                        <TextBlock Text="Align :"   Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="10,5,0,5"/>
                         <ComboBox x:Name="HeaderAlignBox"   BorderBrush="DarkGray" Width="{DynamicResource propContWidth}"
                               Foreground="Black" Margin="0,5,0,5" SelectedItem="{Binding Path=headerCellAlign}"/>
                     </StackPanel>
@@ -188,20 +189,20 @@
 
         <Controls:Flyout Position="Right" Grid.Row="1" Header="Edit Cell" Background="AliceBlue" Theme="Light" IsOpenChanged="EditCell_IsOpenChanged" x:Name="EditCell" >
 
-            <StackPanel Width="250" >
+            <StackPanel Width="270" >
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Parametr :"  Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
+                    <TextBlock Text="Parametr :"  Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="10,5,0,5"/>
                     <TextBox x:Name="CellParametrField" Grid.Column="1"   BorderBrush="DarkGray"
                              Width="{DynamicResource propContWidth}" Margin="0,5,0,5" Foreground="Black"
-                             Text="{Binding Path=tabCellParametr}"/>
-                    <Button x:Name="TagDictBtn" Content="..." Click="TagDictBtn_Click" Style="{DynamicResource SquareButtonStyle}" Height="25" Margin="5,0,0,0"
+                             Text="{Binding Path=tabCellParametr}" KeyDown="CellParametrField_KeyDown"/>
+                    <Button x:Name="TagDictBtn" Content="..." Click="TagDictBtn_Click" Style="{DynamicResource SquareButtonStyle}" Height="25" Margin="10,0,0,0"
                             BorderBrush="DarkGray" BorderThickness="1"/>
 
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Align :"  Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="5,5,0,5"/>
+                    <TextBlock Text="Align :"  Width="{DynamicResource propNameWidth}" Foreground="Black" Margin="10,5,0,5"/>
                     <ComboBox x:Name="CellAlignBox" Grid.Column="1"   BorderBrush="DarkGray"
                               Width="{DynamicResource propContWidth}" Margin="0,5,0,5" Foreground="Black"
                               SelectedItem="{Binding Path=tabCellAlign}"/>
@@ -209,7 +210,7 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Precision :" Width="{DynamicResource propNameWidth}" Foreground="Black"  Margin="5,5,0,5"/>
+                    <TextBlock Text="Precision :" Width="{DynamicResource propNameWidth}" Foreground="Black"  Margin="10,5,0,5"/>
                     <ComboBox x:Name="CellPrecisionBox" Grid.Column="1"   BorderBrush="DarkGray"
                               Width="{DynamicResource propContWidth}" Margin="0,5,0,5" Foreground="Black"
                               SelectedItem="{Binding Path=tabCellPrecision}"/>

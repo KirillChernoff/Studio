@@ -897,6 +897,7 @@ namespace XMLGenerator
 
                 MainWindow.objectXML = objectXML;
             }
+            else return;
 
         }
 

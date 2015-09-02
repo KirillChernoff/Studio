@@ -161,6 +161,8 @@ namespace XMLGenerator
                 SaveAsMenuBtn.IsEnabled = true;
                 SaveMenuBtn.IsEnabled = true;
 
+                Adapter.Visibility = Visibility.Collapsed;
+
                 Title = PathXML;
                 Logic.ClearControls(this);
             }
@@ -250,7 +252,8 @@ namespace XMLGenerator
             Logic.DelRow(objectXML, LastActiveCoords);
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
-            Logic.ClearControls(this);
+            EditCell.IsOpen = false;
+            EditHeader.IsOpen = false;
         }
 
         private void DelCol_Click(object sender, RoutedEventArgs e)
@@ -258,7 +261,8 @@ namespace XMLGenerator
             Logic.DelCol(objectXML, LastActiveCoords);
             ListBox1.Items.Clear();
             Logic.DisplayXML(ListBox1, objectXML);
-            Logic.ClearControls(this);
+            EditCell.IsOpen = false;
+            EditHeader.IsOpen = false;
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)
@@ -308,7 +312,7 @@ namespace XMLGenerator
             }
             else
             {
-                Adapter.Visibility = Visibility.Collapsed; ;
+                Adapter.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -329,6 +333,14 @@ namespace XMLGenerator
         {
             TagDictionary tgDict = new TagDictionary();
             tgDict.ShowDialog();
+        }
+
+        private void CellParametrField_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+               ListBox1.Focus();
+            }
         }
     }
 }
