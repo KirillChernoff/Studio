@@ -89,6 +89,8 @@ namespace XMLGenerator
             if (!Logic.CompareXml(objectXML, ForCompareXML))
                 return;
 
+            LastActiveCoords.rowCoord = 0;
+            LastActiveCoords.colCoord = 0;
             ForCompareXML = new Logic.ObjectXML();
             objectXML = new Logic.ObjectXML();
 
@@ -110,8 +112,6 @@ namespace XMLGenerator
             Title = "Untitled";
             PathXML = null;
             Logic.ClearControls(this);
-            LastActiveCoords.rowCoord = 0;
-            LastActiveCoords.colCoord = 0;
 
         }
 
@@ -137,6 +137,8 @@ namespace XMLGenerator
 
             try
             {
+                LastActiveCoords.rowCoord = 0;
+                LastActiveCoords.colCoord = 0;
                 LoadFile fileload = new LoadFile(Logic.ReadXml);
                 IAsyncResult result = fileload.BeginInvoke(PathXML, null, null);
                 objectXML = fileload.EndInvoke(result);
@@ -161,8 +163,6 @@ namespace XMLGenerator
 
                 Title = PathXML;
                 Logic.ClearControls(this);
-                LastActiveCoords.rowCoord = 0;
-                LastActiveCoords.colCoord = 0;
             }
             catch (XmlException)
             {

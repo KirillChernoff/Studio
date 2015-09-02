@@ -173,7 +173,7 @@ namespace XMLGenerator
 
         private void OkTagDictBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.getTagRez(MainWindow.objectXML.cells[MainWindow.LastActiveCoords.GetHashCode()], fiveItem.Tag.ToString().Split('_')[1]);
+            MainWindow.getTagRez(MainWindow.objectXML.cells[MainWindow.LastActiveCoords.GetHashCode()], TagDictView.SelectedItem.ToString().Split(' ', ':')[2]);
             this.Close();
         }
 
