@@ -187,13 +187,13 @@ namespace XMLGenerator
             Logic.DisplayXML(ListBox1, objectXML);
         }
 
-        private async void SaveClick(object sender, RoutedEventArgs e)
+        private void SaveClick(object sender, RoutedEventArgs e)
         {
-            MessageDialogStyle stylo = MessageDialogStyle.AffirmativeAndNegative;
-            MessageDialogResult saveConfirm = await this.ShowMessageAsync("Save Changes?","Save Changes?",stylo);
+
+            MessageBoxResult saveConfirm = MessageBox.Show("Save Changes?", "Save Changes?", MessageBoxButton.YesNo, MessageBoxImage.Question);
             switch (saveConfirm)
             {
-                case MessageDialogResult.Affirmative:
+                case MessageBoxResult.Yes:
                     {
                         if (PathXML != null && PathXML != "")
                         {
@@ -222,7 +222,7 @@ namespace XMLGenerator
                             return;
                         }
                     }
-                case MessageDialogResult.Negative:
+                case MessageBoxResult.No:
                     return;
             }
 
